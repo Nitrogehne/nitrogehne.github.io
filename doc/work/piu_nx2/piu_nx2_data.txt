@@ -91,8 +91,8 @@ Novasonic Remix|Rootinia : Mix Up 3|https://youtu.be/HM7GZdIWrbU
 Slam|Rootinia : [ Temple ]|https://youtu.be/HoRw_kC6f7E
 미운 오리새끼 (Ugly Dee)|Rootinia : Swan|https://youtu.be/xihixCAdeFY
 그대에게 (For You) Fullver.|Rootinia : [ Castle ]|https://youtu.be/29QyZvJuj9g
-Beat of The War 2|Rootinia : Nightmare Beat|
-Love Is A Danger Zone pt.2|Rootinia : Non-Powerful|
+Beat of The War 2|Rootinia : Nightmare Beat|https://youtu.be/JvxNpOtE438
+Love Is A Danger Zone pt.2|Rootinia : Non-Powerful|https://youtu.be/xMXCGyo89Gg
 좌절금지 (Stop Frustration)|Shantomia : Routine 8|https://youtu.be/fr9AT6iAdG4
 Street Show Down|Shantomia : Vanish|https://youtu.be/3_8QtJuaWi8
 Dance All Night|Shantomia : Dance|https://youtu.be/PYobBKj-dZ4
@@ -128,17 +128,17 @@ Essa Maneira|Shantomia : Fork of a Road 2 #Wild|https://youtu.be/sfdoTjb4tCE
 Funky Tonight|Shantomia : Ghost 2|https://youtu.be/VbQyEig-ImE
 Jam O Beat|Shantomia : B-O-Beat|https://youtu.be/XXEvA-y7KHU
 흐린 기억속의 그대 (U Inside My Dim Memory) Fullver.|Shantomia : [ Castle 2 ]|https://youtu.be/RSbcKFue56o
-Pro Pop Remix|Phantomia : Perplexity 5|https://youtu.be/7Vja76Xf-T8
-BanYa Hiphop Remix|Phantomia : Perplexity 6|
-후회 (Compunction)|Phantomia : +500|https://youtu.be/gzLBxSZKYlE
-폭풍 (Typhoon) Fullver.|Phantomia : Suddenly Appear 3|
-Beat # No.4|Phantomia : Invisible Beat|
-Com' Back|Phantomia : Routine 9|
-햇살 좋은 날 (Shiny Day)|Phantomia : Random Access|
-Moonlight|Phantomia : MX Style|
-Phantom|Phantomia : Non-Powerful 3|
-Beethoven Virus|Phantomia : Routine 10|
-내맘이야 (It's My Business)|Phantomia : [ Necropolis ]|
+Pro Pop Remix|Phantomia : Perplexity 5|https://youtu.be/vrQVNAww8AU
+BanYa Hiphop Remix|Phantomia : Perplexity 6|https://youtu.be/XGdpm5uwk20
+후회 (Compunction)|Phantomia : +500|https://youtu.be/2EdZh1x_7AY
+폭풍 (Typhoon) Fullver.|Phantomia : Suddenly Appear 3|https://youtu.be/Mqqk_BOasFQ
+Beat # No.4|Phantomia : Invisible Beat|https://youtu.be/mI7hPVNkeNw
+Com' Back|Phantomia : Routine 9|https://youtu.be/nxwchrA3xCA
+햇살 좋은 날 (Shiny Day)|Phantomia : Random Access #1|https://youtu.be/G7kCxoJ_6us
+Moonlight|Phantomia : MX Style|https://youtu.be/c_JG3vWvEj4
+Phantom|Phantomia : Non-Powerful 3|https://youtu.be/6t0iNPY2W2s
+Beethoven Virus|Phantomia : Routine 10|https://youtu.be/FjQzKflvYqs
+내맘이야 (It's My Business)|Phantomia : [ Necropolis ]|https://youtu.be/ntHsEM7J8qs
 소방관 아저씨 (Mr. Fire Fighter) Fullver.|Mirtain : Fire Fighting|https://youtu.be/AVZgugjFv-U
 증오 (Hatred)|Mirtain : Magma|https://youtu.be/OqG-2m1oFhc
 가 (Go)|Mirtain : Memorial Service|https://youtu.be/2lqaxZha-qk
@@ -181,11 +181,7 @@ HOT뜨거 (HOT)|Harena : Mine Removing 2|https://youtu.be/EoltoHAQTmM
 ??? (Pumptris Quattro 8bit ver. & Canon D Yasangma Mix.) |Harena : * Yasangma|https://www.youtube.com/watch?v=j5Nznepy1dc&ab_channel=%EB%84%A4%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%84%B0NEVSISTER
 긴급 상황 (Emergency!) Fullver.|Harena : * Bomb|https://youtu.be/hBNQRWfB2f8
 Beat # No.4 Fullver.|Harena : [ Pyramid ]|https://youtu.be/zwI5c2iHEXg
-Extravaganza|Harena : Adversity|
-Street Show Down|Harena : Floodtide|
-또다른 진심 (Another Truth)|Harena : Adversity 2|
-Final Audition|Harena : Tidal Wave|
-Final Audition 3|Harena : 3rd Audition|
+Extravaganza|Harena : Adversity|https://youtu.be/9AnZz149zhs
 Chopstix|Harena : Avoid|https://youtu.be/shqw0S3q-XU
 X-Treme|Harena : Avoid 2|https://youtu.be/G6oyERpG9C0
 Miss S' Story|Harena : Miss S|https://youtu.be/MWIYr0hhk_s
@@ -194,8 +190,8 @@ Beat of The War 2|Morigin : Non-Powerful 7|https://youtu.be/sxmzjqVF4KQ
 애송이 (Greenhorn)|Morigin : Double Expansion|https://youtu.be/HCRT1ejsHi0
 Starian|Morigin : S-Machine|https://youtu.be/4y85RQ-bm20
 Final Audition 2|Morigin : Converter|https://youtu.be/aG7ygP7zNTk
-Chicago Clup Remix|Morigin : Born of Earth 4|
-N|Morigin : N 2|https://youtu.be/tAUUrhIWTQA
+Chicago Clup Remix|Morigin : Born of Earth 5|https://youtu.be/5kfLrLYtpSI
+N|Morigin : N 2|https://youtu.be/Nd5pyOrT0zw
 Dance Vibrations|Morigin : Resister 2|https://youtu.be/hoR_WjriEfk
 Groovin' Motion|Morigin : Separator|https://youtu.be/s2bW1zSBK-g
 Come Back Home|Morigin : Paradox|https://youtu.be/ZG8dJQyOH6k
@@ -211,7 +207,7 @@ Lazenca Save Us|Morigin : Born of Earth 6|https://youtu.be/GITvAHWkQZY
 예지몽 (Déjà Vu) Fullver.|Morigin : * Ehne #6(1/9)|https://youtu.be/zYe7y3Nf_LI?t=73
 Treme Vook of The War|Morigin : [ Factory ]|https://youtu.be/F0FM3CeYXEc
 Hi Bi|Morigin : Arrange|https://youtu.be/iofoT4KJ2oM
-N|Morigin : N|
+N|Morigin : N|https://youtu.be/tAUUrhIWTQA
 Witch Doctor|Cryomiston : Snow Witch|https://youtu.be/5LZsCmJ1gZw
 One Night|Cryomiston : White Night|https://youtu.be/MCty5zZcqlk
 Love Is A Danger Zone pt.2|Cryomiston : Wuwang z Good z|https://youtu.be/bVPkiVawZKA
@@ -229,8 +225,13 @@ Love Is A Danger Zone pt.2|Cryomiston : Crystal W|https://youtu.be/DEe_rFXFJ0Y
 Love Is A Danger Zone pt.2 D&G ver.|Cryomiston : Crystal WN|https://youtu.be/kPbnekxNMQQ
 Beat of The War 2 Fullver.|Cryomiston : [ Ice Castle ]|https://youtu.be/IwuFMFiizqo
 Moonlight?|Cryomiston : Blue Light|https://youtu.be/HurUHcLEt9A
-May Remix|Prue Ocean : ???|https://youtu.be/ZrzNNZzR1tU
+Final Audition 3|Prue Ocean : 3rd Audition|https://youtu.be/esmWILT0u_o
+또다른 진심 (Another Truth)|Prue Ocean : Adversity 2|https://youtu.be/1xuqbpdl1SY
+Street Show Down|Prue Ocean : Floodtide|https://youtu.be/mRv0nPKNIPQ
+Final Audition|Prue Ocean : Tidal Wave|https://youtu.be/EJQ6G5m0w9I
+May Remix|Prue Ocean : ???|https://youtu.be/OpRdbSnX3Kg
 무혼(武魂) 1.5 (Solitary 1.5)|Prue Ocean : Staff Roll|
-Beethoven Virus|Prue Ocean : Eraser|
-Mission Possible|Prue Ocean : Mission Possible|https://www.youtube.com/watch?v=D80dZGwLDiU&ab_channel=Hunx3
+Beethoven Virus|Prue Ocean : Eraser|https://youtu.be/puhladS_VXo
+Mission Possible|Prue Ocean : Mission Possible #Comb-1|https://youtu.be/Bu1uUgqLass
+Mission Possible|Prue Ocean : Mission Possible #Comb-2|https://youtu.be/D80dZGwLDiU
 소방관 아저씨 (Mr. Fire Fighter), Beat of The War 2|Prue Ocean : Fire & Ice|https://youtu.be/tcfJif6x0xw
