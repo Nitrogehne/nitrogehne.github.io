@@ -34,9 +34,15 @@
             .size15 {
                 font-size: 15px;
             }
-			.font0{
-				font-family: gothic;
-				font-weight: 600;
+			.size10 {
+			    font-size: 10px;
+			}
+			.font0 {
+			    font-family: gothic;
+			    font-weight: 600;
+			}
+			.hidden {
+			    display: none;
 			}
         </style>
     </head>
@@ -48,7 +54,10 @@
             <span class="crr_min size30"></span>
             <span class="size15">:</span>
             <span class="crr_sec size15"></span>
-            <span class="size30 font0">&nbsp;&nbsp;&nbsp;~&nbsp;&nbsp;&nbsp;</span>
+            <span class="size30 font0 hidden">&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;</span>
+            <span class="size30 font0">&nbsp;&nbsp;&nbsp;</span>
+            <span class="crr_ymd size10"></span>
+            <span class="size30 font0">&nbsp;&nbsp;&nbsp;</span>
             <span class="end_time size30"></span>
             <span class="size15">: 00</span>
             <span class="size20 font0">종료</span>
@@ -78,13 +87,18 @@
             var si = setInterval(function () {
                 var clock = document.querySelector("#clock");
                 if (clock) {
+				    var nts2 = function(n){ // number to string
+					    return ("0" + n).slice(-2);
+					}
                     var now = new Date();
+					var ymd = document.querySelector("#clock .crr_ymd");
                     var hour = document.querySelector("#clock .crr_hour");
                     var min = document.querySelector("#clock .crr_min");
                     var sec = document.querySelector("#clock .crr_sec");
-                    hour.innerText = ("0" + now.getHours()).slice(-2);
-                    min.innerText = ("0" + now.getMinutes()).slice(-2);
-                    sec.innerText = ("0" + now.getSeconds()).slice(-2);
+					ymd.innerText = "" + nts2(now.getYear() - 100) + nts2(now.getMonth() + 1) + nts2(now.getDate());
+                    hour.innerText = nts2(now.getHours());
+                    min.innerText = nts2(now.getMinutes());
+                    sec.innerText = nts2(now.getSeconds());
                 }
             }, 1000);
         </script>
