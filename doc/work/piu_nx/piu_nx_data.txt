@@ -26,8 +26,8 @@ Arcade Station|39 Charts|_H
 흐린 기억속의 그대 (U Inside My Dim Memory)|Nightmare|https://youtu.be/eCxxDICQBTs
 흐린 기억속의 그대 (U Inside My Dim Memory)|LightMap|
 
-Arch of Darkness|Normal|https://www.youtube.com/watch?v=2gENRCPPYPs&ab_channel=ArudoRLZ
-Arch of Darkness|Crazy|https://www.youtube.com/watch?v=WZGzTktwewo&ab_channel=%EB%84%A4%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%84%B0NEVSISTER
+Arch of Darkness|Normal|https://youtu.be/32LSuj9hfpI
+Arch of Darkness|Crazy|https://youtu.be/TdWmzn9hRZE
 Arch of Darkness|LightMap|
 
 Bust Back|Nightmare|https://www.youtube.com/watch?v=8whj2FdG-LA&ab_channel=Turkeyslam
@@ -79,7 +79,7 @@ We Goin' Fly Remix|LightMap|
 
 Special Station / Another|3 Charts|_H
 
-그녀는 피자를 좋아해 (She Likes Pizza)|Another Nightmare|https://www.youtube.com/watch?v=AQhMfDFC8nI&ab_channel=BOSS_PIUVNPumpItUpTeam
+그녀는 피자를 좋아해 (She Likes Pizza)|Another Nightmare|https://youtu.be/AQhMfDFC8nI
 그녀는 피자를 좋아해 (She Likes Pizza)|Another LightMap|
 
 Bee|Another Freestyle|https://www.youtube.com/watch?v=gm3V0axTYso&ab_channel=Turkeyslam
