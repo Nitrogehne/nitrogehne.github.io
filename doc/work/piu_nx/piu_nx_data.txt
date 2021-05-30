@@ -154,6 +154,9 @@ Bee|N. America : 13 Panamacity 3|https://youtu.be/ZOIIHP_Q4To?t=236
 월광 (Moonlight)|N. America : 14 C.H.24 1|https://youtu.be/QhS2VvaTSMk
 Beethoven Virus|N. America : 14 C.H.24 3|https://youtu.be/QhS2VvaTSMk?t=242
 
+Bee|58-2|N. America : 15 Over Death 2|https://youtu.be/vYHG3TO26P4?t=124
+Canon D|58-3|N. America : 15 Over Death 3|https://youtu.be/vYHG3TO26P4?t=230
+
 Phantom|S05 Lapaz Stage 3|https://www.youtube.com/watch?v=6MPZCQ5i3do&ab_channel=JboyAAA
 
 현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)|S06 Quito Stage 3|https://www.youtube.com/watch?v=9cmdT6lth2M&t=11s&ab_channel=JboyAAA
@@ -207,8 +210,6 @@ Beethoven Virus|54-3|
 Come To Me|56-1|
 또다른 진심|56-2|
 Join The Party|56-3|
-Bee|58-2|
-Canon D|58-3|
 J Bong|59-1|
 Hi Bi|59-2|
 Vook|59-3|
