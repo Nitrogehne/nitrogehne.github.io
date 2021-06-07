@@ -40,6 +40,9 @@
 </table>
 </article>
 <script>
+document.querySelectorAll("#n_piu a").forEach(function(obj){
+  obj.setAttribute("target", "_blank");
+});
 document.querySelectorAll("#n_piu img").forEach(function(obj){
   obj.setAttribute("src", "doc/hobby/piu/" + obj.getAttribute("src"));
 });
