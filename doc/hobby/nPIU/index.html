@@ -1,265 +1,267 @@
 <style>
-#n_piu table {
-    border-width: 3px;
-    padding: 0 1em;
-    margin: auto;
-    border-collapse: collapse;
+    #n_piu table {
+        border-width: 3px;
+        padding: 0 1em;
+        margin: auto;
+        border-collapse: collapse;
 
-#n_piu table tbody tr {
-    border-top-width: 1px;
-    border-top-style: solid;
-}
-#n_piu table tbody tr td {
-    margin : .5em;
-}
-#n_piu img {
-  width : 120px;
-  height : 68px;
-}
+        #n_piu tr {
+            border-top-width: 1px;
+            border-top-style: solid;
+        }
+
+        #n_piu td {
+            margin: .5em;
+        }
+
+        #n_piu img {
+            width: 120px;
+            height: 68px;
+        }
 </style>
 <article id="n_piu">
-영문(ENG Title), 오름차순(012 -> ABC -> !@#)으로 정리하였습니다.<br>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Artist</th>
-      <th>YouTube</th>
-    </tr>
-  </thead>
-  <tbody id="n_piu_tbd">
-  </tbody>
-</table>
+    영문(ENG Title), 오름차순(012 -> ABC -> !@#)으로 정리하였습니다.<br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>YouTube</th>
+            </tr>
+        </thead>
+        <tbody id="n_piu_tbd">
+        </tbody>
+    </table>
 </article>
 <script>
-var nPIU = [
-    [
-        "2006. LOVE SONG",
-        "Banya Production",
+    var nPIU = [
         [
-            ["https://youtu.be/8l1SI3Ql2yw", "2006. LOVE SONG // D13 SS(1Great) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "BBoom BBoom",
-        "MOMOLAND",
-        [
-            ["https://youtu.be/rUbVuNUNLTo", "BBoom BBoom // D8 SSS // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Beethoven Virus",
-        "BanYa",
-        [
-            ["https://youtu.be/NVnhmbV-mO8", "Beethoven Virus // D11 SS(2Great) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Black Cat",
-        "Turbo",
-        [
-            ["https://youtu.be/VTMNOSOLaWQ", "Black Cat // D7 SSS // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Black Swan",
-        "zeron",
-        [
-            ["https://youtu.be/CLUW3TXhHUA", "Black Swan // D15 [SightRead] S(1Bad 1Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Blazing",
-        "BanYa",
-        [
-            ["https://youtu.be/RG_80U2Q2Co", "Blazing // S17 S(3Bad 5Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Bullfighter's Song",
-        "Banya Production",
-        [
-            ["https://youtu.be/uQwMHJt4bgI", "Ahgoo's Bullfighter's Song Nightmare // PIU Story"]
-        ]
-    ],
-    [
-        "Cannon X.1",
-        "YAHPP",
-        [
-            ["https://youtu.be/BHjTPi5tDx4", "Cannon X.1 // D14 SS(2Great) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Come to Me",
-        "BanYa",
-        [
+            "2006. LOVE SONG",
+            "Banya Production",
             [
-                "https://youtu.be/c1ulgM1O05E", "Come to Me // S13 SS(6Great) // Pump It Up XX"
-            ],
+                ["https://youtu.be/8l1SI3Ql2yw", "2006. LOVE SONG // D13 SS(1Great) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "BBoom BBoom",
+            "MOMOLAND",
             [
-                "https://youtu.be/BWW2-uCde0c", "Come to Me // S17 SS(5Great) [GIMMICK] LV.4 // Pump It Up XX"
+                ["https://youtu.be/rUbVuNUNLTo", "BBoom BBoom // D8 SSS // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Beethoven Virus",
+            "BanYa",
+            [
+                ["https://youtu.be/NVnhmbV-mO8", "Beethoven Virus // D11 SS(2Great) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Black Cat",
+            "Turbo",
+            [
+                ["https://youtu.be/VTMNOSOLaWQ", "Black Cat // D7 SSS // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Black Swan",
+            "zeron",
+            [
+                ["https://youtu.be/CLUW3TXhHUA", "Black Swan // D15 [SightRead] S(1Bad 1Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Blazing",
+            "BanYa",
+            [
+                ["https://youtu.be/RG_80U2Q2Co", "Blazing // S17 S(3Bad 5Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Bullfighter's Song",
+            "Banya Production",
+            [
+                ["https://youtu.be/uQwMHJt4bgI", "Ahgoo's Bullfighter's Song Nightmare // PIU Story"]
+            ]
+        ],
+        [
+            "Cannon X.1",
+            "YAHPP",
+            [
+                ["https://youtu.be/BHjTPi5tDx4", "Cannon X.1 // D14 SS(2Great) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Come to Me",
+            "BanYa",
+            [
+                [
+                    "https://youtu.be/c1ulgM1O05E", "Come to Me // S13 SS(6Great) // Pump It Up XX"
+                ],
+                [
+                    "https://youtu.be/BWW2-uCde0c", "Come to Me // S17 SS(5Great) [GIMMICK] LV.4 // Pump It Up XX"
+                ]
+            ]
+        ],
+        [
+            "Faster Z",
+            "YAHPP",
+            [
+                ["https://youtu.be/1Y8WM2zXxNE", "Faster Z // D14 S(1Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Gashina",
+            "SUNMI",
+            [
+                ["https://youtu.be/WZmZcLP1HHY", "Gashina // D15 S(1Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Gotta Go",
+            "CHUNG HA",
+            [
+                ["https://youtu.be/QGAMifqd8lI", "Gun Rock // D24 Broken D(72Miss 10Bad 35Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Gun Rock",
+            "Banya Production",
+            [
+                ["https://youtu.be/V1UJcY1XG_c", "Gotta Go // D16 [SightRead] SS(9Great) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "HIT",
+            "SEVENTEEN",
+            [
+                ["https://youtu.be/e32i_ta3sks", "HIT // D7 S(1Bad) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Jogging",
+            "LUCY",
+            [
+                ["https://youtu.be/7qWdr0QMtnA", "Jogging // D16 [SightRead] S(1Bad) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Kimchi Fingers",
+            "Garlic Squad",
+            [
+                // 여기까지 완료
+                ["https://youtu.be/N7yvzD7u0zE", "Kimchi Fingers // UCS(Ehne) D19? A(6Miss 1Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "LOVE SCENARIO",
+            "iKON",
+            [
+                ["https://youtu.be/SlLwouKyJsc", "LOVE SCENARIO // S8 S(2Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Rooftop",
+            "N.Flying",
+            [
+                ["https://youtu.be/zz41xzFba1U", "Rooftop // D15 [SightRead 2X] SS(5Great) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Solitary 1.5",
+            "YAHPP",
+            [
+                ["https://youtu.be/bzTCfPlIpgs", "Solitary 1.5 // S16 SS(15Great) [DRILL] LV.2 // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Sudden Romance [PIU Edit]",
+            "void",
+            [
+                ["https://youtu.be/Bx89vKVtvvA", "Sudden Romance [PIU Edit] // D8 SS(8Great) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Super Fantasy",
+            "SHK",
+            [
+                [
+                    "https://youtu.be/sOTej65LQ60", "Super Fantasy // S16 A(1Miss) // Pump It Up XX"
+                ],
+                [
+                    "https://youtu.be/b43cAwCkmS0", "Super Fantasy // S16 SS(11Great) [RUN] LV.2 // Pump It Up XX"
+                ]
+            ]
+        ],
+        [
+            "The Reverie",
+            "uma",
+            [
+                ["https://youtu.be/vCrO5oMiyyk", "The Reverie // S17 [SightRead] S(6Bad 7Good) // Pump It Up XX"]
+            ]
+        ],
+        [
+            "Twist of Fate (feat. Ruriling)",
+            "Jehezukiel",
+            [
+                [
+                    "https://youtu.be/7E4rcYV9Ip8", "Twist of Fate (feat. Ruriling) // S19 [SightRead 4X] A // Pump It Up XX"
+                ],
+                [
+                    "https://youtu.be/aEx0PXUeK_M", "Twist of Fate (feat. Ruriling) // S19 [Cheating] A(1Miss) // Pump It Up XX"
+                ],
+                [
+                    "https://youtu.be/EVj4ZZ9-hLw", "Twist of Fate (feat. Ruriling) // S19 [Cheating] S(2Good) // Pump It Up XX"
+                ],
+                [
+                    "https://youtu.be/TOjXUlq-25w", "Twist of Fate (feat. Ruriling) // D21 [SightRead 4X] A // Pump It Up XX"
+                ]
+            ]
+        ],
+        [
+            "Ugly Dee",
+            "Banya Production",
+            [
+                [
+                    "https://youtu.be/Yi2utJ3lkqA", "Ugly Dee // D15 SSS // Pump It Up XX"
+                ],
+                [
+                    "https://youtu.be/zuSDm3leI2Q", "Ugly Dee // D18 SSS // Pump It Up XX"
+                ],
+                [
+                    "https://youtu.be/2ZgcTtbUsdY", "Ugly Dee // Mission#104 D23 C Success // Pump It Up XX"
+                ]
+            ]
+        ],
+        [
+            "Yeo rae a",
+            "SID-SOUND",
+            [
+                ["https://youtu.be/66Txidune4U", "Yeo rae a // S13 [AV999] SSS [GIMMICK] LV.1 // Pump It Up XX"]
             ]
         ]
-    ],
-    [
-        "Faster Z",
-        "YAHPP",
-        [
-            ["https://youtu.be/1Y8WM2zXxNE", "Faster Z // D14 S(1Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Gashina",
-        "SUNMI",
-        [
-            ["https://youtu.be/WZmZcLP1HHY", "Gashina // D15 S(1Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Gotta Go",
-        "CHUNG HA",
-        [
-            ["https://youtu.be/QGAMifqd8lI", "Gun Rock // D24 Broken D(72Miss 10Bad 35Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Gun Rock",
-        "Banya Production",
-        [
-            ["https://youtu.be/V1UJcY1XG_c", "Gotta Go // D16 [SightRead] SS(9Great) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "HIT",
-        "SEVENTEEN",
-        [
-            ["https://youtu.be/e32i_ta3sks", "HIT // D7 S(1Bad) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Jogging",
-        "LUCY",
-        [
-            ["https://youtu.be/7qWdr0QMtnA", "Jogging // D16 [SightRead] S(1Bad) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Kimchi Fingers",
-        "Garlic Squad",
-        [
-            // 여기까지 완료
-            ["https://youtu.be/N7yvzD7u0zE", "Kimchi Fingers // UCS(Ehne) D19? A(6Miss 1Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "LOVE SCENARIO",
-        "iKON",
-        [
-            ["https://youtu.be/SlLwouKyJsc", "LOVE SCENARIO // S8 S(2Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Rooftop",
-        "N.Flying",
-        [
-            ["https://youtu.be/zz41xzFba1U", "Rooftop // D15 [SightRead 2X] SS(5Great) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Solitary 1.5",
-        "YAHPP",
-        [
-            ["https://youtu.be/bzTCfPlIpgs", "Solitary 1.5 // S16 SS(15Great) [DRILL] LV.2 // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Sudden Romance [PIU Edit]",
-        "void",
-        [
-            ["https://youtu.be/Bx89vKVtvvA", "Sudden Romance [PIU Edit] // D8 SS(8Great) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Super Fantasy",
-        "SHK",
-        [
-            [
-                "https://youtu.be/sOTej65LQ60", "Super Fantasy // S16 A(1Miss) // Pump It Up XX"
-            ],
-            [
-                "https://youtu.be/b43cAwCkmS0", "Super Fantasy // S16 SS(11Great) [RUN] LV.2 // Pump It Up XX"
-            ]
-        ]
-    ],
-    [
-        "The Reverie",
-        "uma",
-        [
-            ["https://youtu.be/vCrO5oMiyyk", "The Reverie // S17 [SightRead] S(6Bad 7Good) // Pump It Up XX"]
-        ]
-    ],
-    [
-        "Twist of Fate (feat. Ruriling)",
-        "Jehezukiel",
-        [
-            [
-                "https://youtu.be/7E4rcYV9Ip8", "Twist of Fate (feat. Ruriling) // S19 [SightRead 4X] A // Pump It Up XX"
-            ],
-            [
-                "https://youtu.be/aEx0PXUeK_M", "Twist of Fate (feat. Ruriling) // S19 [Cheating] A(1Miss) // Pump It Up XX"
-            ],
-            [
-                "https://youtu.be/EVj4ZZ9-hLw", "Twist of Fate (feat. Ruriling) // S19 [Cheating] S(2Good) // Pump It Up XX"
-            ],
-            [
-                "https://youtu.be/TOjXUlq-25w", "Twist of Fate (feat. Ruriling) // D21 [SightRead 4X] A // Pump It Up XX"
-            ]
-        ]
-    ],
-    [
-        "Ugly Dee",
-        "Banya Production",
-        [
-            [
-                "https://youtu.be/Yi2utJ3lkqA", "Ugly Dee // D15 SSS // Pump It Up XX"
-            ],
-            [
-                "https://youtu.be/zuSDm3leI2Q", "Ugly Dee // D18 SSS // Pump It Up XX"
-            ],
-            [
-                "https://youtu.be/2ZgcTtbUsdY", "Ugly Dee // Mission#104 D23 C Success // Pump It Up XX"
-            ]
-        ]
-    ],
-    [
-        "Yeo rae a",
-        "SID-SOUND",
-        [
-            ["https://youtu.be/66Txidune4U", "Yeo rae a // S13 [AV999] SSS [GIMMICK] LV.1 // Pump It Up XX"]
-        ]
-    ]
-];
-nPIU.forEach(function (o, i, a) {
-    td = document.createElement("td");
-    td.innerText = o[0];
-    tr = document.createElement("tr");
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.innerText = o[1];
-    tr.appendChild(td);
-    td = document.createElement("td")
-    for (i = 0; i < o[2].length; i++) {
-        a = document.createElement("a");
-        a.href = o[2][i][0];
-        a.target = "_blank";
-        img = document.createElement("img");
-        img.src = "https://img.youtube.com/vi/" + o[2][i][0].split("/")[3] + "/default.jpg";
-        img.title = o[2][i][1];
-        a.appendChild(img);
-        td.appendChild(a);
-    }
-    tr.appendChild(td);
-    document.querySelector("#n_piu #n_piu_tbd").appendChild(tr);
-});
+    ];
+    nPIU.forEach(function(o, i, a) {
+        td = document.createElement("td");
+        td.innerText = o[0];
+        tr = document.createElement("tr");
+        tr.appendChild(td);
+        td = document.createElement("td");
+        td.innerText = o[1];
+        tr.appendChild(td);
+        td = document.createElement("td")
+        for (i = 0; i < o[2].length; i++) {
+            a = document.createElement("a");
+            a.href = o[2][i][0];
+            a.target = "_blank";
+            img = document.createElement("img");
+            img.src = "https://img.youtube.com/vi/" + o[2][i][0].split("/")[3] + "/mqdefault.jpg";
+            img.title = o[2][i][1];
+            a.appendChild(img);
+            td.appendChild(a);
+        }
+        tr.appendChild(td);
+        document.querySelector("#n_piu #n_piu_tbd").appendChild(tr);
+    });
 </script>
