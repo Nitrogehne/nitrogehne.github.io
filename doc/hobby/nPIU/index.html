@@ -78,6 +78,7 @@ var nPIU = [
 	]
   ],
 ];
+var nPIU_sort = [];
 nPIU.forEach(function(o, i, a){
   td = document.createElement("td");
   td.innerText = o[0];
@@ -98,6 +99,7 @@ nPIU.forEach(function(o, i, a){
 	td.appendChild(a);
   }
   tr.appendChild(td);
+  console.log(tr);
   document.querySelector("#n_piu #n_piu_tbd").appendChild(tr);
 });
 </script>
