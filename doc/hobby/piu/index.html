@@ -33,21 +33,21 @@
       <td>2006. LOVE SONG</td>
       <td>Banya Production</td>
       <td>
-		<a href="https://youtu.be/8l1SI3Ql2yw"><img src="2006_love_song_d13_ss.webp" title="2006. LOVE SONG // D13 SS(1Great) // Pump It Up XX"></a>
+		<a href="https://youtu.be/8l1SI3Ql2yw" title="2006. LOVE SONG // D13 SS(1Great) // Pump It Up XX"></a>
 	  </td>
 	</tr>
     <tr>
       <td>HIT</td>
       <td>SEVENTEEN</td>
       <td>
-		<a href="https://youtu.be/e32i_ta3sks"><img src="hit_d7_s.webp" title="HIT // D7 S(1Bad) // Pump It Up XX"></a>
+		<a href="https://youtu.be/e32i_ta3sks" title="HIT // D7 S(1Bad) // Pump It Up XX"></a>
 	  </td>
 	</tr>
     <tr>
       <td>Jogging</td>
       <td>LUCY</td>
       <td>
-		<a href="https://youtu.be/7qWdr0QMtnA"><img src="jogging_d16_s.webp" title="Jogging // D16 [SightRead] S(1Bad) // Pump It Up XX"></a>
+		<a href="https://youtu.be/7qWdr0QMtnA" title="Jogging // D16 [SightRead] S(1Bad) // Pump It Up XX"></a>
 	  </td>
 	</tr>
   </tbody>
@@ -55,9 +55,18 @@
 </article>
 <script>
 document.querySelectorAll("#n_piu a").forEach(function(obj){
+  // target="_blank" 추가
   obj.setAttribute("target", "_blank");
+  // img 추가
+  var img = document.createElement('img');
+  img.src = "https://img.youtube.com/vi/" + obj.getAttribute("href").split("/")[3] + "/default.jpg";
+  img.title = obj.getAttribute("title");
+  obj.appendChild(img);
 });
+/*
 document.querySelectorAll("#n_piu img").forEach(function(obj){
+https://img.youtube.com/vi/d62Ef1BqwQE/default.jpg
   obj.setAttribute("src", "doc/hobby/piu/" + obj.getAttribute("src"));
 });
+*/
 </script>
