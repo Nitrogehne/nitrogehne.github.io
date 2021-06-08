@@ -5,11 +5,11 @@
     margin: auto;
     border-collapse: collapse;
 
-#n_piu tr {
+#n_piu table tbody tr {
     border-top-width: 1px;
     border-top-style: solid;
 }
-#n_piu td {
+#n_piu table tbody tr td {
     margin : .5em;
 }
 #n_piu img {
@@ -29,51 +29,45 @@
     </tr>
   </thead>
   <tbody id="n_piu_tbd">
-    <tr>
-      <td>2006. LOVE SONG</td>
-      <td>Banya Production</td>
-      <td>
-		<a href="https://youtu.be/8l1SI3Ql2yw" title="2006. LOVE SONG // D13 SS(1Great) // Pump It Up XX"></a>
-	  </td>
-	</tr>
-    <tr>
-      <td>Faster Z</td>
-      <td>YAHPP</td>
-      <td>
-		<a href="https://youtu.be/1Y8WM2zXxNE" title="Faster Z // D14 S(1Good) // Pump It Up XX"></a>
-	  </td>
-	</tr>
-    <tr>
-      <td>HIT</td>
-      <td>SEVENTEEN</td>
-      <td>
-		<a href="https://youtu.be/e32i_ta3sks" title="HIT // D7 S(1Bad) // Pump It Up XX"></a>
-	  </td>
-	</tr>
-    <tr>
-      <td>Jogging</td>
-      <td>LUCY</td>
-      <td>
-		<a href="https://youtu.be/7qWdr0QMtnA" title="Jogging // D16 [SightRead] S(1Bad) // Pump It Up XX"></a>
-	  </td>
-	</tr>
   </tbody>
 </table>
 </article>
 <script>
-document.querySelectorAll("#n_piu a").forEach(function(obj){
-  // target="_blank" 추가
-  obj.setAttribute("target", "_blank");
-  // img 추가
-  var img = document.createElement('img');
-  img.src = "https://img.youtube.com/vi/" + obj.getAttribute("href").split("/")[3] + "/default.jpg";
-  img.title = obj.getAttribute("title");
-  obj.appendChild(img);
+var nPIU = [
+  [ "2006. LOVE SONG", "Banya Production", [
+      [ "https://youtu.be/8l1SI3Ql2yw", "2006. LOVE SONG // D13 SS(1Great) // Pump It Up XX" ]
+	]
+  ], [ "Faster Z", "YAHPP", [
+      [ "https://youtu.be/1Y8WM2zXxNE", "Faster Z // D14 S(1Good) // Pump It Up XX" ]
+	]
+  ], [ "HIT", "SEVENTEEN", [
+      [ "https://youtu.be/e32i_ta3sks", "HIT // D7 S(1Bad) // Pump It Up XX" ]
+	]
+  ], [ "Jogging", "LUCY", [
+      [ "https://youtu.be/7qWdr0QMtnA", "Jogging // D16 [SightRead] S(1Bad) // Pump It Up XX" ]
+	]
+  ],
+];
+nPIU.forEach(function(o, i, a){
+  td = document.createElement("td");
+  td.innerText = o[0];
+  tr = document.createElement("tr");
+  tr.appendChild(td);
+  td = document.createElement("td");
+  td.innerText = o[1];
+  tr.appendChild(td);
+  td = document.createElement("td")
+  for(let i = 0; i < o[2].length; i++){
+    a = document.createElement("a");
+	a.href = o[2][i][0];
+	a.target = "_blank";
+	img = document.createElement("img");
+	img.src = "https://img.youtube.com/vi/" + o[2][i][0].split("/")[3] + "/default.jpg";
+	img.title = o[2][i][1];
+	a.appendChild(img);
+	td.appendChild(a);
+  }
+  tr.appendChild(td);
+  document.querySelector("#n_piu #n_piu_tbd").appendChild(tr);
 });
-/*
-document.querySelectorAll("#n_piu img").forEach(function(obj){
-https://img.youtube.com/vi/d62Ef1BqwQE/default.jpg
-  obj.setAttribute("src", "doc/hobby/piu/" + obj.getAttribute("src"));
-});
-*/
 </script>
