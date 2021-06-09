@@ -1,11 +1,11 @@
 <!-- // 추출
     str = "\n";
     document.querySelectorAll("#row-container").forEach(function(obj, idx, arr) {
-        if (idx != 4 || !obj.querySelector("a#anchor-watch-on-yt")) return;
+        //if (idx != 5 || !obj.querySelector("a#anchor-watch-on-yt")) return;
         desc = !!obj.querySelector(".description") ? obj.querySelector(".description").innerText.trim() : "";
         title = desc.replace(/.*Title : /, "").replace(/ Artist :.*$/, "") || "";
         artist = desc.replace(/^((?!Artist).)*Artist : /, "").replace(/ Step Artist :.*$/, "") || "";
-        id = obj.querySelector("a#anchor-watch-on-yt").href.split("?v=")[1] || "";
+        id = obj.querySelector("a#anchor-watch-on-yt") ? obj.querySelector("a#anchor-watch-on-yt").href.split("?v=")[1] : "";
         video_title = obj.querySelector("#video-title").innerText.trim() || "";
         str += "        [ \"" + title + "\", \"" + artist + "\", \"" + id + "\", \"" + video_title + "\" ],\n";
     });
@@ -57,6 +57,7 @@
 </article>
 <script>
     var nPIU = [
+
 
         [ "댄스 위드 미", "반야", "a4pEDZIlzB8", "댄스 위드 미 // D18 SS(4Great) // 펌프 잇 업 XX" ],
         [ "캐논 X.1", "이 얍", "ZqrxeRnuuaQ", "캐논 X.1 // D22 A(25Miss 9Bad 2Good) // 펌프 잇 업 XX" ],
