@@ -29,8 +29,12 @@
         text-align: left;
     }
 	
+	#n_piu td.title, #n_piu td.artist {
+	    max-width : 200px;
+	}
+	
 	#n_piu td.thum {
-	    max-width : 532px;
+	    max-width : calc(120px * 4 + 10px * 5);
 	}
 
     #n_piu a {
@@ -260,10 +264,12 @@
 	});
 	for(i = 0; i < nPIU.length; i++){
         td = document.createElement("td");
+		td.setAttribute("class", "title");
         td.innerText = nPIU[i][0];
         tr = document.createElement("tr");
         tr.appendChild(td);
         td = document.createElement("td");
+		td.setAttribute("class", "artist");
         td.innerText = nPIU[i][1];
         tr.appendChild(td);
         td = document.createElement("td");
