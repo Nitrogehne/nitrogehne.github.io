@@ -2,11 +2,11 @@
     str = "\n";
     document.querySelectorAll("#row-container").forEach(function(obj, idx, arr) {
         if (idx != 4 || !obj.querySelector("a#anchor-watch-on-yt")) return;
-        desc = obj.querySelector(".description").innerText.trim();
-        title = desc.replace(/.*Title : /, "").replace(/ Artist :.*$/, "");
-        artist = desc.replace(/^((?!Artist).)*Artist : /, "").replace(/ Step Artist :.*$/, "");
-        id = obj.querySelector("a#anchor-watch-on-yt").href.split("?v=")[1];
-        video_title = obj.querySelector("#video-title").innerText.trim();
+        desc = !!obj.querySelector(".description") ? obj.querySelector(".description").innerText.trim() : "";
+        title = desc.replace(/.*Title : /, "").replace(/ Artist :.*$/, "") || "";
+        artist = desc.replace(/^((?!Artist).)*Artist : /, "").replace(/ Step Artist :.*$/, "") || "";
+        id = obj.querySelector("a#anchor-watch-on-yt").href.split("?v=")[1] || "";
+        video_title = obj.querySelector("#video-title").innerText.trim() || "";
         str += "        [ \"" + title + "\", \"" + artist + "\", \"" + id + "\", \"" + video_title + "\" ],\n";
     });
     console.log(str);
@@ -25,12 +25,16 @@
     }
 
     #n_piu td {
-        padding-left: .5em;
+        padding-left: 10px;
         text-align: left;
     }
+	
+	#n_piu td.thum {
+	    max-width : 520px;
+	}
 
     #n_piu a {
-        padding-right: .5em;
+        padding-right: 10px;
     }
 
     #n_piu img {
@@ -54,6 +58,7 @@
 <script>
     var nPIU = [
 
+        [ "댄스 위드 미", "반야", "a4pEDZIlzB8", "댄스 위드 미 // D18 SS(4Great) // 펌프 잇 업 XX" ],
         [ "캐논 X.1", "이 얍", "ZqrxeRnuuaQ", "캐논 X.1 // D22 A(25Miss 9Bad 2Good) // 펌프 잇 업 XX" ],
         [ "파사칼리아", "SynthWulf", "UVjNIjh_J4Y", "파사칼리아 // D22 A(8Miss 5Bad 13Good) // 펌프 잇 업 XX" ],
         [ "가시나", "선미", "z3JHFzDJmns", "가시나 // D15 [AV400] SS(1Great) // 펌프 잇 업 XX" ],
@@ -208,7 +213,7 @@
         [ "트위스트 오브 페이트 (feat. Ruriling)", "Jehezukiel", "EVj4ZZ9-hLw", "트위스트 오브 페이트 (feat. Ruriling) // S19 [컨닝] S(2Good) // 펌프 잇 업 XX" ],
         [ "슈퍼 판타지", "SHK", "b43cAwCkmS0", "슈퍼 판타지 // S16 SS(11Great) [RUN] LV.2 // 펌프 잇 업 XX" ],
         [ "미운 오리새끼", "반야 프로덕션", "Yi2utJ3lkqA", "미운 오리새끼 // D15 SSS // 펌프 잇 업 XX" ],
-        [ "기타", "", "uQwMHJt4bgI", "아구형의 투우사의 노래 나이트메어 // 펌프 이야기" ],
+        [ "", "기타", "uQwMHJt4bgI", "아구형의 투우사의 노래 나이트메어 // 펌프 이야기" ],
         [ "트위스트 오브 페이트 (feat. Ruriling)", "Jehezukiel", "aEx0PXUeK_M", "트위스트 오브 페이트 (feat. Ruriling) // S19 [컨닝] A(1Miss) // 펌프 잇 업 XX" ],
         [ "슈퍼 판타지", "SHK", "sOTej65LQ60", "슈퍼 판타지 // S16 A(1Miss) // 펌프 잇 업 XX" ],
         [ "서든로맨스 [PIU Edit]", "void", "Bx89vKVtvvA", "서든로맨스 [PIU Edit] // D8 SS(8Great) // 펌프 잇 업 XX" ],
@@ -236,7 +241,7 @@
     ];
 	nPIU.sort((a, b) => {
 	    var get_type = (desc) => {
-		    return true;
+		    desc
 		};
 	    if(a[0] < b[0]){
 		    return -1;
@@ -261,6 +266,7 @@
         td.innerText = nPIU[i][1];
         tr.appendChild(td);
         td = document.createElement("td");
+		td.setAttribute("class", "thum");
 		do{
             a = document.createElement("a");
             a.href = "https://youtu.be/" + nPIU[i][2];
