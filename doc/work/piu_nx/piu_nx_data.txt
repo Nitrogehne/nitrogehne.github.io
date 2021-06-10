@@ -13,8 +13,8 @@ Arcade Station|39 Charts|_H
 종점 보관소 (Terminal Depository)|Nightmare|https://youtu.be/h5_zUp_JEAE
 종점 보관소 (Terminal Depository)|LightMap|
 
-투우사의 노래 (Bullfighter's Song)|Hard|https://www.youtube.com/watch?v=lN4xMc3Lr4A&ab_channel=JUNTROLL
-투우사의 노래 (Bullfighter's Song)|Crazy|https://www.youtube.com/watch?v=Pn5YIQHP3ro&ab_channel=%EB%84%A4%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%84%B0NEVSISTER
+투우사의 노래 (Bullfighter's Song)|Hard|https://youtu.be/B3ljwoRqHhw
+투우사의 노래 (Bullfighter's Song)|Crazy|https://youtu.be/hmGD4oxEzQo
 투우사의 노래 (Bullfighter's Song)|LightMap|
 
 현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)|Crazy|https://youtu.be/HQ5p8wm8fnQ?t=625
@@ -30,11 +30,11 @@ Arch of Darkness|Normal|https://youtu.be/32LSuj9hfpI
 Arch of Darkness|Crazy|https://youtu.be/TdWmzn9hRZE
 Arch of Darkness|LightMap|
 
-Bust Back|Nightmare|https://www.youtube.com/watch?v=8whj2FdG-LA&ab_channel=Turkeyslam
+Bust Back|Nightmare|https://youtu.be/Plo1sx1TV2M
 Bust Back|LightMap|
 
-Chimera|Crazy|https://www.youtube.com/watch?v=KE8wkWZ5p3s&ab_channel=%EB%84%A4%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%84%B0NEVSISTER
-Chimera|Nightmare|https://www.youtube.com/watch?v=2enPVXnnqB4&ab_channel=%ED%94%BC%ED%8E%A8%EC%A6%88FEFEMZ
+Chimera|Crazy|https://youtu.be/_OUK3Xx9k1k
+Chimera|Nightmare|https://youtu.be/jM0RrCPbDA8
 Chimera|LightMap|
 
 Final Audition Episode 2-1|Normal|https://youtu.be/11znPN69Xfg
