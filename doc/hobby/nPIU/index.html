@@ -1,16 +1,3 @@
-<!-- // 추출
-    str = "\n";
-    document.querySelectorAll("#row-container").forEach(function(obj, idx, arr) {
-        //if (idx != 5 || !obj.querySelector("a#anchor-watch-on-yt")) return;
-        desc = !!obj.querySelector(".description") ? obj.querySelector(".description").innerText.trim() : "";
-        title = desc.replace(/.*Title : /, "").replace(/ Artist :.*$/, "") || "";
-        artist = desc.replace(/^((?!Artist).)*Artist : /, "").replace(/ Step Artist :.*$/, "") || "";
-        id = obj.querySelector("a#anchor-watch-on-yt") ? obj.querySelector("a#anchor-watch-on-yt").href.split("?v=")[1] : "";
-        video_title = obj.querySelector("#video-title").innerText.trim() || "";
-        str += "        [ \"" + title + "\", \"" + artist + "\", \"" + id + "\", \"" + video_title + "\" ],\n";
-    });
-    console.log(str);
--->
 <style>
     #n_piu table {
         border-width: 3px;
@@ -64,15 +51,35 @@
     </table>
 </article>
 <script>
+/* 추출
+    str = "\n";
+    document.querySelectorAll("div[aria-label='동영상 목록'] #row-container").forEach(function(obj, idx, arr) {
+        //if (idx != 5 || !obj.querySelector("a#anchor-watch-on-yt")) return;
+        desc = !!obj.querySelector(".description") ? obj.querySelector(".description").innerText.trim() : "";
+        title = desc.replace(/.*Title : /, "").replace(/ Artist :.*$/, "") || "";
+        artist = desc.replace(/^((?!Artist).)*Artist : /, "").replace(/ [(Step Artist :)|(독음)|(가사)].*$/, "") || "";
+        id = obj.querySelector("a#anchor-watch-on-yt") ? obj.querySelector("a#anchor-watch-on-yt").href.split("?v=")[1] : "";
+        video_title = obj.querySelector("#video-title").innerText.trim() || "";
+        str += "        [ \"" + title + "\", \"" + artist + "\", \"" + id + "\", \"" + video_title + "\" ],\n";
+    });
+    console.log(str);
+*/
     var nPIU = [
+		
 
+        [ "버터", "방탄소년단", "4xyYM5HzyJQ", "버터 // UCS S17? // 펌프 잇 업 UCS" ],
+        [ "버터", "방탄소년단", "s5uvl4M-OEg", "버터 // UCS D15? // 펌프 잇 업 UCS" ],
+        [ "버터", "방탄소년단", "IyWLUqflTZY", "버터 // UCS D9? // 펌프 잇 업 UCS" ],
+        [ "버터", "방탄소년단", "xjuIoxVKjMY", "버터 // UCS S7? // 펌프 잇 업 UCS" ],
+        [ "버터", "방탄소년단", "UfpiehDw-XE", "버터 // UCS DP4? // 펌프 잇 업 UCS" ],
+        [ "아디오스", "에버글로우", "m1OgXEK14tg", "아디오스 // 가사 // 펌프 잇 업 XX 수록곡" ],
         [ "아디오스", "에버글로우", "0w7CsjMfgTI", "아디오스 // 독음 // 펌프 잇 업 XX 수록곡" ],
-        [ "버터", "방탄소년단", "LOelPYjjrS4", "버터 // UCS S4? // 펌프 잇 업 UCS" ],
+        [ "버터", "방탄소년단", "LOelPYjjrS4", "버터 // UCS S5? // 펌프 잇 업 UCS" ],
         [ "아디오스", "에버글로우", "fF6fAntQhgk", "아디오스 // D10 [1X] SS(2Great) // 펌프 잇 업 XX" ],
         [ "파이널 오디션 에피소드 2-2", "이 얍", "8DKszRq0lQA", "파이널 오디션 에피소드 2-2 // NX WorldTour msgoon Stage 3 Alpha Ver. // 펌프 잇 업 NX" ],
         [ "파이널 오디션 에피소드 1", "반야", "-KvVYXV_usU", "파이널 오디션 에피소드 1 // NX WorldTour msgoon Stage 2 Alpha Ver. // 펌프 잇 업 NX" ],
-        [ "파이널 오디션 에피소드 2-1", "이 얍", "", "파이널 오디션 에피소드 2-1 // NX WorldTour msgoon Stage 1 Alpha Ver. // 펌프 잇 업 NX" ],
-        [ "위치 닥터 #1", "이 얍", "HwfTiPDt_mw", "위치 닥터 #1 // D20 #Shorts // 펌프 잇 업 XX" ],
+        [ "파이널 오디션 에피소드 2-1", "이 얍", "qNYw_J6DXe4", "파이널 오디션 에피소드 2-1 // NX WorldTour msgoon Stage 1 Alpha Ver. // 펌프 잇 업 NX" ],
+        [ "위치 닥터 #1", "이 얍", "", "위치 닥터 #1 // D20 #Shorts // 펌프 잇 업 XX" ],		
         [ "바이올렛 퍼퓸", "SHK", "2WpbEs2uLwQ", "바이올렛 퍼퓸 // D10 [1X RS] A(9Miss 9Bad 5Good) // 펌프 잇 업 XX" ],
         [ "엑스트라바간자", "반야", "0fWpEO8DIv4", "엑스트라바간자 // S10 [1X] S(1Bad) // 펌프 잇 업 XX" ],
         [ "컴 투 미", "반야", "K7C5CLVUBj8", "컴 투 미 // D14 [2X] SS(1Great) // 펌프 잇 업 XX" ],
@@ -127,7 +134,7 @@
         [ "스트리트 쇼다운", "반야", "wtV1Tk4nJBM", "스트리트 쇼다운 // S15 [초견] SS(5Great) [TWIST] LV.1 // 펌프 잇 업 XX" ],
         [ "와치 아웃", "Victoria", "zr-8GA677fc", "와치 아웃 // Another Crazy Prototype S16? // 펌프 잇 업 NX" ],
         [ "와치 아웃", "Victoria", "nWhxvxuqexE", "와치 아웃 // Another Freestyle Prototype DP4? // 펌프 잇 업 NX" ],
-        [ "레드 썬", "브레이브 걸스", "jmmdtuN_iso", "레드 썬(With 롯백) // UCS(Ehne) S17? // 펌프 잇 업 UCS" ],
+        [ "레드 썬", "브레이브 걸스", "jmmdtuN_iso", "레드 썬(With 롯백) // UCS S17? // 펌프 잇 업 UCS" ],
         [ "무혼 1.5", "이 얍", "1ADm8ELoIiA", "무혼 1.5 // NX2 WorldMax Staff Roll // 펌프 잇 업 NX2" ],
         [ "왈츠 오브 도지", "Cashew", "K5ci4TLt6f4", "왈츠 오브 도지 // D20 [초견] A(12Miss 2Bad 9Good) // 펌프 잇 업 XX" ],
         [ "파이널 오디션 3", "반야", "euPybJSFtP8", "파이널 오디션 3 // S16 SS(3Great) [TWIST] LV.2 // 펌프 잇 업 XX" ],
@@ -140,14 +147,14 @@
         [ "콩가", "Queen Latin", "B_YV8yvus20", "콩가 // Another Crazy Prototype S18? // 펌프 잇 업 NX" ],
         [ "콩가", "Queen Latin", "Vi-fMNNsvzw", "콩가 // Another Freestyle Prototype DP6? // 펌프 잇 업 NX" ],
         [ "파이널 오디션 에피소드 2-1", "이 얍", "d_MncFCBTh8", "파이널 오디션 에피소드 2-1 // D12 [무봉] SS(5Great) // 펌프 잇 업 XX" ],
-        //[ "레드 썬", "브레이브 걸스", "CGF99J7LTt4", "레드 썬(With 롯백) // UCS(Ehne) S17? // 펌프 잇 업 UCS" ],
+        //[ "레드 썬", "브레이브 걸스", "CGF99J7LTt4", "레드 썬(With 롯백) // UCS S17? // 펌프 잇 업 UCS" ],
         [ "베토벤 바이러스", "반야", "VYFD-nTKrig", "베토벤 바이러스 // D18 S(1Bad) // 펌프 잇 업 XX" ],
         [ "봉봉쇼콜라", "에버글로우", "MgInzNJ1jvE", "봉봉쇼콜라 // D15 [초견] S(1Good) // 펌프 잇 업 XX" ],
         [ "밤", "여자친구", "jyroWuEmM6E", "밤 // S16 [초견] S(3Bad 2Good) // 펌프 잇 업 XX" ],
-        [ "하이힐", "브레이브 걸스", "v-H90_LxJSo", "하이힐 // UCS(Ehne) S12? // 펌프 잇 업 UCS" ],
+        [ "하이힐", "브레이브 걸스", "v-H90_LxJSo", "하이힐 // UCS S12? // 펌프 잇 업 UCS" ],
         [ "라 쿠바니타", "Los Ninos de Sara", "FB7qzS8lhJE", "라 쿠바니타 // Another Nightmare Prototype D18? // 펌프 잇 업 NX2" ],
         [ "슬랩스틱 파르페", "t+pazolite", "nQxjLEwf6o0", "슬랩스틱 파르페 // S7 S(1Bad) // 펌프 잇 업 XX" ],
-        [ "1도 없어", "에이핑크", "iPpyd36GN6g", "1도 없어 // S4 S(1Good) // 펌프 잇 업 XX" ],
+        [ "1도 없어", "에이핑크", "iPpyd36GN6g", "1도 없어 // S4 S(1Good) // 펌프 잇 업 XX" ],  
         [ "아마겟돈", "HyuN vs lixound", "E2n6F65MCaM", "아마겟돈 // D21 [초견] A(20Miss 9Bad 7Good) // 펌프 잇 업 XX" ],
         [ "V3", "뷰티풀데이", "gj_hearjQ5M", "V3 // D21 A(9Miss 2Bad 7Good) // 펌프 잇 업 XX" ],
         [ "꺼림칙한", "Dasu feat. 카가미네 렌", "P4xhMvrU6Co", "꺼림칙한 // S19 SS(12Great) [GIMMICK] LV.7 // 펌프 잇 업 XX" ],
@@ -225,7 +232,7 @@
         [ "조깅", "루시", "LCA7Y5NF8o4", "조깅 // D7 SS(5Great) // 펌프 잇 업 XX" ],
         [ "히페리온 - SHORT CUT -", "엠투유", "pYgCAuuYsTc", "히페리온 -SC- // S16 SS(28Great) // 펌프 잇 업 XX" ],
         [ "히트", "세븐틴", "1Y49vk7O1LU", "히트 // D18 [초견] SS(23Great) // 펌프 잇 업 XX" ],
-        [ "김치 핑거즈", "Garlic Squad", "N7yvzD7u0zE", "김치 핑거즈 // UCS(Ehne) D19? A(6Miss 1Good) // 펌프 잇 업 XX" ],
+        [ "김치 핑거즈", "Garlic Squad", "N7yvzD7u0zE", "김치 핑거즈 // UCS D19? A(6Miss 1Good) // 펌프 잇 업 XX" ],
         [ "컴 투 미", "반야", "BWW2-uCde0c", "컴 투 미 // S17 SS(5Great) [GIMMICK] LV.4 // 펌프 잇 업 XX" ],
         [ "미운 오리새끼", "반야 프로덕션", "zuSDm3leI2Q", "미운 오리새끼 // D18 SSS // 펌프 잇 업 XX" ],	
         [ "컴 투 미", "반야", "c1ulgM1O05E", "컴 투 미 // S13 SS(6Great) // 펌프 잇 업 XX" ],
