@@ -71,7 +71,7 @@ Special thanks <a href="https://www.youtube.com/channel/UCvoGVHCiHOlK8FQigiaUJyQ
             tr.addClass("head");
             td.html("");
           }else if(dt_td[j].includes("youtube.com/") || dt_td[j].includes("youtu.be/")){
-            td.html($("<a href=" + dt_td[j] + " target=_blank>[Youtube link]</a>"));
+            td.html($("<a href=" + dt_td[j] + " target=_blank><img src=img/icon_youtube.png></a>"));
           }else if(dt_td[j].match(/^(Another )?Normal/)){
             td.addClass("piu_nx_no");
           }else if(dt_td[j].match(/^(Another )?Hard/)){

@@ -6,7 +6,7 @@ Arcade Station|39 Charts|_H
 사랑스러워 (Lovely)|Nightmare|https://www.youtube.com/watch?v=8ZFY9E5Icz0&ab_channel=Turkeyslam
 사랑스러워 (Lovely)|LightMap|
 
-자유로와 (Free!)|Freestyle|
+자유로와 (Free!)|Freestyle|https://youtu.be/bfncc8es9-U
 자유로와 (Free!)|LightMap|
 
 종점 보관소 (Terminal Depository)|Crazy|https://youtu.be/B94ZwHypV70
@@ -51,15 +51,15 @@ Final Audition Episode 2-2|Freestyle|https://youtu.be/drqWTDDnAuM
 Final Audition Episode 2-2|Nightmare|https://youtu.be/9UbK5aqeCxM
 Final Audition Episode 2-2|LightMap|
 
-Fly|Hard|https://www.youtube.com/watch?v=OQ_eD-Kk40A&ab_channel=KanauruProductions
+Fly|Hard|https://youtu.be/ks-L05yxkVw
 Fly|LightMap|
 
-Go Back|Hard|https://www.youtube.com/watch?v=-ZuaAU0KJBo&ab_channel=Turkeyslam
-Go Back|Crazy|https://www.youtube.com/watch?v=rf-0t9V6wmU&ab_channel=FulvioTakami
-Go Back|Nightmare|https://www.youtube.com/watch?v=F0E_39u2XY0&ab_channel=Thumbsy
+Go Back|Hard|https://youtu.be/gcfoGDwFAdY
+Go Back|Crazy|https://youtu.be/AsWUVA5kKSI
+Go Back|Nightmare|https://youtu.be/Tbj43FKBGbI
 Go Back|LightMap|
 
-Hold The Line|Nightmare|https://youtu.be/HQ5p8wm8fnQ?t=353
+Hold The Line|Nightmare|https://youtu.be/amUcVv0BE8I
 Hold The Line|LightMap|
 
 One Night|Crazy|https://www.youtube.com/watch?v=A9D8WcxbVMA&ab_channel=bebupiu
