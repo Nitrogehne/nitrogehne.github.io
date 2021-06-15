@@ -1,7 +1,7 @@
 <article id="piu_nx">
 <h1>Pump It Up New Xenesis</h1>
-Special thanks <a href="https://www.youtube.com/channel/UCvoGVHCiHOlK8FQigiaUJyQ" target="_blank"><img src="img/icon_youtube.png">Vincent Kim</a>,
-<a href="https://www.youtube.com/channel/UCPq5v-pM3xWNvu00DGYxVAg" target="_blank"><img src="img/icon_youtube.png">BOSS_PIUVN Pump It Up Team</a><br>
+Special thanks <a href="https://www.youtube.com/channel/UCvoGVHCiHOlK8FQigiaUJyQ" target="_blank"><img class="normal" src="img/youtube_social_icon_red.png">Vincent Kim</a>,
+<a href="https://www.youtube.com/channel/UCPq5v-pM3xWNvu00DGYxVAg" target="_blank"><img class="normal" src="img/youtube_social_icon_red.png">BOSS_PIUVN Pump It Up Team</a><br>
 <br>
 <table id="piu_nx_tb">
   <thead>
@@ -16,6 +16,11 @@ Special thanks <a href="https://www.youtube.com/channel/UCvoGVHCiHOlK8FQigiaUJyQ
 </table>
 </article>
 <style>
+  #piu_nx img[src="img/youtube_social_icon_red.png"] {
+    vertical-align:middle;
+    width : 28.4px;
+	height : 20px;
+  }
   #piu_nx_tb {
     border-width: 3px;
     padding: 0 1em;
@@ -74,7 +79,7 @@ Special thanks <a href="https://www.youtube.com/channel/UCvoGVHCiHOlK8FQigiaUJyQ
             tr.addClass("head");
             td.html("");
           }else if(dt_td[j].includes("youtube.com/") || dt_td[j].includes("youtu.be/")){
-            td.html($("<a href=" + dt_td[j] + " target=_blank><img src=img/icon_youtube.png></a>"));
+            td.html($("<a href=" + dt_td[j] + " target=_blank><img src=img/youtube_social_icon_red.png></a>"));
           }else if(dt_td[j].match(/^(Another )?Normal/)){
             td.addClass("piu_nx_no");
           }else if(dt_td[j].match(/^(Another )?Hard/)){
