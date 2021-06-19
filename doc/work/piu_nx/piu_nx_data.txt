@@ -21,9 +21,9 @@ Arcade Station|39 Charts|_H
 현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)|Freestyle|https://youtu.be/wyJKhAfw1RY
 현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)|LightMap|
 
-흐린 기억속의 그대 (U Inside My Dim Memory)|Hard|https://www.youtube.com/watch?v=mZjz3l-CZEI&ab_channel=ArudoRLZ
-흐린 기억속의 그대 (U Inside My Dim Memory)|Crazy|https://youtu.be/Z5uAVyI4Cv8
-흐린 기억속의 그대 (U Inside My Dim Memory)|Nightmare|https://youtu.be/eCxxDICQBTs
+흐린 기억속의 그대 (U Inside My Dim Memory)|Hard|https://youtu.be/YBh-QbFPKoQ
+흐린 기억속의 그대 (U Inside My Dim Memory)|Crazy|https://youtu.be/lbGoSCC4yiM
+흐린 기억속의 그대 (U Inside My Dim Memory)|Nightmare|https://youtu.be/a5ieAK4Jwrk
 흐린 기억속의 그대 (U Inside My Dim Memory)|LightMap|
 
 Arch of Darkness|Normal|https://youtu.be/32LSuj9hfpI
@@ -69,12 +69,12 @@ One Night|LightMap|
 Snow Dream|Hard|https://youtu.be/hYRVLd5yNSU
 Snow Dream|LightMap|
 
-Witch Doctor #1|Crazy|https://www.youtube.com/watch?v=9UKIitjxZtU&ab_channel=%EB%84%A4%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%84%B0NEVSISTER
-Witch Doctor #1|Nightmare|https://www.youtube.com/watch?v=z4knqppaCBQ&ab_channel=%EB%84%A4%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%84%B0NEVSISTER
+Witch Doctor #1|Crazy|https://youtu.be/WmYKbv1lydk
+Witch Doctor #1|Nightmare|https://youtu.be/VxM-dNVvyfQ
 Witch Doctor #1|LightMap|
 
-We Goin' Fly Remix|Crazy|https://www.youtube.com/watch?v=wHUSRksg3tI&ab_channel=%EB%84%A4%EB%B8%8C%EC%8B%9C%EC%8A%A4%ED%84%B0NEVSISTER
-We Goin' Fly Remix|Nightmare|https://youtu.be/j_rh3T1u9s0
+We Goin' Fly Remix|Crazy|https://youtu.be/SS0t07PBXjk
+We Goin' Fly Remix|Nightmare|https://youtu.be/KX1Z6mhf4q8
 We Goin' Fly Remix|LightMap|
 
 Special Station / Another|3 Charts|_H
