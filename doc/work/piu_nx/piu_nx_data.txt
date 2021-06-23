@@ -165,6 +165,11 @@ Fianl Audition Episode 2-2|N. America : 15 msgoon 3|https://youtu.be/VeJQ_-hLA9w
 그대에게 (For You)|S. America : 02 Buenosaires 17-2<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=115
 Com' Back|S. America : 02 Buenosaires 17-3<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=245
 
+친구여|S. America : 03 Santiago 1|https://youtu.be/uleexU5BEsI
+사자후|S. America : 03 Santiago 2|https://youtu.be/uleexU5BEsI?t=115
+Storm|S. America : 03 Santiago 3|https://youtu.be/uleexU5BEsI?t=231
+
+
 Phantom|S05 Lapaz Stage 3|https://www.youtube.com/watch?v=6MPZCQ5i3do&ab_channel=JboyAAA
 
 현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)|S06 Quito Stage 3|https://www.youtube.com/watch?v=9cmdT6lth2M&t=11s&ab_channel=JboyAAA
@@ -172,9 +177,7 @@ Loner|Europe-07 Athens-1|https://www.youtube.com/watch?v=4rADg-NJnpc&ab_channel=
 Lazenca Save Us|Europe-07 Athens-2|https://www.youtube.com/watch?v=QOPqsqgfebc&ab_channel=s34nVideos
 
 
-친구여|11-1|
-사자후|11-2|
-Storm|11-3|
+
 중화반점|12-1|
 Hold The Line|12-2|
 사랑가 2006|16-1|
