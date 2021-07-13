@@ -98,19 +98,19 @@ Fianl Audition Episode 2-2|Asia : 02 Hanoi 2|https://youtu.be/UmZVX_uA80c?t=137
 
 사랑스러워|Asia : 03 Tokyo 3|https://youtu.be/JDlcC28x6O0?t=239
 
-One Night|Asia : 04 Hongkong 1|https://youtu.be/YFAidGR3It4
-불놀이야 (Fire Game)|Asia : 04 Hongkong 2|https://youtu.be/YFAidGR3It4?t=117
-경고 (Don't Bother Me)|Asia : 04 Hongkong 3<br>Freestyle Mission Edit|https://youtu.be/YFAidGR3It4?t=246
+One Night|Asia : 04 HongKong 1|https://youtu.be/YFAidGR3It4
+불놀이야 (Fire Game)|Asia : 04 HongKong 2|https://youtu.be/YFAidGR3It4?t=117
+경고 (Don't Bother Me)|Asia : 04 HongKong 3<br>Freestyle Mission Edit|https://youtu.be/YFAidGR3It4?t=246
 
 Watch Out|Asia : 06 Taipei 2|https://youtu.be/YlbpeAPjGZI?t=122
 긴급상황|Asia : 06 Taipei 3|https://youtu.be/YlbpeAPjGZI?t=239
 
-Hybs|Asia : 07 Kualalumpur 1|https://youtu.be/_FmQ6MflA1o
-Chicago Club Remix|Asia : 07 Kualalumpur 2|https://youtu.be/_FmQ6MflA1o?t=123
+Hybs|Asia : 07 KualaLumpur 1|https://youtu.be/_FmQ6MflA1o
+Chicago Club Remix|Asia : 07 KualaLumpur 2|https://youtu.be/_FmQ6MflA1o?t=123
 
-님과 함께|Asia : 08 Singgapore 1|https://youtu.be/RClr8nW28x4
-긴급상황|Asia : 08 Singgapore 2|https://youtu.be/RClr8nW28x4?t=115
-One Night|Asia : 08 Singgapore 3|https://youtu.be/RClr8nW28x4?t=235
+님과 함께|Asia : 08 Singapore 1|https://youtu.be/RClr8nW28x4
+긴급상황|Asia : 08 Singapore 2|https://youtu.be/RClr8nW28x4?t=115
+One Night|Asia : 08 Singapore 3|https://youtu.be/RClr8nW28x4?t=235
 
 Bust Back|Asia : 11 Pyongyang 1 (v1.05)|https://youtu.be/PioIxuC3mMY
 그대에게|Asia : 11 Pyongyang 3 (v1.08)|
@@ -126,8 +126,8 @@ Beat Of The War|Asia : 16 J.K.D 1|https://youtu.be/n-lFSTxx4SA
 Beat Of The War 2|Asia : 16 J.K.D 2|https://youtu.be/n-lFSTxx4SA?t=118
 Beat Of The War 2 DnG Ver.|Asia : 16 J.K.D 3|https://youtu.be/n-lFSTxx4SA?t=253
 
-Free Style |N. America : 03 Sansalvador 1|https://youtu.be/p3_wh1PWAjg
-N|N. America : 03 Sansalvador 2|https://youtu.be/p3_wh1PWAjg?t=119
+Free Style |N. America : 03 SanSalvador 1|https://youtu.be/p3_wh1PWAjg
+N|N. America : 03 SanSalvador 2|https://youtu.be/p3_wh1PWAjg?t=119
 
 Csikos Post|N. America : 05 Ottawa 1|https://youtu.be/xO6_mBRFbLQ
 Chimera|N. America : 05 Ottawa 2|https://youtu.be/xO6_mBRFbLQ?t=125
@@ -137,9 +137,9 @@ Final Audition|N. America : 06 Waikiki 1|https://youtu.be/7Pz7EaY1VK0
 Final Audition 2|N. America : 06 Waikiki 2|https://youtu.be/7Pz7EaY1VK0?t=120
 Final Audition 3|N. America : 06 Waikiki 3|https://youtu.be/7Pz7EaY1VK0?t=237
 
-폭풍 (Typhoon)|N. America : 08 Sanjose 1|https://youtu.be/SKyMTiEDKkw
-폭풍의 언덕 (Wuthering Heights)|N. America : 08 Sanjose 2|https://youtu.be/SKyMTiEDKkw?t=128
-Storm|N. America : 08 Sanjose 3|https://youtu.be/SKyMTiEDKkw?t=240
+폭풍 (Typhoon)|N. America : 08 SanJose 1|https://youtu.be/SKyMTiEDKkw
+폭풍의 언덕 (Wuthering Heights)|N. America : 08 SanJose 2|https://youtu.be/SKyMTiEDKkw?t=128
+Storm|N. America : 08 SanJose 3|https://youtu.be/SKyMTiEDKkw?t=240
 
 Street Show Down|N. America : 09 Havana 1|https://youtu.be/3o3-VeXHNY0
 X Treme|N. America : 09 Havana 2|https://youtu.be/3o3-VeXHNY0?t=118
@@ -147,23 +147,23 @@ Witch Doctor|N. America : 09 Havana 3|https://youtu.be/3o3-VeXHNY0?t=238
 
 Up Up|N. America : 12 Managua 1|https://youtu.be/VK3JRPF81Lg
 
-너 너 (U)|N. America : 13 Panamacity 1|https://youtu.be/ZOIIHP_Q4To
-N|N. America : 13 Panamacity 2|https://youtu.be/ZOIIHP_Q4To?t=115
-Bee|N. America : 13 Panamacity 3|https://youtu.be/ZOIIHP_Q4To?t=236
+너 너 (U)|N. America : 13 PanamaCity 1|https://youtu.be/ZOIIHP_Q4To
+N|N. America : 13 PanamaCity 2|https://youtu.be/ZOIIHP_Q4To?t=115
+Bee|N. America : 13 PanamaCity 3|https://youtu.be/ZOIIHP_Q4To?t=236
 
 월광 (Moonlight)|N. America : 14 C.H.24 1|https://youtu.be/QhS2VvaTSMk
 Beethoven Virus|N. America : 14 C.H.24 3|https://youtu.be/QhS2VvaTSMk?t=242
 
-Bee|N. America : 15 Over Death 2|https://youtu.be/vYHG3TO26P4?t=124
-Canon D|N. America : 15 Over Death 3|https://youtu.be/vYHG3TO26P4?t=230
+Bee|N. America : 15 OverDeath 2|https://youtu.be/vYHG3TO26P4?t=124
+Canon D|N. America : 15 OverDeath 3|https://youtu.be/vYHG3TO26P4?t=230
 
 Final Audition Episode 2-1|N. America : 15 msgoon 1|https://youtu.be/VeJQ_-hLA9w
 Fianl Audition Episode 1|N. America : 15 msgoon 2|https://youtu.be/VeJQ_-hLA9w?t=119
 Fianl Audition Episode 2-2|N. America : 15 msgoon 3|https://youtu.be/VeJQ_-hLA9w?t=240
 
-또다른 진심 (Another Truth)|S. America : 02 Buenosaires 1<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4
-그대에게 (For You)|S. America : 02 Buenosaires 17-2<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=115
-Com' Back|S. America : 02 Buenosaires 17-3<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=245
+또다른 진심 (Another Truth)|S. America : 02 BuenosAires 1<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4
+그대에게 (For You)|S. America : 02 BuenosAires 17-2<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=115
+Com' Back|S. America : 02 BuenosAires 17-3<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=245
 
 친구여|S. America : 03 Santiago 1|https://youtu.be/uleexU5BEsI
 사자후|S. America : 03 Santiago 2|https://youtu.be/uleexU5BEsI?t=115
