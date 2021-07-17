@@ -91,29 +91,29 @@ Shake It Up|Another LightMap|
 
 World Tour|102 Missions|_H
 
-영원한 사랑|Asia : 01 Seoul 1|https://youtu.be/V8xGSBff2fM
+영원한 사랑 (Forever Love)|Asia : 01 Seoul 1|https://youtu.be/V8xGSBff2fM
 
 Beat Of The War 2|Asia : 02 Hanoi 1|https://youtu.be/UmZVX_uA80c
 Fianl Audition Episode 2-2|Asia : 02 Hanoi 2|https://youtu.be/UmZVX_uA80c?t=137
 
-사랑스러워|Asia : 03 Tokyo 3|https://youtu.be/JDlcC28x6O0?t=239
+사랑스러워 (Lovely)|Asia : 03 Tokyo 3|https://youtu.be/JDlcC28x6O0?t=239
 
 One Night|Asia : 04 HongKong 1|https://youtu.be/YFAidGR3It4
 불놀이야 (Fire Game)|Asia : 04 HongKong 2|https://youtu.be/YFAidGR3It4?t=117
 경고 (Don't Bother Me)|Asia : 04 HongKong 3<br>Freestyle Mission Edit|https://youtu.be/YFAidGR3It4?t=246
 
 Watch Out|Asia : 06 Taipei 2|https://youtu.be/YlbpeAPjGZI?t=122
-긴급상황|Asia : 06 Taipei 3|https://youtu.be/YlbpeAPjGZI?t=239
+긴급상황 (Emergency)|Asia : 06 Taipei 3|https://youtu.be/YlbpeAPjGZI?t=239
 
 Hybs|Asia : 07 KualaLumpur 1|https://youtu.be/_FmQ6MflA1o
 Chicago Club Remix|Asia : 07 KualaLumpur 2|https://youtu.be/_FmQ6MflA1o?t=123
 
-님과 함께|Asia : 08 Singapore 1|https://youtu.be/RClr8nW28x4
-긴급상황|Asia : 08 Singapore 2|https://youtu.be/RClr8nW28x4?t=115
+님과 함께 (With My Lover)|Asia : 08 Singapore 1|https://youtu.be/RClr8nW28x4
+긴급상황 (Emergency)|Asia : 08 Singapore 2|https://youtu.be/RClr8nW28x4?t=115
 One Night|Asia : 08 Singapore 3|https://youtu.be/RClr8nW28x4?t=235
 
 Bust Back|Asia : 11 Pyongyang 1 (v1.05)|https://youtu.be/PioIxuC3mMY
-그대에게|Asia : 11 Pyongyang 3 (v1.08)|
+그대에게 (For You)|Asia : 11 Pyongyang 3 (v1.08)|
 
 We Goin' Fly Remix|Asia : 14 KanG2 2|https://youtu.be/VYVhs5itqno?t=118
 Arch Of Darkness|Asia : 14 KanG2 3<br>KanG2 Step Mission Edit|https://youtu.be/VYVhs5itqno?t=241
@@ -165,8 +165,8 @@ Fianl Audition Episode 2-2|N. America : 15 msgoon 3|https://youtu.be/VeJQ_-hLA9w
 그대에게 (For You)|S. America : 02 BuenosAires 17-2<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=115
 Com' Back|S. America : 02 BuenosAires 17-3<br>Hard Mission Edit|https://youtu.be/cz_uUpvfWb4?t=245
 
-친구여|S. America : 03 Santiago 1|https://youtu.be/uleexU5BEsI
-사자후|S. America : 03 Santiago 2|https://youtu.be/uleexU5BEsI?t=115
+친구여 (My Friend)|S. America : 03 Santiago 1|https://youtu.be/uleexU5BEsI
+사자후 (Sajahu)|S. America : 03 Santiago 2|https://youtu.be/uleexU5BEsI?t=115
 Storm|S. America : 03 Santiago 3|https://youtu.be/uleexU5BEsI?t=231
 
 Phantom|S. America : 05 LaPaz 3|https://youtu.be/CuHrJjHid3Q?t=233
