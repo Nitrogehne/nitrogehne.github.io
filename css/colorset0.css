@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+:root {
+  /* Font */
+  --color: #E7DBED;
+  /* Background */
+  --color-b: #000000;
+  /* Corsor Point */
+  --color-p: #9A54CE;
+  /* Mouseover hover */
+  --color-h: #61B977;
+  /* Focus */
+  --color-f: #37B8EB;
+}
