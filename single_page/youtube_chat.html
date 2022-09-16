@@ -1,0 +1,139 @@
+<!html>
+<html>
+<head>
+    <title>nYouTube_Chat</title>
+	<meta charset="utf-8">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: TmonMonsori, 바탕;
+            margin: 0;
+            padding: 0;
+        }
+		body {
+			overflow: hidden;
+		}
+		#player {
+			width : 100%;
+			height : 50%;
+			border : 0px;
+		}
+		#log, #chat {
+		margin : 1em 0;
+		}
+    </style>
+</head>
+<div><a id="chat"><button id="button"></button></a></div>
+<div id="log">&nbsp;</div>
+<iframe id="player" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+<script>
+var chat = document.getElementById("chat");
+var log = document.getElementById("log");
+var player = document.getElementById("player");
+var nStream = "UCUUNsZoqq5WNhfh115LASig"; // Nitrogehne
+var url = new URL(location.href);
+// var nStream_idx = parseInt(url.searchParams.get("nStream")) || 0;
+var src = [
+	"https://www.youtube.com/embed/live_stream?channel=" + nStream,
+	"autoplay=0", // autoplay 0 1 플레이어가 로드될 때 초기 동영상을 자동재생할지 여부
+	"controls=1", // controls 1 0 2 동영상 플레이어 컨트롤을 표시할지 여부
+	"enablejsapi=1", // enablejsapi 0 1 JavaScript API를 사용 여부
+	"fs=1", // fs 1 0 전체화면 버튼이 표시 여부
+	"modestbranding=0", // modestbranding 0 1 YouTube 로고를 표시하지 않기
+	"rel=0", // rel 1 0 재생이 종료되면 플레이어에서 관련 동영상을 표시할지 여부
+];
+player.src = src.join("&");
+
+<!-- 유튜브 스크립트 -->
+var si_q, cnt_q; // 화질변경 변수
+var si_s, cnt_s; // 상태변경 변수
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+function onYouTubeIframeAPIReady() {
+	player = new YT.Player('player', {
+		events: {
+		'onReady': onPlayerReady, // 준비 완료
+		'onPlaybackQualityChange': onPlayerPlaybackQualityChange, // 품질 변경시
+		'onStateChange': onPlayerStateChange, // 상태 변경시
+		'onError': onPlayerError
+		}
+	});
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+	event.target.playVideo();
+	player.setVolume(0);
+	
+	var chat = document.getElementById("chat");	
+	var button = document.getElementById("button");
+	button.innerText = "https://www.youtube.com/live_chat?v=" + player.getVideoUrl().match(/v=(.*)$/)[1];
+	chat.href = "https://www.youtube.com/live_chat?v=" + player.getVideoUrl().match(/v=(.*)$/)[1];
+}
+
+function onPlayerPlaybackQualityChange(event) {
+	log.innerText = "화질변경 감지 :", event.data;
+	if (event.data != "hd720"){
+		cnt_q = 5;
+		clearInterval(si_q);
+		si_q = setInterval(function(){
+			log.innerText = "화질변경 카운트다운 : " + cnt_q--;
+			if(cnt_q <= 0){
+				clearInterval(si_q);
+				player.setPlaybackQuality(player.getAvailableQualityLevels()[0]);
+				//player.setPlaybackQuality("hd720");
+				log.innerText = player.getPlaybackQuality() + " " + player.getAvailableQualityLevels();
+			}
+		}, 1000);
+	}
+}
+
+function onPlayerStateChange(event) {
+	switch(event.data){
+	case -1 : log.innerText = "상태변경 감지 : 시작되지 않음"; break;
+	case 0 : log.innerText = "상태변경 감지 : 종료"; break;
+	case 1 : log.innerText = "상태변경 감지 : 재생 중"; break;
+	case 2 : log.innerText = "상태변경 감지 : 일시중지"; break;
+	case 3 : log.innerText = "상태변경 감지 : 버퍼링"; break;
+	case 5 : log.innerText = "상태변경 감지 : 동영상 신호"; break;
+	}
+	switch(event.data){
+	case -1 :
+	case 0 :
+	case 2 :
+	case 3 :
+	case 5 :
+		cnt_s = 30;
+		clearInterval(si_s);
+		si_s = setInterval(function(){
+			//p.style.visibility = "visible";
+			//p.innerText = "방송상태 불안정\n" + cnt_s-- + "초 뒤에 새로고침";
+			if(cnt_s <= 0){
+				clearInterval(si_s);
+				location.reload();
+			}
+		}, 1000);
+		break;
+	case 1 :
+		clearInterval(si_s);
+		//p.style.visibility = "hidden";
+		//p.innerText = "";
+		break;
+	}
+}
+function onPlayerError(event){
+	log.innerText = "err : " + event;
+}
+setInterval(function(){ // 10초마다 리로드 (싱크 맞추기)
+	location.reload();
+}, 1000 * 10 * 1);
+</script>
+</html>

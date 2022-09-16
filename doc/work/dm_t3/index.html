@@ -1,0 +1,84 @@
+<article id="dm_t3">
+<h1>DJMAX TECHNIKA 3</h1>
+  Crew, Challenge Mission Planning<br>
+  <a href="https://namu.wiki/w/DJMAX%20TECHNIKA%203/%EB%AF%B8%EC%85%98" title="DJMAX TECHNIKA 3/미션" target="_blank">Wiki Link</a><br>
+  &
+  <table id="dm_t3_tb">
+    <thead>
+      <tr>
+        <th>Music</th>
+        <th>Mode</th>
+        <th>YouTube</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</article>
+<style>
+  #dm_t3_tb {
+    border-width: 3px;
+    padding: 0 1em;
+    margin : auto;
+    border-collapse : collapse; 
+  }
+  #dm_t3_tb thead {
+    
+  }
+  #dm_t3_tb tbody tr.song_div {
+    border-top-width : 1px;
+    border-top-style : solid;
+  }
+  #dm_t3_tb tbody td {
+    padding : 0 1em;
+  }
+  .dm_t3_st, .dm_t3_nm, .dm_t3_hd, .dm_t3_mx, .dm_t3_ex { font-weight : bold; }
+  .dm_t3_st{ color : hotpink; }
+  .dm_t3_nm{ color : lemonchiffon; }
+  .dm_t3_hd{ color : dodgerblue;}
+  .dm_t3_mx{ color : orangered; }
+  .dm_t3_ex{ color : darkorchid; }
+</style>
+<script>
+  var tb, tr, dt_tr, td, dt_td, song;
+  $.ajax({
+    async : false,
+    url : "doc/work/dm_t3/dm_t3_data.txt",
+    success : function(rs) {
+      tb = $("#dm_t3_tb tbody");
+      dt_tr = rs.split("\n");
+      for(let i = 0; i < dt_tr.length; i++){
+        tr = $("<tr>");
+        dt_td = dt_tr[i].split("|");
+        if(song != dt_td[0]) {
+          tr.addClass("song_div");
+        }
+        song = dt_td[0];
+        for(let j = 0; j < dt_td.length; j++){
+          td = $("<td>").text(dt_td[j]);
+          if(dt_td[j].includes("youtube")){
+            td.html($("<a href=" + dt_td[j] + " target=_blank>[Youtube link]</a>"));
+          }else if(dt_td[j].includes("Star")){
+            td.addClass("dm_t3_st");
+          }else if(dt_td[j].includes("NM")){
+            td.addClass("dm_t3_nm");
+          }else if(dt_td[j].includes("HD")){
+            td.addClass("dm_t3_hd");
+          }else if(dt_td[j].includes("MX")){
+            td.addClass("dm_t3_mx");
+          }else if(dt_td[j].includes("EX")){
+            td.addClass("dm_t3_ex");
+          }
+          tr.append(td);
+        }
+        if(dt_td[0] != ""){
+          tb.append(tr);
+        }
+      }
+    },
+    complete : function(rs) {
+    },
+    error : function(rs) {
+    }
+  });
+</script>

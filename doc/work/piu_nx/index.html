@@ -1,0 +1,666 @@
+<article id="piu_nx">
+    <h1>Pump It Up New Xenesis</h1>
+    Special thanks
+    <a href="https://www.youtube.com/channel/UCvoGVHCiHOlK8FQigiaUJyQ" target="_blank"><img class="normal" src="img/youtube_social_icon_red.png">Vincent Kim</a>,
+    <a href="https://www.youtube.com/channel/UCPq5v-pM3xWNvu00DGYxVAg" target="_blank"><img class="normal" src="img/youtube_social_icon_red.png">BOSS_PIUVN Pump It Up Team</a><br>
+    <br>
+    <table id="piu_nx_tb">
+        <thead>
+            <tr>
+                <th>Music</th>
+                <th>Mode</th>
+                <th>YouTube</th>
+                <th>nPump</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</article>
+<style>
+    #piu_nx img[src="img/youtube_social_icon_red.png"] {
+        vertical-align: middle;
+        width: calc(64px * 20 / 45);
+        height: 20px;
+    }
+    #piu_nx_tb {
+        border-width: 3px;
+        padding: 0 1em;
+        margin: auto;
+        border-collapse: collapse;
+    }
+    #piu_nx_tb thead {}
+    #piu_nx_tb thead th {
+        background-color: #000;
+        padding: 0 1em;
+    }
+    #piu_nx_tb tbody tr.song_div {
+        border-top-width: 1px;
+        border-top-style: solid;
+    }
+    #piu_nx_tb tbody tr.head td {
+        background-color: #222;
+        color: #fff;
+        font-weight: bold;
+    }
+    #piu_nx_tb tbody tr:hover {
+        background-color: #222;
+    }
+    #piu_nx_tb tbody td {
+        padding: 0 1em;
+    }
+    .piu_nx_no,
+    .piu_nx_hd,
+    .piu_nx_cz,
+    .piu_nx_fs,
+    .piu_nx_nm,
+    .piu_nx_lm {
+        font-weight: bold;
+    }
+    .piu_nx_asia,
+    .piu_nx_namerica,
+    .piu_nx_samerica,
+    .piu_nx_europe {
+        font-weight: bold;
+    }
+    .piu_nx_no {
+        color: khaki;
+    }
+    .piu_nx_hd {
+        color: dodgerblue;
+    }
+    .piu_nx_cz {
+        color: orangered;
+    }
+    .piu_nx_fs {
+        color: greenyellow;
+    }
+    .piu_nx_nm {
+        color: darkorchid;
+    }
+    .piu_nx_lm {
+        color: lightcyan;
+    }
+    .piu_nx_asia {
+        color: DeepSkyBlue;
+    }
+    .piu_nx_namerica {
+        color: LimeGreen;
+    }
+    .piu_nx_samerica {
+        color: HotPink;
+    }
+    .piu_nx_europe {
+        color: GoldenRod;
+    }
+</style>
+<script>
+    var nNX = [
+        [
+            "Arcade Station", "39 Charts", "_H", "", ""
+        ],
+        [
+            "사랑가 2006 (Love Song 2006)", "Nightmare", "https://youtu.be/dMtOLfGhZ3c", "https://youtu.be/8l1SI3Ql2yw"
+        ],
+        [
+            "사랑가 2006 (Love Song 2006)", "LightMap", ""
+        ],
+        [
+            "사랑스러워 (Lovely)", "Nightmare", "https://youtu.be/Xo8Ues-TmxE", "https://youtu.be/pmNrSU9RP3o"
+        ],
+        [
+            "사랑스러워 (Lovely)", "LightMap", ""
+        ],
+        [
+            "자유로와 (Free!)", "Freestyle", "https://youtu.be/bfncc8es9-U", "https://youtu.be/msJsfXS4O_c"
+        ],
+        [
+            "자유로와 (Free!)", "LightMap", ""
+        ],
+        [
+            "종점 보관소 (Terminal Depository)", "Crazy", "https://youtu.be/uRi_zFarUyM", "https://youtu.be/2f4x6Hi6rV8"
+        ],
+        [
+            "종점 보관소 (Terminal Depository)", "Nightmare", "https://youtu.be/AWehyBFxMHw", "https://youtu.be/vmAO51X19h0"
+        ],
+        [
+            "종점 보관소 (Terminal Depository)", "LightMap", ""
+        ],
+        [
+            "투우사의 노래 (Bullfighter's Song)", "Hard", "https://youtu.be/B3ljwoRqHhw", "https://youtu.be/fhPvROry6P4"
+        ],
+        [
+            "투우사의 노래 (Bullfighter's Song)", "Crazy", "https://youtu.be/hmGD4oxEzQo"
+        ],
+        [
+            "투우사의 노래 (Bullfighter's Song)", "LightMap", ""
+        ],
+        [
+            "현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)", "Crazy", "https://youtu.be/ULlq-N-RwKc"
+        ],
+        [
+            "현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)", "Freestyle", "https://youtu.be/wyJKhAfw1RY", "https://youtu.be/kK6k2wiPt7c"
+        ],
+        [
+            "현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)", "LightMap", ""
+        ],
+        [
+            "흐린 기억속의 그대 (U Inside My Dim Memory)", "Hard", "https://youtu.be/YBh-QbFPKoQ", "https://youtu.be/DMe16nxDK_s"
+        ],
+        [
+            "흐린 기억속의 그대 (U Inside My Dim Memory)", "Crazy", "https://youtu.be/lbGoSCC4yiM", "https://youtu.be/EpTdA0CEog8"
+        ],
+        [
+            "흐린 기억속의 그대 (U Inside My Dim Memory)", "Nightmare", "https://youtu.be/a5ieAK4Jwrk"
+        ],
+        [
+            "흐린 기억속의 그대 (U Inside My Dim Memory)", "LightMap", ""
+        ],
+        [
+            "Arch of Darkness", "Normal", "https://youtu.be/32LSuj9hfpI"
+        ],
+        [
+            "Arch of Darkness", "Crazy", "https://youtu.be/TdWmzn9hRZE"
+        ],
+        [
+            "Arch of Darkness", "LightMap", ""
+        ],
+        [
+            "Bust Back", "Nightmare", "https://youtu.be/Plo1sx1TV2M", "https://youtu.be/hehJzaPab1w"
+        ],
+        [
+            "Bust Back", "LightMap", ""
+        ],
+        [
+            "Chimera", "Crazy", "https://youtu.be/_OUK3Xx9k1k", "https://youtu.be/euP6ABaH-ZA",
+        ],
+        [
+            "Chimera", "Nightmare", "https://youtu.be/jM0RrCPbDA8"
+        ],
+        [
+            "Chimera", "LightMap", ""
+        ],
+        [
+            "Final Audition Episode 2-1", "Normal", "https://youtu.be/w4USBG6UT3c", "https://youtu.be/11znPN69Xfg"
+        ],
+        [
+            "Final Audition Episode 2-1", "Hard", "https://youtu.be/w4USBG6UT3c", "https://youtu.be/T7fW5IVP2B8"
+        ],
+        [
+            "Final Audition Episode 2-1", "Crazy", "https://youtu.be/QgrLNpbyKIA", "https://youtu.be/E08WB0k3-vk"
+        ],
+        [
+            "Final Audition Episode 2-1", "Freestyle", "https://youtu.be/Q_7OtVmxaJk", "https://youtu.be/d_MncFCBTh8"
+        ],
+        [
+            "Final Audition Episode 2-1", "Nightmare", "https://youtu.be/AlUYsAI6_XY", "https://youtu.be/dc1JLjZeSlM"
+        ],
+        [
+            "Final Audition Episode 2-1", "LightMap", ""
+        ],
+        [
+            "Final Audition Episode 2-2", "Normal", "https://youtu.be/jKIDJjxVaG8", "https://youtu.be/6Qbw98HVCjc"
+        ],
+        [
+            "Final Audition Episode 2-2", "Hard", "https://youtu.be/jKIDJjxVaG8"
+        ],
+        [
+            "Final Audition Episode 2-2", "Crazy", "https://youtu.be/SmSGQXemmZM", "https://youtu.be/r0YNUcp-8bI"
+        ],
+        [
+            "Final Audition Episode 2-2", "Freestyle", "https://youtu.be/drqWTDDnAuM"
+        ],
+        [
+            "Final Audition Episode 2-2", "Nightmare", "https://youtu.be/9UbK5aqeCxM", "https://youtu.be/-N7XR6eR6Tc"
+        ],
+        [
+            "Final Audition Episode 2-2", "LightMap", ""
+        ],
+        [
+            "Fly", "Hard", "https://youtu.be/ks-L05yxkVw", "https://youtu.be/sBvbnrdWExg"
+        ],
+        [
+            "Fly", "LightMap", ""
+        ],
+        [
+            "Go Back", "Hard", "https://youtu.be/gcfoGDwFAdY"
+        ],
+        [
+            "Go Back", "Crazy", "https://youtu.be/AsWUVA5kKSI", "https://youtu.be/PUCLr4GMsVA"
+        ],
+        [
+            "Go Back", "Nightmare", "https://youtu.be/Tbj43FKBGbI", "https://youtu.be/OIyqkEE7uWc"
+        ],
+        [
+            "Go Back", "LightMap", ""
+        ],
+        [
+            "Hold The Line", "Nightmare", "https://youtu.be/amUcVv0BE8I", "https://youtu.be/-X0QmUHjzIQ"
+        ],
+        [
+            "Hold The Line", "LightMap", ""
+        ],
+        [
+            "One Night", "Crazy", "https://youtu.be/JiJ5BdB_63g"
+        ],
+        [
+            "One Night", "Nightmare", "https://youtu.be/X4c2KRE_pjs"
+        ],
+        [
+            "One Night", "LightMap", ""
+        ],
+        [
+            "Snow Dream", "Hard", "https://youtu.be/hYRVLd5yNSU", "https://youtu.be/EHpjQ7zrAxs"
+        ],
+        [
+            "Snow Dream", "LightMap", ""
+        ],
+        [
+            "Witch Doctor #1", "Crazy", "https://youtu.be/WmYKbv1lydk", "https://youtu.be/Xshi7brgn6c"
+        ],
+        [
+            "Witch Doctor #1", "Nightmare", "https://youtu.be/VxM-dNVvyfQ", "https://youtu.be/lo3iyPhN_rM"
+        ],
+        [
+            "Witch Doctor #1", "LightMap", ""
+        ],
+        [
+            "We Goin' Fly Remix", "Crazy", "https://youtu.be/SS0t07PBXjk", "https://youtu.be/Gus9kSeiSNI"
+        ],
+        [
+            "We Goin' Fly Remix", "Nightmare", "https://youtu.be/KX1Z6mhf4q8"
+        ],
+        [
+            "We Goin' Fly Remix", "LightMap", ""
+        ],
+        [
+            "Special Station / Another", "3 Charts", "_H", "", ""
+        ],
+        [
+            "그녀는 피자를 좋아해 (She Likes Pizza)", "Another Nightmare", "https://youtu.be/P1ZjyBzPm1Y"
+        ],
+        [
+            "그녀는 피자를 좋아해 (She Likes Pizza)", "Another LightMap", ""
+        ],
+        [
+            "Bee", "Another Freestyle", "https://youtu.be/maA5mJet16o", "https://youtu.be/E4f2CY5X524"
+        ],
+        [
+            "Bee", "Another LightMap", ""
+        ],
+        [
+            "Shake It Up", "Another Crazy", "https://youtu.be/roNmG0FA1Sc"
+        ],
+        [
+            "Shake It Up", "Another Nightmare", "https://youtu.be/1Oaco9gWMGY"
+        ],
+        [
+            "Shake It Up", "Another LightMap", ""
+        ],
+        [
+            "World Tour", "102 Missions", "_H", "", ""
+        ],
+        [
+            "영원한 사랑 (Forever Love)", "As. : 01 Seoul 1", "https://youtu.be/V8xGSBff2fM"
+        ],
+        [
+            "Beat Of The War 2", "As. : 02 Hanoi 1", "https://youtu.be/UmZVX_uA80c"
+        ],
+        [
+            "Fianl Audition Episode 2-2", "As. : 02 Hanoi 2", "https://youtu.be/UmZVX_uA80c?t=137"
+        ],
+        [
+            "사랑스러워 (Lovely)", "As. : 03 Tokyo 3", "https://youtu.be/JDlcC28x6O0?t=239"
+        ],
+        [
+            "One Night", "As. : 04 HongKong 1", "https://youtu.be/YFAidGR3It4"
+        ],
+        [
+            "불놀이야 (Fire Game)", "As. : 04 HongKong 2", "https://youtu.be/YFAidGR3It4?t=117"
+        ],
+        [
+            "경고 (Don't Bother Me)", "As. : 04 HongKong 3<br>Freestyle Mission Edit", "https://youtu.be/YFAidGR3It4?t=246"
+        ],
+        [
+            "Watch Out", "As. : 06 Taipei 2", "https://youtu.be/YlbpeAPjGZI?t=122"
+        ],
+        [
+            "긴급상황 (Emergency)", "As. : 06 Taipei 3", "https://youtu.be/YlbpeAPjGZI?t=239"
+        ],
+        [
+            "Hybs", "As. : 07 KualaLumpur 1", "https://youtu.be/_FmQ6MflA1o"
+        ],
+        [
+            "Chicago Club Remix", "As. : 07 KualaLumpur 2", "https://youtu.be/_FmQ6MflA1o?t=123"
+        ],
+        [
+            "님과 함께 (With My Lover)", "As. : 08 Singapore 1", "https://youtu.be/RClr8nW28x4"
+        ],
+        [
+            "긴급상황 (Emergency)", "As. : 08 Singapore 2", "https://youtu.be/RClr8nW28x4?t=115"
+        ],
+        [
+            "One Night", "As. : 08 Singapore 3", "https://youtu.be/RClr8nW28x4?t=235"
+        ],
+        [
+            "Bust Back", "As. : 11 Pyongyang 1 (v1.05)", "https://youtu.be/PioIxuC3mMY"
+        ],
+        [
+            "그대에게 (For You)", "As. : 11 Pyongyang 3 (v1.08)", ""
+        ],
+        [
+            "We Goin' Fly Remix", "As. : 14 KanG2 2", "https://youtu.be/VYVhs5itqno?t=118"
+        ],
+        [
+            "Arch Of Darkness", "As. : 14 KanG2 3<br>KanG2 Step Mission Edit", "https://youtu.be/VYVhs5itqno?t=241"
+        ],
+        [
+            "Arch Of Darkness ", "As. : 15 Yasangma 1<br>Crazy Mission Edit", "https://youtu.be/y49hzk2TT9Q"
+        ],
+        [
+            "Witch Doctor #1", "As. : 15 Yasangma 2<br>Crazy Mission Edit", "https://youtu.be/y49hzk2TT9Q?t=123"
+        ],
+        [
+            "Final Audition", "As. : 15 Yasangma 3<br>Another Crazy Mission Edit", "https://youtu.be/y49hzk2TT9Q?t=242"
+        ],
+        [
+            "Beat Of The War", "As. : 16 J.K.D 1", "https://youtu.be/n-lFSTxx4SA"
+        ],
+        [
+            "Beat Of The War 2", "As. : 16 J.K.D 2", "https://youtu.be/n-lFSTxx4SA?t=118"
+        ],
+        [
+            "Beat Of The War 2 DnG Ver.", "As. : 16 J.K.D 3", "https://youtu.be/n-lFSTxx4SA?t=253"
+        ],
+        [
+            "Free Style ", "N.Am. : 03 SanSalvador 1", "https://youtu.be/p3_wh1PWAjg"
+        ],
+        [
+            "N", "N.Am. : 03 SanSalvador 2", "https://youtu.be/p3_wh1PWAjg?t=119"
+        ],
+        [
+            "Csikos Post", "N.Am. : 05 Ottawa 1", "https://youtu.be/xO6_mBRFbLQ"
+        ],
+        [
+            "Chimera", "N.Am. : 05 Ottawa 2", "https://youtu.be/xO6_mBRFbLQ?t=125"
+        ],
+        [
+            "Dr. M", "N.Am. : 05 Ottawa 3", "https://youtu.be/xO6_mBRFbLQ?t=253"
+        ],
+        [
+            "Final Audition", "N.Am. : 06 Waikiki 1", "https://youtu.be/7Pz7EaY1VK0"
+        ],
+        [
+            "Final Audition 2", "N.Am. : 06 Waikiki 2", "https://youtu.be/7Pz7EaY1VK0?t=120"
+        ],
+        [
+            "Final Audition 3", "N.Am. : 06 Waikiki 3", "https://youtu.be/7Pz7EaY1VK0?t=237"
+        ],
+        [
+            "폭풍 (Typhoon)", "N.Am. : 08 SanJose 1", "https://youtu.be/SKyMTiEDKkw"
+        ],
+        [
+            "폭풍의 언덕 (Wuthering Heights)", "N.Am. : 08 SanJose 2", "https://youtu.be/SKyMTiEDKkw?t=128"
+        ],
+        [
+            "Storm", "N.Am. : 08 SanJose 3", "https://youtu.be/SKyMTiEDKkw?t=240"
+        ],
+        [
+            "Street Show Down", "N.Am. : 09 Havana 1", "https://youtu.be/3o3-VeXHNY0"
+        ],
+        [
+            "X Treme", "N.Am. : 09 Havana 2", "https://youtu.be/3o3-VeXHNY0?t=118"
+        ],
+        [
+            "Witch Doctor", "N.Am. : 09 Havana 3", "https://youtu.be/3o3-VeXHNY0?t=238"
+        ],
+        [
+            "Up Up", "N.Am. : 12 Managua 1", "https://youtu.be/VK3JRPF81Lg"
+        ],
+        [
+            "너 너 (U)", "N.Am. : 13 PanamaCity 1", "https://youtu.be/ZOIIHP_Q4To"
+        ],
+        [
+            "N", "N.Am. : 13 PanamaCity 2", "https://youtu.be/ZOIIHP_Q4To?t=115"
+        ],
+        [
+            "Bee", "N.Am. : 13 PanamaCity 3", "https://youtu.be/ZOIIHP_Q4To?t=236"
+        ],
+        [
+            "월광 (Moonlight)", "N.Am. : 14 C.H.24 1", "https://youtu.be/QhS2VvaTSMk"
+        ],
+        [
+            "Beethoven Virus", "N.Am. : 14 C.H.24 3", "https://youtu.be/QhS2VvaTSMk?t=242"
+        ],
+        [
+            "Bee", "N.Am. : 15 OverDeath 2", "https://youtu.be/vYHG3TO26P4?t=124"
+        ],
+        [
+            "Canon D", "N.Am. : 15 OverDeath 3", "https://youtu.be/vYHG3TO26P4?t=230"
+        ],
+        [
+            "Final Audition Episode 2-1", "N.Am. : 15 msgoon 1", "https://youtu.be/VeJQ_-hLA9w"
+        ],
+        [
+            "Fianl Audition Episode 1", "N.Am. : 15 msgoon 2", "https://youtu.be/VeJQ_-hLA9w?t=119"
+        ],
+        [
+            "Fianl Audition Episode 2-2", "N.Am. : 15 msgoon 3", "https://youtu.be/VeJQ_-hLA9w?t=240"
+        ],
+        [
+            "또다른 진심 (Another Truth)", "S.Am. : 02 BuenosAires 1<br>Hard Mission Edit", "https://youtu.be/cz_uUpvfWb4"
+        ],
+        [
+            "그대에게 (For You)", "S.Am. : 02 BuenosAires 17-2<br>Hard Mission Edit", "https://youtu.be/cz_uUpvfWb4?t=115"
+        ],
+        [
+            "Com' Back", "S.Am. : 02 BuenosAires 17-3<br>Hard Mission Edit", "https://youtu.be/cz_uUpvfWb4?t=245"
+        ],
+        [
+            "친구여 (My Friend)", "S.Am. : 03 Santiago 1", "https://youtu.be/uleexU5BEsI"
+        ],
+        [
+            "사자후 (Sajahu)", "S.Am. : 03 Santiago 2", "https://youtu.be/uleexU5BEsI?t=115"
+        ],
+        [
+            "Storm", "S.Am. : 03 Santiago 3", "https://youtu.be/uleexU5BEsI?t=231"
+        ],
+        [
+            "Phantom", "S.Am. : 05 LaPaz 3", "https://youtu.be/CuHrJjHid3Q?t=233"
+        ],
+        [
+            "발자국 (Footprints)", "S.Am. : 06 Quito 1", "https://youtu.be/mSqU5j4mlcw"
+        ],
+        [
+            "자유로와 (Free!)", "S.Am. : 06 Quito 2", "https://youtu.be/mSqU5j4mlcw?t=127"
+        ],
+        [
+            "현진영 Go 진영 Go (Hyun Jin Young Go Jin Young Go)", "S.Am. : 06 Quito 3", "https://youtu.be/mSqU5j4mlcw?t=248"
+        ],
+        [
+            "HOT 뜨거 (HOT)", "S.Am. : 07 Caracas 2", "https://youtu.be/6lotXQHg_X0?t=131"
+        ],
+        [
+            "소방관 아저씨 (Mr. Fire Fighter)", "S.Am. : 07 Caracas 3", "https://youtu.be/6lotXQHg_X0?t=252"
+        ],
+        [
+            "나를 돌아봐 (Come Back To Me)", "S.Am. : 08 Montevideo 1", "https://youtu.be/rAquQOuXUy0"
+        ],
+        [
+            "돌아와 (Come To Me)", "S.Am. : 08 Montevideo 2", "https://youtu.be/rAquQOuXUy0?t=120"
+        ],
+        [
+            "Com' Back", "S.Am. : 08 Montevideo 3", "https://youtu.be/rAquQOuXUy0?t=233"
+        ],
+        [
+            "Enter The Dragon", "S.Am. : 09 Bogotá 1", "https://youtu.be/W0k7mKqqa-Q"
+        ],
+        [
+            "Gun Rock", "S.Am. : 09 Bogotá 3", "https://youtu.be/W0k7mKqqa-Q?t=234"
+        ],
+        [
+            "그녀는 피자를 좋아해 (She Likes Pizza)", "S.Am. : 10 Valencia 1", "https://youtu.be/f81TqEqzheI"
+        ],
+        [
+            "Will O The Wisp", "S.Am. : 10 Valencia 2<br>Includes the last wild part<br>of division mode.", "https://youtu.be/f81TqEqzheI?t=113"
+        ],
+        [
+            "Mr. Larpus", "S.Am. : 10 Valencia 3", "https://youtu.be/f81TqEqzheI?t=224"
+        ],
+        [
+            "위엑닥바 (Wi.Ex.Doc.Va Remix)", "S.Am. : 11 Asunción 2", "https://youtu.be/wW6p9uhkmVs?t=124"
+        ],
+        [
+            "태양의 나라 (Empire of the sun)", "S.Am. : 12 Georgetown 1", "https://youtu.be/UpxZc_BfeCQ"
+        ],
+        [
+            "뛰어봐 (Run)", "S.Am. : 12 Georgetown 3", "https://youtu.be/UpxZc_BfeCQ?t=238"
+        ],
+        [
+            "우리는 (We Are)", "S.Am. : 13 Sucre 1", "https://youtu.be/QwMJvGCGZgA"
+        ],
+        [
+            "폭풍의 언덕 (Wuthering Heights)", "S.Am. : 13 Sucre 3", "https://youtu.be/QwMJvGCGZgA?t=258"
+        ],
+        [
+            "J Bong", "S.Am. : 14 Wing 1", "https://youtu.be/FCrN_lRoxiM"
+        ],
+        [
+            "Hi Bi", "S.Am. : 14 Wing 2", "https://youtu.be/FCrN_lRoxiM?t=116"
+        ],
+        [
+            "Vook", "S.Am. : 14 Wing 3", "https://youtu.be/FCrN_lRoxiM?t=227"
+        ],
+        [
+            "Love Is A Danger Zone", "S.Am. : 15 B.P.M 1", "https://youtu.be/LEMAVZm_9_8"
+        ],
+        [
+            "Love Is A Danger Zone pt.2", "S.Am. : 15 B.P.M 2", "https://youtu.be/LEMAVZm_9_8?t=124"
+        ],
+        [
+            "Love Is A Danger Zone pt.2 DnG Ver.", "S.Am. : 15 B.P.M 3", "https://youtu.be/LEMAVZm_9_8?t=245"
+        ],
+        [
+            "중화반점(Chung Hwa Ban Jeom)", "Eu. : 03 Rome 1", "https://youtu.be/fWPFuXqDois"
+        ],
+        [
+            "Hold The Line", "Eu. : 03 Rome 2", "https://youtu.be/fWPFuXqDois?t=124"
+        ],
+        [
+            "사랑가 2006 (2006 Love Song)", "Eu. : 04 Berlin 1", "https://youtu.be/qAZ_Cos0AMQ"
+        ],
+        [
+            "연가 (Love Song)", "Eu. : 04 Berlin 2", "https://youtu.be/qAZ_Cos0AMQ?t=115"
+        ],
+        [
+            "Conga", "Eu. : 04 Berlin 3", "https://youtu.be/qAZ_Cos0AMQ?t=238"
+        ],
+        [
+            "Essa Maneira", "Eu. : 05 Moscow 2", "https://youtu.be/k7zi7EwlGp4?t=128"
+        ],
+        [
+            "Power Of Dream", "Eu. : 05 Moscow 3", "https://youtu.be/k7zi7EwlGp4?t=259"
+        ],
+        [
+            "Loner", "Eu. : 07 Athens 1", "https://youtu.be/X03o73LwHQk"
+        ],
+        [
+            "Lazenca Save Us", "Eu. : 07 Athens 2", "https://youtu.be/X03o73LwHQk?t=115"
+        ],
+        [
+            "One Love", "Eu. : E09-1", ""
+        ],
+        [
+            "영원한 사랑", "Eu. : 09-2", ""
+        ],
+        [
+            "내게 남은 사랑을 다 줄게", "Eu. : 09-3", ""
+        ],
+        [
+            "Up Up", "Eu. : 10-1", ""
+        ],
+        [
+            "Shake It Up", "Eu. : 10-3<br>Another Crazy Mission Edit", ""
+        ],
+        [
+            "오빠는 풍각쟁이", "Eu. : 13-1", ""
+        ],
+        [
+            "오빠는 풍각쟁이", "Eu. : 13-2", ""
+        ],
+        [
+            "오빠는 풍각쟁이", "Eu. : 13-3", ""
+        ],
+        [
+            "Come To Me", "Eu. : 14-1", ""
+        ],
+        [
+            "또다른 진심", "Eu. : 14-2", ""
+        ],
+        [
+            "Join The Party", "Eu. : 14-3", ""
+        ],
+        [
+            "Extravaganza", "Eu. : 15-1<br>Another Nightmare Mission Edit", ""
+        ],
+        [
+            "Witch Doctor", "Eu. : 15-2<br>Another Nightmare Mission Edit", ""
+        ],
+        [
+            "Final Audtition Episode 1", "Eu. : 15-3<br>Another Nightmare Mission Edit", ""
+        ],
+        [
+            "Final Audition Episode 2-2", "Eu. : 16-2", ""
+        ],
+        [
+            "Dignity", "Eu. : 16-3<br>Income Nightmare Mission Edit", ""
+        ]
+    ];
+    var tb,
+        tr,
+        td;
+    tb = $("#piu_nx_tb tbody");
+    for (let i = 0; i < nNX.length; i++) {
+        tr = $("<tr>");
+        if (0 == i || nNX[i - 1][0] != nNX[i][0]) {
+            tr.addClass("song_div");
+        }
+        for (let j = 0; j < nNX[i].length; j++) {
+            td = $("<td>").html(nNX[i][j]);
+            if (nNX[i][j] == "_H") {
+                tr.addClass("head");
+                td.html("");
+            } else if (nNX[i][j].includes("youtube.com/") || nNX[i][j].includes("youtu.be/")) {
+                td.html($("<a href=" + nNX[i][j] + " target=_blank><img src=img/youtube_social_icon_red.png></a>"));
+            } else if (nNX[i][j].match(/^(Another )?Normal/)) {
+                td.addClass("piu_nx_no");
+            } else if (nNX[i][j].match(/^(Another )?Hard/)) {
+                td.addClass("piu_nx_hd");
+            } else if (nNX[i][j].match(/^(Another )?Crazy/)) {
+                td.addClass("piu_nx_cz");
+            } else if (nNX[i][j].match(/^(Another )?Freestyle/)) {
+                td.addClass("piu_nx_fs");
+            } else if (nNX[i][j].match(/^(Another )?Nightmare/)) {
+                td.addClass("piu_nx_nm");
+            } else if (nNX[i][j].match(/^(Another )?LightMap/)) {
+                td.addClass("piu_nx_lm");
+            } else if (nNX[i][j].match(/^As\. : /)) {
+                td.addClass("piu_nx_asia");
+                td.html(td.html().replace("As. : ", "A"));
+            } else if (nNX[i][j].match(/^N.Am\. : /)) {
+                td.addClass("piu_nx_namerica");
+                td.html(td.html().replace("N.Am. : ", "N"));
+            } else if (nNX[i][j].match(/^S.Am\. : /)) {
+                td.addClass("piu_nx_samerica");
+                td.html(td.html().replace("S.Am. : ", "S"));
+            } else if (nNX[i][j].match(/^Eu\. : /)) {
+                td.addClass("piu_nx_europe");
+                td.html(td.html().replace("Eu. : ", "E"));
+            }
+            tr.append(td);
+        }
+        if (nNX[i][0] != "") {
+            tb.append(tr);
+        }
+    }
+</script>

@@ -1,0 +1,93 @@
+<article id="piu_zero">
+<h1>Pump It Up ZERO</h1>
+<table id="piu_zero_tb">
+  <thead>
+    <tr>
+      <th>Music</th>
+      <th>Mode</th>
+      <th>YouTube</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<br>
+-EK-
+<br>
+<img src="doc/work/piu_zero/zero_staff_roll.png" style="max-width:360px;width:100%;">
+</article>
+<style>
+  #piu_zero_tb {
+    border-width: 3px;
+    padding: 0 1em;
+    margin : auto;
+    border-collapse : collapse; 
+  }
+  #piu_zero_tb thead {
+    
+  }
+  #piu_zero_tb tbody tr.song_div {
+    border-top-width : 1px;
+    border-top-style : solid;
+  }
+  #piu_zero_tb tbody tr.head td {
+    background-color : #222;
+    color : #fff;
+    font-weight : bold;
+  }
+  #piu_zero_tb tbody td {
+    padding : 0 1em;
+  }
+  .piu_zero_ez, .piu_zero_hd, .piu_zero_cz, .piu_zero_nm, .piu_zero_lm { font-weight : bold; }
+  .piu_zero_ez{ color : hotpink; }
+  .piu_zero_hd{ color : dodgerblue; }
+  .piu_zero_cz{ color : orangered;}
+  .piu_zero_nm{ color : darkorchid; }
+  .piu_zero_lm{ color : lightcyan; }
+</style>
+<script>
+  var tb, tr, dt_tr, td, dt_td, song;
+  $.ajax({
+    async : false,
+    url : "doc/work/piu_zero/piu_zero_data.txt",
+    success : function(rs) {
+      tb = $("#piu_zero_tb tbody");
+      dt_tr = rs.split("\n");
+      for(let i = 0; i < dt_tr.length; i++){
+        tr = $("<tr>");
+        dt_td = dt_tr[i].split("|");
+        if(song != dt_td[0]) {
+          tr.addClass("song_div");
+        }
+        song = dt_td[0];
+        for(let j = 0; j < dt_td.length; j++){
+          td = $("<td>").html(dt_td[j]);
+          if(dt_td[j] == "_H"){
+            tr.addClass("head");
+            td.html("");
+          }else if(dt_td[j].includes("youtube")){
+            td.html($("<a href=" + dt_td[j] + " target=_blank>[Youtube link]</a>"));
+          }else if(dt_td[j] == "Easy"){
+            td.addClass("piu_zero_ez");
+          }else if(dt_td[j] == "Hard"){
+            td.addClass("piu_zero_hd");
+          }else if(dt_td[j] == "Crazy"){
+            td.addClass("piu_zero_cz");
+          }else if(dt_td[j].match(/^(Another )?Nightmare/)){
+            td.addClass("piu_zero_nm");
+          }else if(dt_td[j] == "LightMap"){
+            td.addClass("piu_zero_lm");
+          }
+          tr.append(td);
+        }
+        if(dt_td[0] != ""){
+          tb.append(tr);
+        }
+      }
+    },
+    complete : function(rs) {
+    },
+    error : function(rs) {
+    }
+  });
+</script>

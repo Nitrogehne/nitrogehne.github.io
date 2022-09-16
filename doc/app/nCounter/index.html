@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nCounter</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <style>
+            @font-face {
+                font-family: 'tmonmonsori.ttfregular';
+                src: url('https://nitrogehne.github.io/font/tmonmonsori.woff2') format('woff2'), url('https://nitrogehne.github.io/font/tmonmonsori.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #FF0000;
+				cursor: pointer;
+            }
+			#counter{
+				display: inline-block;
+				white-space:nowrap;
+			    background-color: #000000;
+                color: #ffd788;
+                font-family: TmonMonsori, "tmonmonsori.ttfregular";
+				font-size: 0px;
+				text-align: center;
+				vertical-align: middle;
+			}
+        </style>
+		<script src="https://nitrogehne.github.io/js/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <div id="counter" data-count="0">0</div>
+        <script>
+		var c = $("#counter");
+		var w = $(window);
+		do {
+			c.css({
+				"font-size": parseInt(c.css("font-size")) + 1 + "px",
+				"line-Height": c.outerHeight() + "px",
+			});
+		}while(c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());		
+		c.css({
+			"font-size": parseInt(c.css("font-size")) - 1 + "px",
+			"width": w.outerWidth() + "px",
+			"height": w.outerHeight() + "px",
+			"line-height": w.outerHeight() + "px",
+		});
+		$(document).on("click", "#counter", function(){
+			$(this).attr("data-count", parseInt($(this).attr("data-count")) + 1);
+			$(this).text($(this).attr("data-count"));
+			do {
+				c.css({
+					"font-size": parseInt(c.css("font-size")) + 1 + "px",
+					"line-Height": c.outerHeight() + "px",
+				});
+			}while(c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());			
+			c.css({
+				"font-size": parseInt(c.css("font-size")) - 1 + "px",
+				"width": w.outerWidth() + "px",
+				"height": w.outerHeight() + "px",
+				"line-height": w.outerHeight() + "px",
+			});
+		});
+        </script>
+    </body>
+</html>
