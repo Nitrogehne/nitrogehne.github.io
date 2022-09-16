@@ -42,13 +42,15 @@
 				"font-size": parseInt(c.css("font-size")) + 1 + "px",
 				"line-Height": c.outerHeight() + "px",
 			});
-		}while(c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());		
+		}while(c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());
+		
 		c.css({
 			"font-size": parseInt(c.css("font-size")) - 1 + "px",
 			"width": w.outerWidth() + "px",
 			"height": w.outerHeight() + "px",
 			"line-height": w.outerHeight() + "px",
 		});
+		
 		$(document).on("click", "#counter", function(){
 			$(this).attr("data-count", parseInt($(this).attr("data-count")) + 1);
 			$(this).text($(this).attr("data-count"));

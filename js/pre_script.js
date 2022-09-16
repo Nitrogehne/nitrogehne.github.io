@@ -3,31 +3,40 @@ $(function() {
 });
 
 function load_file() {
-  $(":not(#main) > .load").each(function() {
-    var obj = $(this);
-    var url = obj.attr("data-url");
-    $.ajax({
-      async : false, // ajax를 동기방식으로 사용한다.
-      url : url,
-      success : function(rs) {
-        obj.after(rs);
-      },
-      error : function() {
-        obj.after("[File not found : " + url + "]");
-      },
-      complete : function() {
-        obj.remove();
-      }
-    });
-  }).promise().done(function() {
-      setTimeout(function(){
-          if(0 < $(":not(#main) > .load").length) {
-              load_file();
-          }else{
-              post_script();
-          }
-      }, 100);
-  });
+	$(":not(#main) > .load").each(function() {
+		var obj = $(this);
+		var url = obj.attr("data-url");
+		if(['localhost', '127.0.0.1', '', '::1'].includes(location.hostname)){
+			let fr = new FileReader();
+			console.log(url);
+			fr.readAsText(url, "utf-8");
+			fr.onload = () => {
+				console.log(fr.result);
+			}
+		}else{
+			$.ajax({
+				async : false, // ajax를 동기방식으로 사용한다.
+				url : url,
+				success : function(rs) {
+					obj.after(rs);
+				},
+				error : function() {
+					obj.after("[File not found : " + url + "]");
+				},
+				complete : function() {
+					obj.remove();
+				}
+			});
+		}
+	}).promise().done(function() {
+		setTimeout(function(){
+			if(0 < $(":not(#main) > .load").length) {
+			  load_file();
+			}else{
+			  post_script();
+			}
+		}, 100);
+	});
 }
 
 function post_script(){
@@ -51,25 +60,33 @@ function init_main(){
     }
 }
 function load_main() {
-  $("#main .load").each(function() {
-    var obj = $(this);
-    var url = obj.attr("data-url");
-    $.ajax({
-      async : false, // ajax를 동기방식으로 사용한다.
-      url : url,
-      success : function(rs) {
-        obj.after(rs);
-      },
-      error : function() {
-        obj.after("[File not found : " + url + "]");
-      },
-      complete : function() {
-        obj.remove();
-      }
-    });
-  }).promise().done(function() {
-    if(0 < $(".load").length) {
-      load_file();
-    }
-  });
+	$("#main .load").each(function() {
+		var obj = $(this);
+		var url = obj.attr("data-url");
+		if(['localhost', '127.0.0.1', '', '::1'].includes(location.hostname)){
+			let fr = new FileReader();
+			fr.readAsText(url, "utf-8");
+			fr.onload = () => {
+				console.log(fr.result);
+			}
+		}else{
+			$.ajax({
+				async : false, // ajax를 동기방식으로 사용한다.
+				url : url,
+				success : function(rs) {
+					obj.after(rs);
+				},
+				error : function() {
+					obj.after("[File not found : " + url + "]");
+				},
+				complete : function() {
+					obj.remove();
+				}
+			});
+		}
+	}).promise().done(function() {
+		if(0 < $(".load").length) {
+		  load_file();
+		}
+	});
 }

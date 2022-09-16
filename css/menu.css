@@ -31,19 +31,19 @@
 }
 
 #main_menu ul li.current > a {
-  color : #9A54CE;
+  color : var(--color-p);
   background-color:#222;
-  border-bottom : 3px solid #9A54CE;
+  border-bottom : 3px solid var(--color-p);
 }
 #main_menu ul li.semi_current > a {
-  color : #9A54CE;
+  color : var(--color-p);
   background-color:#222;
-  border-bottom : 1px solid #9A54CE;
+  border-bottom : 1px solid var(--color-p);
 }
 
 #main_menu ul li a:hover{
   background: #333;
-  color:#61B977;
+  color:var(--color-h);
 }
 
 #main_menu ul li ul{
@@ -64,12 +64,12 @@
 }
 
 #main_menu ul li ul li a{
-  color : #E7DBED;
+  color : var(--color);
 }
 
 #main_menu ul li ul li a:hover{
   background: #333;
-  color:#61B977;
+  color:var(--color-h);
 }
 
 #main_menu p{
