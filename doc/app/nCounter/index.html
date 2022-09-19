@@ -16,8 +16,9 @@
                 padding: 0;
             }
             body {
-                background-color: #FF0000;
+                background-color: #000;
 				cursor: pointer;
+				align : center;
             }
 			#counter{
 				display: inline-block;
@@ -25,7 +26,6 @@
 			    background-color: #000000;
                 color: #ffd788;
                 font-family: TmonMonsori, "tmonmonsori.ttfregular";
-				font-size: 0px;
 				text-align: center;
 				vertical-align: middle;
 			}
@@ -35,37 +35,44 @@
     <body>
         <div id="counter" data-count="0">0</div>
         <script>
+		var _c;
 		var c = $("#counter");
 		var w = $(window);
-		do {
-			c.css({
-				"font-size": parseInt(c.css("font-size")) + 1 + "px",
-				"line-Height": c.outerHeight() + "px",
-			});
-		}while(c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());
-		
-		c.css({
-			"font-size": parseInt(c.css("font-size")) - 1 + "px",
-			"width": w.outerWidth() + "px",
-			"height": w.outerHeight() + "px",
-			"line-height": w.outerHeight() + "px",
-		});
-		
-		$(document).on("click", "#counter", function(){
-			$(this).attr("data-count", parseInt($(this).attr("data-count")) + 1);
-			$(this).text($(this).attr("data-count"));
+		var setSize = () => {
+			_c = 0;
+			c.css({ "width" : "", "height" : "" });
 			do {
 				c.css({
 					"font-size": parseInt(c.css("font-size")) + 1 + "px",
 					"line-Height": c.outerHeight() + "px",
 				});
-			}while(c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());			
+				console.log(++_c, "+", c.css("font-size"), ",", c.outerWidth(), "<", w.outerWidth(), "&&", c.outerHeight(), "<", w.outerHeight());
+			}while(_c < 10000 && c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());
+			
+			_c = 0;
+			do {
+				c.css({
+					"font-size": parseInt(c.css("font-size")) - 1 + "px",
+					"line-Height": c.outerHeight() + "px",
+				});
+				console.log(++_c, "-", c.css("font-size"), ",", c.outerWidth(), "<", w.outerWidth(), "&&", c.outerHeight(), "<", w.outerHeight());
+			}while(_c < 10000 && w.outerWidth() < c.outerWidth() || w.outerHeight() < c.outerHeight());
+			
 			c.css({
-				"font-size": parseInt(c.css("font-size")) - 1 + "px",
 				"width": w.outerWidth() + "px",
 				"height": w.outerHeight() + "px",
-				"line-height": w.outerHeight() + "px",
 			});
+		};
+		
+		// init
+		setSize();
+		
+		// event
+		$(window).resize(setSize);
+		$(document).on("click", "#counter", function(){
+			$(this).attr("data-count", parseInt($(this).attr("data-count")) + 1);
+			$(this).text($(this).attr("data-count"));
+			setSize();
 		});
         </script>
     </body>
