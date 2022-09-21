@@ -1,85 +1,93 @@
 <style>
     /* - - - - - - - - - - 조합판 */
+    :root{
+        --color-true : #1DDB16;
+        --color-false : #FF0000;
+        --color-select : #FFFF24;
+        --color-border : silver;
+        --rv : max(150px, min(calc(100vw / 7), calc(100vh / 6)));
+        --rm : calc(var(--rv) / 6);
+        --rb : calc(var(--rm) / 4);
+        --rb2 : calc(var(--rb) / 2);
+    }
     ._combiboard {
         display: inline-block;
         vertical-align: middle;
+        margin-right : var(--rm);
     }
     ._combi {
-        border: solid silver;
-        border-width: 5px 5px 0px 5px;
-        padding-left: 20px;
-        font-size: 28px;
-        letter-spacing: 20px;
+        border: solid var(--color-border);
+        border-width: var(--rb2) var(--rb2) 0px var(--rb2);
+        font-size: calc((var(--rv) * 3) / 13 - var(--rb2) * 3);
+        padding-left : var(--rm);
+        letter-spacing: var(--rm);
         font-weight: bold;
-        width: 130px;
-        height: 32px;
+        width: var(--rv);
+        height: calc((var(--rv) * 3) / 13);
         text-align: center;
+        vertical-align: middle;
+        line-height: calc((var(--rv) * 3) / 13 - var(--rb2) * 2);
     }
     ._combi._a {
-        color: #1DDB16;
+        color: var(--color-true);
     }
     ._combi._m {
-        color: #FF0000;
+        color: var(--color-fals)
     }
     ._comp {
-        border: solid silver;
-        border-width: 5px;
-        color : #FFFF24;
-        font-size: 28px;
-        font-weight: bold;
-        width: 150px;
-        height: 32px;
-        text-align: center;
+        border-bottom-width: var(--rb2);
+        color : var(--color-select);
         cursor: pointer;
     }
     ._comp:hover {
-      border-color : #FFFF24;
+      border-color : var(--color-select);
     }
     ._comp._a {
-        border-color : #1DDB16;
-        color: #1DDB16;
+        border-color : var(--color-true);
+        color: var(--color-true);
     }
     ._comp._m {
-        border-color : #ff0000;
-        color: #FF0000;
+        border-color : var(--color-fals)
+        color: var(--color-fals)
     }
     /* - - - - - - - - - - 게임판 */
     ._gameboard {
-        border: 5px outset silver;
+        border: var(--rb) outset var(--color-border);
         display: inline-block;
         vertical-align: middle;
-        padding: 10px;
     }
     ._num {
-        width: 30px;
-        height: 30px;
-        font-size: 21px;
+        width: calc(var(--rv) / 4);
+        height: calc(var(--rv) / 4);
+        font-size: calc(var(--rv) / 4 - var(--rb2) * 3);
         font-weight: bold;
         position: absolute;
-        margin: -30px;
+        margin: calc(-1 * var(--rv) / 4 / 2 - var(--rb2));
         background: black;
-        border: 3px solid silver;
-        border-radius: 15px;
+        border: var(--rb2) solid var(--color-border);
+        border-radius: calc(var(--rv) / 4 / 2);
         text-align: center;
+        vertical-align : middle;
+        line-height: calc(var(--rv) / 4 - var(--rb2) * 2);
     }
     ._x {
-        border: 5px ridge silver;
-        padding: 10px;
-        margin: 10px;
+        border: var(--rb) outset var(--color-border);
+        margin: var(--rm) 0 0 var(--rm);
         cursor: pointer;
-        width: 140px;
-        height: 140px;
+        width: var(--rv);
+        height: var(--rv);
+    }
+    ._x:last-child {
+        margin: var(--rm);
     }
     ._x._selected {
-        border-width: 10px;
-        border-color: #FFFF24;
-        margin: 5px;
+        border-color: var(--color-select);
     }
     ._x._a {
-        border-color: #1DDB16;
+        border-color: var(--color-true);
     }
     ._x._m {
-        border-color: #FF0000;
+        border-color: var(--color-fals)
     }
     ._l {
         float: left;
@@ -101,29 +109,51 @@
     ._shape {
         
     }
-    ._s {
+    ._s { /* square */
         width: 0px;
         height: 0px;
-        border-width: 42px;
+        border-width: calc(var(--rv) / 2 - var(--rm) - var(--rb));
         border-style: solid;
-        margin: 8px;
+        position : relative;
+        left : var(--rm);
+        top : var(--rm);
     }
-    ._c {
+    ._c { /* circle */
         width: 0px;
         height: 0px;
-        border-width: 50px;
-        border-radius: 50px;
+        border-width: calc(var(--rv) / 2 - var(--rm));
+        border-radius: calc(var(--rv) / 2 - var(--rm));
         border-style: solid;
+        position : relative;
+        left : calc(var(--rm) - var(--rb));
+        top :calc(var(--rm) - var(--rb));
     }
-    ._t {
+    ._t { /* triangle */
         width: 0px;
         height: 0px;
-        margin: 6px 0px 7px 0px;
-        border-width: 0 50px 87px 50px;
+        border-top-width: 0;
+        border-right-width: calc((var(--rv) / 2 - var(--rm)));
+        border-bottom-width: calc(0.866 * (var(--rv) / 2 - var(--rm)) * 2);
+        border-left-width: calc((var(--rv) / 2 - var(--rm)));
         border-style: solid;
-        border-top-color: transparent !important;
-        border-right-color: transparent !important;
-        border-left-color: transparent !important;
+        position : relative;
+        left :calc(var(--rm) - var(--rb));
+        top : var(--rm);
+    }
+    ._w ._t {
+        border-top-color: white;
+        border-right-color: white;
+        border-left-color: white;
+    }
+    ._g ._t {
+        border-top-color: gray;
+        border-right-color: gray;
+        border-left-color: gray;
+    }
+    ._k ._t {
+        border-top-color: black;
+        border-right-color: black;
+        border-left-color: black;
     }
     /* - - - - - - - - - - 색 */
     ._r {
@@ -153,7 +183,7 @@
         <div class="_combi"></div>
         <div class="_combi"></div>
         <div class="_combi"></div>
-        <div class="_comp">
+        <div class="_combi _comp">
             결!
         </div>
     </div>
@@ -274,7 +304,7 @@
 		});
 	});
 	function make_game(answer) {
-		$("._combi").attr("data-value", "").text("");
+		$("._combi:not(._comp)").attr("data-value", "").text("");
                $("._comp").removeClass("_a _m");
 		$("._selected").removeClass("_a _m _selected");
 		// 조합 클래스명

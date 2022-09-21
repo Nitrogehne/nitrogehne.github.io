@@ -2,11 +2,14 @@
 <html>
     <head>
         <title>nCounter</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <style>
             @font-face {
-                font-family: 'tmonmonsori.ttfregular';
-                src: url('https://nitrogehne.github.io/font/tmonmonsori.woff2') format('woff2'), url('https://nitrogehne.github.io/font/tmonmonsori.woff') format('woff');
+                font-family: "tmonmonsori.ttfregular";
+                src: url("https://nitrogehne.github.io/font/tmonmonsori.woff2")
+                        format("woff2"),
+                    url("https://nitrogehne.github.io/font/tmonmonsori.woff")
+                        format("woff");
                 font-weight: normal;
                 font-style: normal;
             }
@@ -17,63 +20,98 @@
             }
             body {
                 background-color: #000;
-				cursor: pointer;
-				align : center;
+                cursor: pointer;
             }
-			#counter{
-				display: inline-block;
-				white-space:nowrap;
-			    background-color: #000000;
+            #counter {
+                display: inline-block;
+                white-space: nowrap;
+                background-color: #000;
                 color: #ffd788;
                 font-family: TmonMonsori, "tmonmonsori.ttfregular";
-				text-align: center;
-				vertical-align: middle;
-			}
+                text-align: center;
+                vertical-align: middle;
+            }
         </style>
-		<script src="https://nitrogehne.github.io/js/jquery-3.3.1.min.js"></script>
+        <script src="https://nitrogehne.github.io/js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div id="counter" data-count="0">0</div>
-        <script>
-		var _c;
-		var c = $("#counter");
-		var w = $(window);
-		var setSize = () => {
-			_c = 0;
-			c.css({ "width" : "", "height" : "" });
-			do {
-				c.css({
-					"font-size": parseInt(c.css("font-size")) + 1 + "px",
-					"line-Height": c.outerHeight() + "px",
-				});
-				console.log(++_c, "+", c.css("font-size"), ",", c.outerWidth(), "<", w.outerWidth(), "&&", c.outerHeight(), "<", w.outerHeight());
-			}while(_c < 10000 && c.outerWidth() < w.outerWidth() && c.outerHeight() < w.outerHeight());
-			
-			_c = 0;
-			do {
-				c.css({
-					"font-size": parseInt(c.css("font-size")) - 1 + "px",
-					"line-Height": c.outerHeight() + "px",
-				});
-				console.log(++_c, "-", c.css("font-size"), ",", c.outerWidth(), "<", w.outerWidth(), "&&", c.outerHeight(), "<", w.outerHeight());
-			}while(_c < 10000 && w.outerWidth() < c.outerWidth() || w.outerHeight() < c.outerHeight());
-			
-			c.css({
-				"width": w.outerWidth() + "px",
-				"height": w.outerHeight() + "px",
-			});
-		};
-		
-		// init
-		setSize();
-		
-		// event
-		$(window).resize(setSize);
-		$(document).on("click", "#counter", function(){
-			$(this).attr("data-count", parseInt($(this).attr("data-count")) + 1);
-			$(this).text($(this).attr("data-count"));
-			setSize();
-		});
-        </script>
     </body>
+    <script>
+        var cnt;
+        var c = $("#counter");
+        var w = $(window);
+        var setSize = () => {
+            cnt = 0;
+            c.css({ width: "", height: "" });
+            do {
+                c.css({
+                    "font-size": parseInt(c.css("font-size")) + 1 + "px",
+                    //"line-height": c.outerHeight() + "px",
+                });
+                console.log(
+                    cnt,
+                    "+",
+                    c.css("font-size"),
+                    ",",
+                    c.outerWidth(),
+                    "<",
+                    w.outerWidth(),
+                    "&&",
+                    c.outerHeight(),
+                    "<",
+                    w.outerHeight()
+                );
+            } while (
+                cnt++ < 1000 &&
+                c.outerWidth() <= w.outerWidth() &&
+                c.outerHeight() <= w.outerHeight()
+            );
+
+            cnt = 0;
+            do {
+                c.css({
+                    "font-size": parseInt(c.css("font-size")) - 1 + "px",
+                    //"line-height": c.outerHeight() + "px",
+                });
+                console.log(
+                    cnt,
+                    "-",
+                    c.css("font-size"),
+                    ",",
+                    w.outerWidth(),
+                    "<=",
+                    c.outerWidth(),
+                    "||",
+                    w.outerHeight(),
+                    "<=",
+                    c.outerHeight()
+                );
+            } while (
+                cnt++ < 1000 &&
+                (w.outerWidth() <= c.outerWidth() ||
+                    w.outerHeight() <= c.outerHeight())
+            );
+
+            c.css({
+                width: w.outerWidth() + "px",
+                height: w.outerHeight() + "px",
+                //"line-height": w.outerHeight() + "px",
+            });
+        };
+
+        // init
+        setSize();
+
+        // event
+        $(window).resize(setSize);
+        $(document).on("click", "#counter", function () {
+            $(this).attr(
+                "data-count",
+                parseInt($(this).attr("data-count")) + 1
+            );
+            $(this).text($(this).attr("data-count"));
+            setSize();
+        });
+    </script>
 </html>

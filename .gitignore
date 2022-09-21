@@ -1,0 +1,7 @@
+# Files
+*.n
+*~
+
+# Folders
+n/
+*/n/*

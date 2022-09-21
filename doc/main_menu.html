@@ -1,48 +1,196 @@
-<nav id="main_menu">
-  <ul>
-    <li class="nav_lv1 current">
-      <a class="to_main" data-url="doc/home/index.html">Home</a>
-      <ul>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/home/colorset/index.html">Colorset</a></li>
-      </ul>
-    </li>
-    <li class="nav_lv1">
-      <a>App.</a>
-      <ul>
-	    <li class="nav_lv2"><a href="doc/app/nCounter/index.html" onclick="window.open(this.href, 'nCounter', 'width=200, height=100'); return false;">Simple Counter</a></li>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/app/combination/index.html">결! 합!</a></li>
-        <li class="nav_lv2 hidden"><a class="to_main" data-url="doc/app/what_eat/index.html">뭐 먹지?</a></li>
-        <li class="nav_lv2 hidden"><a class="hidden">temp 3</a></li>
-      </ul>
-    </li>
-    <li class="nav_lv1 hidden">
-      <a class="to_main" data-url="doc/nstory/index.html">nStory</a>
-    </li>
-    <li class="nav_lv1">
-      <a>Hobby</a>
-      <ul>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/hobby/composition/index.html">Composition</a></li>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/hobby/bms/index.html">BMS</a></li>
-		<li class="nav_lv2"><a href="https://www.youtube.com/c/Nitrogehne" target="_blank">nTube</a></li>
-        <li class="nav_lv2"><a href="https://www.youtube.com/c/nPump" target="_blank">nPump</a></li>
-      </ul>
-    </li>
-    <li class="nav_lv1">
-      <a>Work</a>
-      <ul>
-        <li class="nav_lv2" style="display:none"><a class="to_main" data-url="doc/work/bms.html">BMS</a></li>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/work/piu_zero/index.html">PIU ZERO</a></li>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/work/piu_nx/index.html">PIU NX</a></li>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/work/piu_nx2/index.html">PIU NX2</a></li>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/work/piu_nxa/index.html">PIU NXA</a></li>
-        <li class="nav_lv2"><a class="to_main" data-url="doc/work/dm_t3/index.html">DMT3</a></li>
-      </ul>
-    </li>
-    <li class="nav_lv1">
-      <a class="to_main" data-url="doc/link/index.html">Link</a>
-    </li>
-    <!-- li class="nav_lv1">
-      <a class="to_main" data-url="doc/visitor/visitor.html">Visitor</a>
-    </li -->
-  </ul>
-</nav>
+<nav id="main_menu"></nav>
+<script>
+    var menu = [
+        {
+            title: "Home",
+            url: "doc/home/index.html",
+            sub: [{ title: "Colorset", url: "doc/home/colorset/index.html" }],
+        },
+        {
+            title: "nStory",
+            url: "doc/nstory/index.html",
+        },
+        {
+            title: "App.",
+            sub: [
+                {
+                    title: "Simple Counter",
+                    url: "doc/app/nCounter/index.html",
+                    onclick:
+                        "window.open(this.href, 'nCounter', 'width=200, height=100'); return false;",
+                    target: "nCounter",
+                },
+                { title: "결! 합!", url: "doc/app/combination/index.html" },
+                {
+                    title: "뭐 먹지?",
+                    url: "doc/app/what_eat/index.html",
+                    style: "display: none;",
+                },
+            ],
+        },
+        {
+            title: "Hobby",
+            sub: [
+                {
+                    title: "Composition",
+                    url: "doc/hobby/composition/index.html",
+                },
+                { title: "BMS", url: "doc/hobby/bms/index.html" },
+                {
+                    title: "nTube",
+                    url: "https://www.youtube.com/user/Nitrogehne",
+                    icon: "img/icon_youtube.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nPump",
+                    url: "https://www.youtube.com/c/nPump",
+                    icon: "img/icon_youtube.png",
+                    target: "_blank",
+                },
+            ],
+        },
+        {
+            title: "Work",
+            sub: [
+                { title: "PIU ZERO", url: "doc/work/piu_zero/index.html" },
+                { title: "PIU NX", url: "doc/work/piu_nx/index.html" },
+                { title: "PIU NX2", url: "doc/work/piu_nx2/index.html" },
+                { title: "PIU NXA", url: "doc/work/piu_nxa/index.html" },
+                { title: "DMT3", url: "doc/work/dm_t3/index.html" },
+            ],
+        },
+        {
+            title: "Link",
+            sub: [
+                {
+                    title: "nPage",
+                    url: "https://nitrogehne.github.io",
+                    icon: "img/icon_github.png",
+                    target: "_blank",
+                    style: "display: none;",
+                },
+                {
+                    title: "nTwitter",
+                    url: "https://twitter.com/Nitrogehne",
+                    icon: "img/icon_twitter.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nLife",
+                    url: "https://blog.naver.com/song_ms",
+                    icon: "img/icon_naverblog.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nEating",
+                    url: "http://ehne.tistory.com/",
+                    icon: "img/icon_tistory.png",
+                    target: "_blank",
+                    style: "display: none;",
+                },
+                {
+                    title: "nSound",
+                    url: "https://soundcloud.com/ehne",
+                    icon: "img/icon_soundcloud.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nThink",
+                    url: "https://ehnethink.blogspot.com/",
+                    icon: "img/icon_blogspot.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nPhoto",
+                    url: "https://www.instagram.com/nitrogehne/",
+                    icon: "img/icon_instagram.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nthTime",
+                    url: "https://www.instagram.com/ehne_th_time/",
+                    icon: "img/icon_instagram.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nMemorise",
+                    url: "https://www.instagram.com/ehne_memories/",
+                    icon: "img/icon_instagram.png",
+                    target: "_blank",
+                    style: "display: none;",
+                },
+                {
+                    title: "nMoka",
+                    url: "https://www.instagram.com/ehne_nmoka/",
+                    icon: "img/icon_instagram.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nPoGO",
+                    url: "https://www.instagram.com/ehne_pokemongo/",
+                    icon: "img/icon_instagram.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nTube",
+                    url: "https://www.youtube.com/user/Nitrogehne",
+                    icon: "img/icon_youtube.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nPump",
+                    url: "https://www.youtube.com/c/nPump",
+                    icon: "img/icon_youtube.png",
+                    target: "_blank",
+                },
+                {
+                    title: "nTwitch",
+                    url: "https://www.twitch.tv/nitrogehne",
+                    icon: "img/icon_twitch.png",
+                    target: "_blank",
+                },
+                {
+                    title: "n트게더",
+                    url: "https://tgd.kr/nitrogehne",
+                    icon: "img/icon_tgd.png",
+                    target: "_blank",
+                },
+            ],
+        },
+        // [ "Visit" ],
+    ];
+
+    var init_menu = (parent, sub, lv) => {
+        console.log(parent, sub, lv);
+        let ul = document.createElement("ul");
+        for (let i in sub) {
+            let obj = sub[i];
+            let li = document.createElement("li");
+            li.setAttribute("data-lv", lv);
+            let a = document.createElement("a");
+            let innerHTML = "";
+            if (!!obj.icon)
+                innerHTML = "<img class='icon' src='" + obj.icon + "'> ";
+            innerHTML += obj.title;
+            a.innerHTML = innerHTML;
+            a.setAttribute(
+                obj.target ? "href" : "data-url",
+                obj.url ? obj.url : ""
+            );
+            a.setAttribute("data-target", obj.target ? "" : "main");
+            for (let i in obj) {
+                if (["title", "url", "icon", "sub"].includes(i)) continue;
+                a.setAttribute(i, obj[i]);
+            }
+            li.appendChild(a);
+            ul.appendChild(li);
+            if (obj.sub) init_menu(li, obj.sub, lv + 1);
+        }
+        parent.appendChild(ul);
+    };
+
+    var nav = document.querySelector("nav#main_menu");
+    init_menu(nav, menu, 1);
+    document.querySelector("li").setAttribute("class", "current");
+</script>
