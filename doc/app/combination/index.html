@@ -47,8 +47,8 @@
         color: var(--color-true);
     }
     ._comp._m {
-        border-color : var(--color-fals)
-        color: var(--color-fals)
+        border-color : var(--color-false);
+        color: var(--color-false)
     }
     /* - - - - - - - - - - 게임판 */
     ._gameboard {
@@ -87,7 +87,7 @@
         border-color: var(--color-true);
     }
     ._x._m {
-        border-color: var(--color-fals)
+        border-color: var(--color-false)
     }
     ._l {
         float: left;
@@ -170,6 +170,8 @@
 </style>
 <article id="combination">
     <h1>결<span class="hidden">(缺)</span>! 합<span class="hidden">(合)</span>!</h1>
+    <h3>도형의 모양, 도형의 색, 배경의 색이 각각 모두 같거나 모두 다른 조합을 찾는 게임입니다.<br>
+    더이상 조합을 찾지못하면 "결 !"을 눌러주세요.<br><br></h3>
     <div class="_combiboard">
         <div class="_combi"></div>
         <div class="_combi"></div>
@@ -290,11 +292,11 @@
 		$("._comp").click(function() {
 			if($("._selected").length != 3) {
 				if(answer.length > 0) {
-                                       $("._comp").addClass("_m");
+                    $("._comp").addClass("_m");
 					$("._x").addClass("_selected _m");
 					clear();
 				} else {
-                                       $("._comp").addClass("_a");
+                    $("._comp").addClass("_a");
 					$("._x").addClass("_selected _a");
 					setTimeout(function() {
 						make_game(answer);
@@ -305,7 +307,7 @@
 	});
 	function make_game(answer) {
 		$("._combi:not(._comp)").attr("data-value", "").text("");
-               $("._comp").removeClass("_a _m");
+        $("._comp").removeClass("_a _m");
 		$("._selected").removeClass("_a _m _selected");
 		// 조합 클래스명
 		var wgk = new Array("_w", "_g", "_k");
@@ -367,7 +369,6 @@
 	function clear() {
 		setTimeout(function() {
 			$("._combi").removeClass("_a _m");
-			$("._comp").removeClass("_a _m");
 			$("._selected").removeClass("_a _m _selected");
 		}, 1000);
 	}
