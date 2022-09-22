@@ -49,16 +49,23 @@ function init_main() {
         }
         if (
             obj_get["menu"] &&
-            $("#main_menu a[data-url='doc/" + obj_get["menu"] + "/index.html']")
-                .length
+            $(
+                "#main_menu a[data-url='page/" +
+                    obj_get["menu"] +
+                    "/index.html']"
+            ).length
         ) {
             $("#main .load").attr(
                 "data-url",
-                "doc/" + obj_get["menu"] + "/index.html"
+                "page/" + obj_get["menu"] + "/index.html"
             );
             $("#main_menu li.current").removeClass("current");
             $("#main_menu li.semi_current").removeClass("semi_current");
-            $("#main_menu a[data-url='doc/" + obj_get["menu"] + "/index.html']")
+            $(
+                "#main_menu a[data-url='page/" +
+                    obj_get["menu"] +
+                    "/index.html']"
+            )
                 .parent("li")
                 .addClass("current")
                 .parents(".nav_lv1")
