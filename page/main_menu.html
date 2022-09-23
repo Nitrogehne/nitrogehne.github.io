@@ -1,3 +1,91 @@
+<style>
+    @charset "utf-8";
+
+    #main_menu {
+        text-align: center;
+    }
+
+    #main_menu ul {
+        list-style: none;
+        display: inline-block;
+    }
+
+    #main_menu li {
+        float: left;
+    }
+
+    #main_menu ul li a {
+        background: #111;
+        cursor: pointer;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        min-width: 6em;
+        min-height: 10em;
+        padding: 0.5em 1em;
+        white-space: nowrap;
+    }
+
+    #main_menu ul > li:nth-child(2n) > a {
+        background: #222;
+    }
+
+    #main_menu ul li a[href=""],
+    #main_menu ul li a[data-url=""] {
+        cursor: not-allowed;
+    }
+    #main_menu ul li:last-child a {
+        border-right: 0;
+    }
+
+    #main_menu ul li:has(.current) a.current {
+        color: var(--color-p);
+        background-color: #333;
+        border-bottom: 3px solid var(--color-p);
+    }
+
+    #main_menu ul li:has(.current) > a {
+        border-bottom: 1px solid var(--color-p);
+    }
+
+    #main_menu ul li a:hover {
+        background: #444;
+        color: var(--color-h);
+        transform: rotate(6deg);
+    }
+
+    #main_menu ul li ul {
+        display: none;
+        position: absolute;
+        width: 100px;
+        z-index: 200;
+    }
+
+    #main_menu ul li:hover ul {
+        display: block;
+    }
+
+    #main_menu ul li ul li {
+        display: block;
+        float: none;
+    }
+
+    #main_menu ul li ul li a {
+        color: var(--color);
+    }
+
+    #main_menu ul li ul li a:hover {
+        background: #444;
+        color: var(--color-h);
+    }
+
+    #main_menu p {
+        clear: left;
+    }
+</style>
 <nav id="main_menu"></nav>
 <script>
     var menu = [
@@ -22,6 +110,11 @@
                 },
                 { title: "결! 합!", url: "page/app/combination/index.html" },
                 {
+                    title: "Triple Gem",
+                    url: "page/app/triplegem/index.html",
+                    style: "display: none;",
+                },
+                {
                     title: "뭐 먹지?",
                     url: "page/app/what_eat/index.html",
                     style: "display: none;",
@@ -32,20 +125,20 @@
             title: "Hobby",
             sub: [
                 {
-                    title: "nSound (Composition)",
+                    title: "nSound",
                     url: "https://soundcloud.com/ehne",
                     icon: "img/icon_soundcloud.png",
                     target: "_blank",
                 },
                 { title: "BMS", url: "page/hobby/bms/index.html" },
                 {
-                    title: "nTube (YouTube)",
+                    title: "nTube",
                     url: "https://www.youtube.com/user/Nitrogehne",
                     icon: "img/icon_youtube.png",
                     target: "_blank",
                 },
                 {
-                    title: "nPump (Pump It Up)",
+                    title: "nPump",
                     url: "https://www.youtube.com/c/nPump",
                     icon: "img/icon_youtube.png",
                     target: "_blank",
@@ -164,10 +257,10 @@
     ];
 
     var init_menu = (parent, sub, lv) => {
-        console.log(parent, sub, lv);
         let ul = document.createElement("ul");
         for (let i in sub) {
             let obj = sub[i];
+            if (obj.style && obj.style.includes("display: none;")) continue;
             let li = document.createElement("li");
             li.setAttribute("data-lv", lv);
             let a = document.createElement("a");
@@ -192,7 +285,7 @@
         parent.appendChild(ul);
     };
 
-    var nav = document.querySelector("nav#main_menu");
+    var nav = document.getElementById("main_menu");
     init_menu(nav, menu, 1);
-    document.querySelector("li").setAttribute("class", "current");
+    document.querySelector("a").setAttribute("class", "current");
 </script>

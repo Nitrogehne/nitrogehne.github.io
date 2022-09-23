@@ -1,42 +1,18 @@
 $(function () {
-    load_file();
-});
-
-function load_file() {
-    $(":not(#main) > .load")
+    $("[data-load]")
         .each(function () {
-            var obj = $(this);
-            var url = obj.attr("data-url");
-            $.ajax({
-                async: false, // ajax를 동기방식으로 사용한다.
-                url: url,
-                success: function (rs) {
-                    obj.after(rs);
-                },
-                error: function () {
-                    obj.after("[File not found : " + url + "]");
-                },
-                complete: function () {
-                    obj.remove();
-                },
+            load_file({
+                target:
+                    this.getAttribute("data-load") == "this" ? this : undefined,
+                url: this.getAttribute("data-url"),
             });
         })
         .promise()
         .done(function () {
-            setTimeout(function () {
-                if (0 < $(":not(#main) > .load").length) {
-                    load_file();
-                } else {
-                    post_script();
-                }
-            }, 100);
+            init_main();
+            load_main();
         });
-}
-
-function post_script() {
-    init_main();
-    load_main();
-}
+});
 
 function init_main() {
     if (location.search != "") {

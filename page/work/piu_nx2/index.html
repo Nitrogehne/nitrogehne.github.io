@@ -1,135 +1,190 @@
 <article id="piu_nx2">
-<h1>Pump It Up Next Xenesis</h1>
-  Arcade Station Manager<br>
-  World Max Manager & Planning
-<table id="piu_nx2_tb">
-  <thead>
-    <tr>
-      <th>Music</th>
-      <th>Mode</th>
-      <th>YouTube</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-<br>
-Ehne, -EK-, MINSEOK SONG
-<br>
-<img src="doc/work/piu_nx2/nx2_staff_roll.png" style="max-width:960px;width:100%;">
+    <h1>Pump It Up Next Xenesis</h1>
+    Arcade Station Manager<br />
+    World Max Manager & Planning
+    <table id="piu_nx2_tb">
+        <thead>
+            <tr>
+                <th>Music</th>
+                <th>Mode</th>
+                <th>YouTube</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <br />
+    Ehne, -EK-, MINSEOK SONG
+    <br />
+    <img
+        src="${path}/nx2_staff_roll.png"
+        style="max-width: 960px; width: 100%"
+    />
 </article>
 <style>
-  #piu_nx2_tb {
-    border-width: 3px;
-    padding: 0 1em;
-    margin : auto;
-    border-collapse : collapse; 
-  }
-  #piu_nx2_tb thead {
-    
-  }
-  #piu_nx2_tb tbody tr.song_div {
-    border-top-width : 1px;
-    border-top-style : solid;
-  }
-  #piu_nx2_tb tbody tr.head td {
-    background-color : #222;
-    color : #fff;
-    font-weight : bold;
-  }
-  #piu_nx2_tb tbody td {
-    padding : 0 1em;
-  }
-  .piu_nx2_no, .piu_nx2_hd, .piu_nx2_cz, .piu_nx2_fs, .piu_nx2_nm, .piu_nx2_lm { font-weight : bold; }
-  .piu_nx2_ro, .piu_nx2_sh, .piu_nx2_ph, .piu_nx2_mi, .piu_nx2_ba, .piu_nx2_ha, .piu_nx2_mo, .piu_nx2_cr, .piu_nx2_pr { font-weight : bold; }
-  .piu_nx2_no { color : khaki; }
-  .piu_nx2_hd { color : dodgerblue; }
-  .piu_nx2_cz { color : orangered;}
-  .piu_nx2_fs { color : greenyellow;}
-  .piu_nx2_nm { color : darkorchid; }
-  .piu_nx2_lm { color : lightcyan; }
-  .piu_nx2_ro { color : forestgreen; }
-  .piu_nx2_sh { color : darkseagreen; }
-  .piu_nx2_ph { color : mediumpurple; }
-  .piu_nx2_mi { color : red; }
-  .piu_nx2_ba { color : whitesmoke; }
-  .piu_nx2_ha { color : coral; }
-  .piu_nx2_mo { color : LightSlateGray; }
-  .piu_nx2_cr { color : lightblue; }
-  .piu_nx2_pr { color : palegreen; }
+    #piu_nx2_tb {
+        border-width: 3px;
+        padding: 0 1em;
+        margin: auto;
+        border-collapse: collapse;
+    }
+    #piu_nx2_tb thead {
+    }
+    #piu_nx2_tb tbody tr.song_div {
+        border-top-width: 1px;
+        border-top-style: solid;
+    }
+    #piu_nx2_tb tbody tr.head td {
+        background-color: #222;
+        color: #fff;
+        font-weight: bold;
+    }
+    #piu_nx2_tb tbody td {
+        padding: 0 1em;
+    }
+    .piu_nx2_no,
+    .piu_nx2_hd,
+    .piu_nx2_cz,
+    .piu_nx2_fs,
+    .piu_nx2_nm,
+    .piu_nx2_lm {
+        font-weight: bold;
+    }
+    .piu_nx2_ro,
+    .piu_nx2_sh,
+    .piu_nx2_ph,
+    .piu_nx2_mi,
+    .piu_nx2_ba,
+    .piu_nx2_ha,
+    .piu_nx2_mo,
+    .piu_nx2_cr,
+    .piu_nx2_pr {
+        font-weight: bold;
+    }
+    .piu_nx2_no {
+        color: khaki;
+    }
+    .piu_nx2_hd {
+        color: dodgerblue;
+    }
+    .piu_nx2_cz {
+        color: orangered;
+    }
+    .piu_nx2_fs {
+        color: greenyellow;
+    }
+    .piu_nx2_nm {
+        color: darkorchid;
+    }
+    .piu_nx2_lm {
+        color: lightcyan;
+    }
+    .piu_nx2_ro {
+        color: forestgreen;
+    }
+    .piu_nx2_sh {
+        color: darkseagreen;
+    }
+    .piu_nx2_ph {
+        color: mediumpurple;
+    }
+    .piu_nx2_mi {
+        color: red;
+    }
+    .piu_nx2_ba {
+        color: whitesmoke;
+    }
+    .piu_nx2_ha {
+        color: coral;
+    }
+    .piu_nx2_mo {
+        color: LightSlateGray;
+    }
+    .piu_nx2_cr {
+        color: lightblue;
+    }
+    .piu_nx2_pr {
+        color: palegreen;
+    }
 </style>
 <script>
-  var tb, tr, dt_tr, td, dt_td, song;
-  $.ajax({
-    async : false,
-    url : "doc/work/piu_nx2/piu_nx2_data.txt",
-    success : function(rs) {
-      tb = $("#piu_nx2_tb tbody");
-      dt_tr = rs.split("\n");
-      for(let i = 0; i < dt_tr.length; i++){
-        tr = $("<tr>");
-        dt_td = dt_tr[i].split("|");
-        if(song != dt_td[0]) {
-          tr.addClass("song_div");
-        }
-        song = dt_td[0];
-        for(let j = 0; j < dt_td.length; j++){
-          td = $("<td>").html(dt_td[j]);
-          if(dt_td[j] == "_H"){
-            tr.addClass("head");
-            td.html("");
-          }else if(dt_td[j].includes("youtube") || dt_td[j].includes("youtu.be/")){
-            td.html($("<a href=" + dt_td[j] + " target=_blank>[Youtube link]</a>"));
-          }else if(dt_td[j].match(/^(Another )?Normal/)){
-            td.addClass("piu_nx2_no");
-          }else if(dt_td[j].match(/^(Another )?Hard/)){
-            td.addClass("piu_nx2_hd");
-          }else if(dt_td[j].match(/^(Another )?Crazy/)){
-            td.addClass("piu_nx2_cz");
-          }else if(dt_td[j].match(/^(Another )?Freestyle/)){
-            td.addClass("piu_nx2_fs");
-          }else if(dt_td[j].match(/^(Another )?Nightmare/)){
-            td.addClass("piu_nx2_nm");
-          }else if(dt_td[j].match(/^(Another )?LightMap/)){
-            td.addClass("piu_nx2_lm");
-          }else if(dt_td[j].includes("Rootinia : ")){
-            td.addClass("piu_nx2_ro");
-            td.text(td.text().replace("Rootinia : ", ""));
-          }else if(dt_td[j].includes("Shantomia : ")){
-            td.addClass("piu_nx2_sh");
-            td.text(td.text().replace("Shantomia : ", ""));
-          }else if(dt_td[j].includes("Phantomia : ")){
-            td.addClass("piu_nx2_ph");
-            td.text(td.text().replace("Phantomia : ", ""));
-          }else if(dt_td[j].includes("Mirtain : ")){
-            td.addClass("piu_nx2_mi");
-            td.text(td.text().replace("Mirtain : ", ""));
-          }else if(dt_td[j].includes("Barharn : ")){
-            td.addClass("piu_nx2_ba");
-            td.text(td.text().replace("Barharn : ", ""));
-          }else if(dt_td[j].includes("Harena : ")){
-            td.addClass("piu_nx2_ha");
-            td.text(td.text().replace("Harena : ", ""));
-          }else if(dt_td[j].includes("Morigin : ")){
-            td.addClass("piu_nx2_mo");
-            td.text(td.text().replace("Morigin : ", ""));
-          }else if(dt_td[j].includes("Cryomiston : ")){
-            td.addClass("piu_nx2_cr");
-            td.text(td.text().replace("Cryomiston : ", ""));
-          }else if(dt_td[j].includes("Prue Ocean : ")){
-            td.addClass("piu_nx2_pr");
-            td.text(td.text().replace("Prue Ocean : ", ""));
-          }
-          tr.append(td);
-        }
-        if(dt_td[0] != ""){
-          tb.append(tr);
-        }
-      }
-    },
-    complete : function(rs) {
-    },
-    error : function(rs) {
-    }
-  });
+    var tb, tr, dt_tr, td, dt_td, song;
+    $.ajax({
+        async: false,
+        url: "${path}/piu_nx2_data.txt",
+        success: function (rs) {
+            tb = $("#piu_nx2_tb tbody");
+            dt_tr = rs.split("\n");
+            for (let i = 0; i < dt_tr.length; i++) {
+                tr = $("<tr>");
+                dt_td = dt_tr[i].split("|");
+                if (song != dt_td[0]) {
+                    tr.addClass("song_div");
+                }
+                song = dt_td[0];
+                for (let j = 0; j < dt_td.length; j++) {
+                    td = $("<td>").html(dt_td[j]);
+                    if (dt_td[j].trim() == "_H") {
+                        tr.addClass("head");
+                        td.html("");
+                    } else if (
+                        dt_td[j].includes("youtube") ||
+                        dt_td[j].includes("youtu.be/")
+                    ) {
+                        td.html(
+                            $(
+                                "<a href=" +
+                                    dt_td[j] +
+                                    " target=_blank>[Youtube link]</a>"
+                            )
+                        );
+                    } else if (dt_td[j].match(/^(Another )?Normal/)) {
+                        td.addClass("piu_nx2_no");
+                    } else if (dt_td[j].match(/^(Another )?Hard/)) {
+                        td.addClass("piu_nx2_hd");
+                    } else if (dt_td[j].match(/^(Another )?Crazy/)) {
+                        td.addClass("piu_nx2_cz");
+                    } else if (dt_td[j].match(/^(Another )?Freestyle/)) {
+                        td.addClass("piu_nx2_fs");
+                    } else if (dt_td[j].match(/^(Another )?Nightmare/)) {
+                        td.addClass("piu_nx2_nm");
+                    } else if (dt_td[j].match(/^(Another )?LightMap/)) {
+                        td.addClass("piu_nx2_lm");
+                    } else if (dt_td[j].includes("Rootinia : ")) {
+                        td.addClass("piu_nx2_ro");
+                        td.text(td.text().replace("Rootinia : ", ""));
+                    } else if (dt_td[j].includes("Shantomia : ")) {
+                        td.addClass("piu_nx2_sh");
+                        td.text(td.text().replace("Shantomia : ", ""));
+                    } else if (dt_td[j].includes("Phantomia : ")) {
+                        td.addClass("piu_nx2_ph");
+                        td.text(td.text().replace("Phantomia : ", ""));
+                    } else if (dt_td[j].includes("Mirtain : ")) {
+                        td.addClass("piu_nx2_mi");
+                        td.text(td.text().replace("Mirtain : ", ""));
+                    } else if (dt_td[j].includes("Barharn : ")) {
+                        td.addClass("piu_nx2_ba");
+                        td.text(td.text().replace("Barharn : ", ""));
+                    } else if (dt_td[j].includes("Harena : ")) {
+                        td.addClass("piu_nx2_ha");
+                        td.text(td.text().replace("Harena : ", ""));
+                    } else if (dt_td[j].includes("Morigin : ")) {
+                        td.addClass("piu_nx2_mo");
+                        td.text(td.text().replace("Morigin : ", ""));
+                    } else if (dt_td[j].includes("Cryomiston : ")) {
+                        td.addClass("piu_nx2_cr");
+                        td.text(td.text().replace("Cryomiston : ", ""));
+                    } else if (dt_td[j].includes("Prue Ocean : ")) {
+                        td.addClass("piu_nx2_pr");
+                        td.text(td.text().replace("Prue Ocean : ", ""));
+                    }
+                    tr.append(td);
+                }
+                if (dt_td[0] != "") {
+                    tb.append(tr);
+                }
+            }
+        },
+        complete: function (rs) {},
+        error: function (rs) {},
+    });
 </script>
