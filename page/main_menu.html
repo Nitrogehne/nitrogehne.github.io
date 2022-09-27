@@ -6,84 +6,69 @@
     }
 
     #main_menu ul {
-        list-style: none;
         display: inline-block;
+        list-style: none;
     }
 
     #main_menu li {
         float: left;
     }
 
-    #main_menu ul li a {
+    #main_menu li:hover ul {
+        display: block;
+    }
+    #main_menu li:last-child a {
+        border-right-width: 1px;
+    }
+
+    #main_menu a {
         background: #111;
+        border-width: 1px 0 1px 1px;
+        border-style: solid;
+        border-color: #333;
         cursor: pointer;
         display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-        text-decoration: none;
         font-size: 1.2em;
         font-weight: bold;
-        min-width: 6em;
-        min-height: 10em;
+        min-width: 7em;
         padding: 0.5em 1em;
-        white-space: nowrap;
+        text-align: center;
+        text-decoration: underline;
+        vertical-align: middle;
+        white-space: normal;
     }
 
-    #main_menu ul > li:nth-child(2n) > a {
-        background: #222;
-    }
-
-    #main_menu ul li a[href=""],
-    #main_menu ul li a[data-url=""] {
+    #main_menu a[href=""],
+    #main_menu a[data-url=""] {
         cursor: not-allowed;
-    }
-    #main_menu ul li:last-child a {
-        border-right: 0;
+        font-weight: normal;
+        text-decoration: none;
     }
 
-    #main_menu ul li:has(.current) a.current {
+    #main_menu a:hover {
+        background: #222;
+        color: var(--color-h);
+    }
+    #main_menu a.current {
         color: var(--color-p);
         background-color: #333;
-        border-bottom: 3px solid var(--color-p);
+        border-bottom: 3px solid var(--color-p) !important;
     }
 
-    #main_menu ul li:has(.current) > a {
+    #main_menu li:has(.current) > a {
         border-bottom: 1px solid var(--color-p);
     }
 
-    #main_menu ul li a:hover {
-        background: #444;
-        color: var(--color-h);
-        transform: rotate(6deg);
-    }
-
-    #main_menu ul li ul {
+    #main_menu li ul {
         display: none;
         position: absolute;
-        width: 100px;
-        z-index: 200;
+        z-index: 9999;
     }
-
-    #main_menu ul li:hover ul {
-        display: block;
-    }
-
-    #main_menu ul li ul li {
-        display: block;
+    #main_menu li li {
         float: none;
     }
-
-    #main_menu ul li ul li a {
-        color: var(--color);
-    }
-
-    #main_menu ul li ul li a:hover {
-        background: #444;
-        color: var(--color-h);
-    }
-
-    #main_menu p {
-        clear: left;
+    #main_menu li li a {
+        border-width: 0 1px 1px 1px;
     }
 </style>
 <nav id="main_menu"></nav>
@@ -266,7 +251,7 @@
             let a = document.createElement("a");
             let innerHTML = "";
             if (!!obj.icon)
-                innerHTML = "<img class='icon' src='" + obj.icon + "'> ";
+                innerHTML = "<img class='icon' src='" + obj.icon + "'>";
             innerHTML += obj.title;
             a.innerHTML = innerHTML;
             a.setAttribute(
