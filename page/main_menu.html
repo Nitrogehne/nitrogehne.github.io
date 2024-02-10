@@ -81,7 +81,7 @@
         },
         {
             title: "nStory",
-            url: "page/nstory/index.html",
+            url: "page/nStory/index.html",
         },
         {
             title: "App.",
@@ -272,5 +272,18 @@
 
     var nav = document.getElementById("main_menu");
     init_menu(nav, menu, 1);
-    document.querySelector("a").setAttribute("class", "current");
+    document.querySelector("#main_menu a").setAttribute("class", "current");
+
+    $(document).on("click", "#main_menu [data-target]", function () {
+        var obj = $(this);
+        var target =
+            obj.attr("data-target") == "this"
+                ? $(this)
+                : obj.attr("data-target");
+        var url = obj.attr("data-url");
+        if (!url) return;
+        load_file({ target: target, url: url });
+        $("#main_menu .current").removeClass("current");
+        obj.addClass("current");
+    });
 </script>

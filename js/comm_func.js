@@ -6,25 +6,47 @@ function load_file({ target, url }) {
         url: url,
         success: function (rs) {
             rs = rs.replaceAll("${path}", url.match(/(.*)\//i)[1]);
-            if (!!target) {
-                $(target).after(rs);
-            } else {
-                $("#main").empty().append(rs);
+            switch (typeof target) {
+                case "object":
+                    $(target).after(rs);
+                    break;
+                case "string":
+                    switch (target) {
+                        case "main":
+                            $("#main").empty().append(rs);
+                            break;
+                        default:
+                            $("#" + target)
+                                .empty()
+                                .append(rs);
+                    }
             }
         },
         error: function () {
             let err = "[File not found : " + url + "]";
-            if (!!target) {
-                $(target).after(err);
-            } else {
-                $("#main").empty().append(err);
+            switch (typeof target) {
+                case "object":
+                    $(target).after(err);
+                    break;
+                case "string":
+                    switch (target) {
+                        case "main":
+                            $("#main").empty().append(err);
+                            break;
+                        default:
+                            $("#" + target)
+                                .empty()
+                                .append(err);
+                    }
             }
         },
         complete: function () {
-            if (!!target) {
-                target.remove();
+            switch (typeof target) {
+                case "object":
+                    target.remove();
+                    break;
+                case "string":
             }
-
             $("[data-load]").each(function () {
                 load_file({
                     target:
