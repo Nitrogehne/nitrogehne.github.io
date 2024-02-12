@@ -1,5 +1,5 @@
 // https://pokemon.gameinfo.io/ko
-const pokemon_names = {
+var pokemon_names = {
     1: [
         "이상해씨",
         "/ko/pokemon/1-bulbasaur",

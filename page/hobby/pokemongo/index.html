@@ -13,11 +13,12 @@
         margin: auto;
         border-collapse: collapse;
     }
-    #pokemongo_tb thead {
+    #pokemongo_tb thead th {
+        background-color: #333;
+        color: #e7dbed;
     }
     #pokemongo_tb tbody tr.lucky td {
-        background-color: #222;
-        color: #fff;
+        color: #d9c393;
         font-weight: bold;
     }
     #pokemongo_tb tbody td {
@@ -27,10 +28,10 @@
 <script src="page/hobby/pokemongo/pokemon_names.js"></script>
 <script src="page/hobby/pokemongo/perfect_pokemons.js"></script>
 <script>
-    const table_title_order = ["gr", "no", "fm", "nm", "sm", "pb", "cd", "td"];
-    const table_title = {
+    var table_title_order = ["gr", "no", "fm", "sm", "pb", "cd", "td"];
+    var table_title = {
         gr: "사탕 그룹", // group
-        no: "도감 번호",
+        no: "번호",
         fm: "모습", // form
         sn: "색이 다른", // shinylucky
         nm: "이름", // name
@@ -40,15 +41,16 @@
         td: "교환", // trade
         lk: "반짝반짝", //
     };
-    let thead = $("#pokemongo_tb thead");
+    var thead = $("#pokemongo_tb thead");
     for (let key of table_title_order) {
         let th = $("<th>");
         th.html(table_title[key]);
         thead.append(th);
     }
-    let tbody = $("#pokemongo_tb tbody");
+    var tbody = $("#pokemongo_tb tbody");
+    var sn =
+        "<img src='page/hobby/pokemongo/shiny.png' style='width:16px;height:16px;'>";
     for (let obj of perfect_pokemons) {
-        console.log(obj);
         let tr = $("<tr>");
         for (let key of table_title_order) {
             let td = $("<td>");
@@ -57,47 +59,45 @@
                 switch (key) {
                     case "gr":
                     case "no":
-                    case "fm":
                     case "cd":
                     case "sm":
-                        td.html(obj[key]);
-                        break;
-                    case "nm":
-                        let sn = "";
-                        if (obj.hasOwnProperty("sn")) {
-                            sn = $("<img>");
-                            sn.attr("src", "page/hobby/pokemongo/shiny.png");
-                        }
-                        td.html(sn + pokemon_names[obj["no"]][0]);
-                    case "pb":
-                        if (obj.hasOwnProperty("pb")) {
-                            let ball = $("<img>")
-                                .css({
-                                    width: "16px",
-                                    height: "16px",
-                                })
-                                .attr(
-                                    "src",
-                                    "page/hobby/pokemongo/" +
-                                        obj["pb"] +
-                                        "b.webp"
-                                );
-                            console.log(ball);
-                            td.append(ball);
-                        }
-                        break;
                     case "td":
                         td.html(obj[key]);
                         break;
-                    case "lk":
-                        td.addClass("lucky");
+                    case "fm":
+                        let html_arr = [];
+                        if (obj.hasOwnProperty("sn")) {
+                            html_arr.push(sh);
+                        }
+                        html_arr.push(obj[key]);
+                        html_arr.push(pokemon_names[obj["no"]][0]);
+                        td.html(html_arr.join(" "));
+                        break;
+                    case "pb":
+                        let ball = $("<img>")
+                            .css({
+                                width: "16px",
+                                height: "16px",
+                            })
+                            .attr(
+                                "src",
+                                "page/hobby/pokemongo/" + obj["pb"] + "b.webp"
+                            );
+                        td.append(ball);
                         break;
                     default:
                         console.log(key, "처리 필요");
                 }
                 td.html(html);
             } else {
-                //console.log(key, "없음");
+                if (key === "fm") {
+                    let html_arr = [];
+                    if (obj.hasOwnProperty("sn")) {
+                        html_arr.push(sn);
+                    }
+                    html_arr.push(pokemon_names[obj["no"]][0]);
+                    td.html(html_arr.join(" "));
+                }
             }
             tr.append(td);
             if (obj.hasOwnProperty("lk")) {
