@@ -2,94 +2,8 @@
     <h1>Pokémon GO</h1>
     <h3>완벽 포켓몬 수집을 목표로 하고있습니다.</h3>
     <table id="pokemongo_tb">
-        <thead>
-            <tr>
-                <th>Group</th>
-                <th>NO.</th>
-                <th>Pokémon Info</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1~3</td>
-                <td>1</td>
-                <td>이상해씨</td>
-                <td>2020-11-15</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>3</td>
-                <td>이상해꽃</td>
-                <td>2017-02-16</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>3</td>
-                <td>(교환*)이상해꽃(하드플랜트)</td>
-                <td>2020-01-22</td>
-            </tr>
-            <tr>
-                <td>4~6</td>
-                <td>6</td>
-                <td>리자몽</td>
-                <td>2018-03-13</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>6</td>
-                <td>(교환*)리자몽(블라스트번)</td>
-                <td>2018-12-03</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>6</td>
-                <td>리자몽(용의숨결)</td>
-                <td>2019-12-16</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>6</td>
-                <td>(교환)리자몽(용의숨결/블라스트번)</td>
-                <td>2022-07-08</td>
-            </tr>
-            <tr>
-                <td>7~9</td>
-                <td>9</td>
-                <td>거북왕</td>
-                <td>2018-03-08</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
+        <thead></thead>
+        <tbody></tbody>
     </table>
 </article>
 <style>
@@ -101,7 +15,7 @@
     }
     #pokemongo_tb thead {
     }
-    #pokemongo_tb tbody tr.head td {
+    #pokemongo_tb tbody tr.lucky td {
         background-color: #222;
         color: #fff;
         font-weight: bold;
@@ -110,26 +24,86 @@
         padding: 0 1em;
     }
 </style>
+<script src="page/hobby/pokemongo/pokemon_names.js"></script>
+<script src="page/hobby/pokemongo/perfect_pokemons.js"></script>
 <script>
-    /*
-    var tb, tr, dt_tr, td, dt_td, song;
-    $.ajax({
-        async: false,
-        url: "doc/work/pokemongo/pokemongo_data.txt",
-        success: function (rs) {
-            tb = $("#pokemongo_tb tbody");
-            dt_tr = rs.split("\n");
-            for (let i = 0; i < dt_tr.length; i++) {
-                tr = $("<tr>");
-                dt_td = dt_tr[i].split("|");
-                no = dt_td[0];
-                for (let j = 0; j < dt_td.length; j++) {
-                    td = $("<td>").text(dt_td[j]);
+    const table_title_order = ["gr", "no", "fm", "nm", "sm", "pb", "cd", "td"];
+    const table_title = {
+        gr: "사탕 그룹", // group
+        no: "도감 번호",
+        fm: "모습", // form
+        sn: "색이 다른", // shinylucky
+        nm: "이름", // name
+        sm: "특별한 기술", // special move
+        pb: "볼", // poke ball
+        cd: "잡은 날", // catch date
+        td: "교환", // trade
+        lk: "반짝반짝", //
+    };
+    let thead = $("#pokemongo_tb thead");
+    for (let key of table_title_order) {
+        let th = $("<th>");
+        th.html(table_title[key]);
+        thead.append(th);
+    }
+    let tbody = $("#pokemongo_tb tbody");
+    for (let obj of perfect_pokemons) {
+        console.log(obj);
+        let tr = $("<tr>");
+        for (let key of table_title_order) {
+            let td = $("<td>");
+            if (obj.hasOwnProperty(key)) {
+                let html;
+                switch (key) {
+                    case "gr":
+                    case "no":
+                    case "fm":
+                    case "cd":
+                    case "sm":
+                        td.html(obj[key]);
+                        break;
+                    case "nm":
+                        let sn = "";
+                        if (obj.hasOwnProperty("sn")) {
+                            sn = $("<img>");
+                            sn.attr("src", "page/hobby/pokemongo/shiny.png");
+                        }
+                        td.html(sn + pokemon_names[obj["no"]][0]);
+                    case "pb":
+                        if (obj.hasOwnProperty("pb")) {
+                            let ball = $("<img>")
+                                .css({
+                                    width: "16px",
+                                    height: "16px",
+                                })
+                                .attr(
+                                    "src",
+                                    "page/hobby/pokemongo/" +
+                                        obj["pb"] +
+                                        "b.webp"
+                                );
+                            console.log(ball);
+                            td.append(ball);
+                        }
+                        break;
+                    case "td":
+                        td.html(obj[key]);
+                        break;
+                    case "lk":
+                        td.addClass("lucky");
+                        break;
+                    default:
+                        console.log(key, "처리 필요");
                 }
+                td.html(html);
+            } else {
+                //console.log(key, "없음");
             }
-        },
-        complete: function (rs) {},
-        error: function (rs) {},
-    });
-    */
+            tr.append(td);
+            if (obj.hasOwnProperty("lk")) {
+                tr.addClass("lucky");
+            }
+        }
+        tbody.append(tr);
+    }
 </script>
