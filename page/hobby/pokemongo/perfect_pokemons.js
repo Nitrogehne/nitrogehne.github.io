@@ -4,6 +4,7 @@ var perfect_pokemons = [
         no: 1,
         pb: "p",
         cd: "2020-11-15",
+        mt: "w",
     },
     {
         no: 3,
@@ -12,11 +13,13 @@ var perfect_pokemons = [
         pb: "p",
         td: "2020-01-22",
         cd: "2020-01-17",
+        mt: "w",
     },
     {
         no: 3,
         cd: "2017-02-16",
         pb: "h",
+        mt: "w",
     },
     {
         gr: "파이리",
@@ -26,17 +29,20 @@ var perfect_pokemons = [
         td: "2018-12-03",
         pb: "s",
         cd: "2018-12-02",
+        mt: "w",
     },
     {
         no: 6,
         cd: "2018-03-13",
         pb: "h",
+        mt: "w",
     },
     {
         no: 6,
         sm: "용의숨결",
         cd: "2019-12-16",
         pb: "h",
+        mt: "w",
     },
     {
         no: 6,
@@ -44,12 +50,14 @@ var perfect_pokemons = [
         td: "2022-07-08",
         pb: "s",
         cd: "2022-01-01",
+        mt: "w",
     },
     {
         gr: "꼬부기",
         no: 9,
         cd: "2018-03-08",
         pb: "h",
+        mt: "w",
     },
     {
         gr: "캐터피",
@@ -57,6 +65,7 @@ var perfect_pokemons = [
         td: "2019-08-21",
         pb: "p",
         cd: "2019-08-20",
+        mt: "w",
     },
     {
         gr: "뿔충이",
@@ -64,17 +73,20 @@ var perfect_pokemons = [
         sm: "드릴라이너",
         pb: "p",
         cd: "2019-10-16",
+        mt: "w",
     },
     {
         gr: "구구",
         no: 16,
         pb: "p",
         cd: "2021-10-29",
+        mt: "w",
     },
     {
         no: 18,
         pb: "p",
         cd: "2017-06-09",
+        mt: "w",
     },
     {
         gr: "꼬렛",
@@ -83,12 +95,7 @@ var perfect_pokemons = [
         td: "2019-03-12",
         pb: "p",
         cd: "2019-02-28",
-    },
-    {
-        no: 20,
-        fm: "정화",
-        pb: "pr",
-        cd: "2019-09-30",
+        mt: "w",
     },
     {
         no: 19,
@@ -96,6 +103,14 @@ var perfect_pokemons = [
         pb: "p",
         cd: "2020-07-26",
         fm: "알로라",
+        mt: "w",
+    },
+    {
+        no: 20,
+        fm: "정화",
+        pb: "pr",
+        cd: "2019-09-30",
+        mt: "g",
     },
     {
         gr: "깨비참",
@@ -103,23 +118,27 @@ var perfect_pokemons = [
         td: "2019-10-01",
         pb: "p",
         cd: "2019-10-01",
+        mt: "w",
     },
     {
         gr: "아보",
         no: 23,
         cd: "2022-06-01",
         pb: "p",
+        mt: "w",
     },
     {
         no: 23,
         cd: "2019-07-25",
         pb: "s",
+        mt: "w",
     },
     {
         gr: "피카츄",
         no: 25,
         cd: "2022-07-16",
         pb: "h",
+        mt: "w",
     },
     {
         no: 25,
@@ -127,6 +146,7 @@ var perfect_pokemons = [
         cd: "2017-12-31",
         pb: "h",
         sm: "프레젠트",
+        mt: "w",
     },
     {
         no: 25,
@@ -134,24 +154,28 @@ var perfect_pokemons = [
         cd: "2018-02-28",
         pb: "h",
         sm: "프레젠트",
+        mt: "w",
     },
     {
         no: 25,
         fm: "니트모자",
         cd: "2019-12-24",
         pb: "h",
+        mt: "w",
     },
     {
         no: 25,
         fm: "니트모자",
         cd: "2019-12-25",
         pb: "h",
+        mt: "w",
     },
     {
         no: 25,
         fm: "탐정모자",
         cd: "2022-09-24",
         pb: "s",
+        mt: "f",
     },
     {
         no: 25,
@@ -160,6 +184,7 @@ var perfect_pokemons = [
         cd: "2022-10-30",
         pb: "s",
         td: "2022-11-05",
+        mt: "w",
     },
     {
         no: 25,
@@ -167,6 +192,7 @@ var perfect_pokemons = [
         cd: "2022-11-01",
         pb: "h",
         td: "2022-11-05",
+        mt: "w",
     },
     {
         no: 25,
@@ -174,12 +200,14 @@ var perfect_pokemons = [
         cd: "2022-06-28",
         pb: "s",
         td: "2022-06-30",
+        mt: "w",
     },
     {
         no: 25,
         fm: "따라큐변장",
         cd: "2019-10-22",
         pb: "h",
+        mt: "w",
     },
     {
         no: 25,
@@ -188,6 +216,7 @@ var perfect_pokemons = [
         cd: "2020-07-07",
         pb: "s",
         td: "2020-07-07",
+        mt: "w",
     },
     {
         no: 25,
@@ -195,6 +224,7 @@ var perfect_pokemons = [
         cd: "2020-12-15",
         pb: "h",
         td: "2020-12-16",
+        mt: "w",
     },
     {
         no: 25,
@@ -205,6 +235,7 @@ var perfect_pokemons = [
         pb: "s",
         td: "2022-08-31",
         ev: "Pokémon GO Fest 2022",
+        mt: "w",
     },
     {
         no: 26,
@@ -212,6 +243,22 @@ var perfect_pokemons = [
         cd: "2020-09-03",
         pb: "s",
         td: "2020-09-10",
+        mt: "w",
+    },
+    {
+        gr: "모래두지",
+        no: 27,
+        fm: "정화",
+        mt: "g",
+        cd: "2019-11-19",
+        pb: "pr",
+    },
+    {
+        no: 27,
+        fm: "정화",
+        mt: "g",
+        cd: "2019-11-19",
+        pb: "pr",
     },
     {
         gr: "고오스",
