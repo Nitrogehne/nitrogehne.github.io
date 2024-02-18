@@ -226,7 +226,7 @@ var perfect_pokemons = [
         shiny: false,
         shadow: false,
         purified: false,
-        region: "a",
+        region: "",
         costume: "",
         weight: "2.79",
         height: "0.28",
