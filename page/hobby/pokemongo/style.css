@@ -34,6 +34,12 @@
 #pokemongo_tb .shiny {
     background-image: url("icon_shiny.png");
 }
+#pokemongo_tb .shadow {
+    background-image: url("icon_shadow.webp");
+}
+#pokemongo_tb .purified {
+    background-image: url("icon_purified.webp");
+}
 #pokemongo_tb .trade {
     background-image: url("icon_trade.png");
 }

@@ -26,7 +26,7 @@
         if (test) console.log(obj);
         let tr = $("<tr>");
         tbody.append(tr);
-        if (obj.hasOwnProperty("candy_group")) {
+        if (obj.hasOwnProperty("candy_group") && obj["candy_group"]) {
             odd = !odd;
         }
         if (!odd) tr.addClass("odd");
@@ -58,7 +58,22 @@
                         td.append(icon.clone().addClass("purified"));
                     }
                     if (obj.hasOwnProperty("region") && obj["region"]) {
-                        td.append(txt.clone().html(obj["region"]));
+                        let region = "";
+                        switch (obj["region"]) {
+                            case "a":
+                                region = "알로라";
+                                break;
+                            case "g":
+                                region = "가라르";
+                                break;
+                            case "h":
+                                region = "히스이";
+                                break;
+                        }
+                        td.append(txt.clone().html(region));
+                    }
+                    if (obj.hasOwnProperty("costume") && obj["costume"]) {
+                        td.append(txt.clone().html(obj["costume"]));
                     }
                     if (
                         obj.hasOwnProperty("pokedex_no") &&
