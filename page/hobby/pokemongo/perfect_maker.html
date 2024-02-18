@@ -410,6 +410,7 @@
     }
     function add() {
         $(this).closest("tr").after(get_row());
+        save_export();
     }
     function remove() {
         $(this).closest("tr").remove();
