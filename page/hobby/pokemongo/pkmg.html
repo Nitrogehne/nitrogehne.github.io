@@ -1,0 +1,379 @@
+<style>
+    #pokemongo table {
+        border-width: 3px;
+        padding: 0 1em;
+        margin: auto;
+        border-collapse: collapse;
+    }
+    #pokemongo table thead th {
+        background-color: #333;
+        color: #e7dbed;
+        border: 1px solid #fff;
+    }
+    #pokemongo table thead td {
+        color: #e7dbed;
+        border: 1px solid #fff;
+    }
+    #pokemongo input[type="text"] {
+        width: 5em;
+    }
+</style>
+<article id="pokemongo">
+    <button onclick="save_export()">저장 및 추출</button>
+    <input id="export" style="width: 30em" />
+    <table>
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+</article>
+<script>
+    var $table = $("#pokemongo table");
+    var $thead = $("#pokemongo table thead");
+    var title = [
+        ["다음에 추가", "add", "btn"],
+        ["사탕 그룹", "candy_group", "txt"],
+        ["도감 번호", "pokedex_no", "txt"],
+        ["반짝반짝", "lucky", "chk"],
+        ["색이 다른", "shiny", "chk"],
+        ["그림자", "shadow", "chk"],
+        ["정화", "purified", "chk"],
+        ["지방", "region", "sel", ["기본", "알로라", "가라르", "히스이"]],
+        ["몸무게", "weight", "txt"],
+        ["키", "height", "txt"],
+        ["특별한 기술", "knows_attack", "txt"],
+        ["만남", "meet", "sel", ["w", "f", "g", "e"]],
+        ["볼", "ball", "sel", ["p", "s", "h", "m", "pr", "ub"]],
+        ["알 종류", "egg_type", "sel", ["2", "5", "7", "10", "12"]],
+        ["알 받은 날", "egg_received_date", "date"],
+        ["알 부화 날", "egg_hatched_date", "date"],
+        ["엽서 받은 날", "postcard_received_date", "date"],
+        ["교환한 날", "trade_date", "date"],
+        ["잡은 날", "caught_date", "date"],
+        ["행사", "event", "txt"],
+        ["삭제", "del", "btn"],
+    ];
+    $tr = $("<tr>");
+    $thead.append($tr);
+    for (let title_arr of title) {
+        let $th = $("<th>");
+        $tr.append($th);
+        $th.html(title_arr[0]);
+    }
+    var $tbody = $("#pokemongo table tbody");
+    var pkm_arr;
+    if (localStorage.pkm_arr) {
+        let pkm_arr_json = localStorage.pkm_arr;
+        let pkm_arr = JSON.parse(pkm_arr_json);
+        $("#export").val("var perfect_pokemons = " + pkm_arr_json + ";");
+        for (let pkm of pkm_arr) {
+            let $tr = $("<tr>");
+            $tbody.append($tr);
+            for (let title_arr of title) {
+                let $td = $("<td>");
+                $tr.append($td);
+                let sel = $("<select>");
+                switch (title_arr[1]) {
+                    case "add":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<button>").html("+").on("click", add)
+                        );
+                        break;
+                    case "candy_group":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=text>").val(pkm.candy_group)
+                        );
+                        break;
+                    case "pokedex_no":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=text>").val(pkm.pokedex_no)
+                        );
+                        break;
+                    case "lucky":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=checkbox>").prop(
+                                "checked",
+                                pkm.lucky
+                            )
+                        );
+                        break;
+                    case "shiny":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=checkbox>").prop(
+                                "checked",
+                                pkm.shiny
+                            )
+                        );
+                        break;
+                    case "shadow":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=checkbox>").prop(
+                                "checked",
+                                pkm.shadow
+                            )
+                        );
+                        break;
+                    case "purified":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=checkbox>").prop(
+                                "checked",
+                                pkm.purified
+                            )
+                        );
+                        break;
+                    case "region":
+                        $td.attr("data-key", title_arr[1]).append(sel);
+                        sel.append($("<option>").val("").html("기본"));
+                        sel.append($("<option>").val("a").html("알로라"));
+                        sel.append($("<option>").val("g").html("가라르"));
+                        sel.append($("<option>").val("h").html("히스이"));
+                        break;
+                    case "weight":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=text>").val(pkm.weight)
+                        );
+                        break;
+                    case "height":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=text>").val(pkm.height)
+                        );
+                        break;
+                    case "knows_attack":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=text>").val(pkm.knows_attack)
+                        );
+                        break;
+                    case "meet":
+                        $td.attr("data-key", title_arr[1]).append(sel);
+                        sel.append($("<option>").val("w").html("야생"));
+                        sel.append($("<option>").val("e").html("알"));
+                        sel.append($("<option>").val("f").html("필드 리서치"));
+                        sel.append($("<option>").val("r").html("레이드"));
+                        sel.append($("<option>").val("g").html("고 로켓단"));
+                        sel.append($("<option>").val("p").html("엽서"));
+                        sel.val(pkm.meet);
+                        break;
+                    case "ball":
+                        $td.attr("data-key", title_arr[1]).append(sel);
+                        sel.append($("<option>").val("p").html("포켓볼"));
+                        sel.append($("<option>").val("s").html("슈퍼볼"));
+                        sel.append($("<option>").val("h").html("하이퍼볼"));
+                        sel.append($("<option>").val("pr").html("프리미어볼"));
+                        sel.append(
+                            $("<option>").val("ub").html("울트라비스트볼")
+                        );
+                        sel.append($("<option>").val("e").html("알 부화"));
+                        sel.append($("<option>").val("m").html("마스터볼"));
+                        sel.val(pkm.ball);
+                        break;
+                    case "egg_type":
+                        $td.attr("data-key", title_arr[1]).append(sel);
+                        sel.append($("<option>").val("").html(""));
+                        sel.append($("<option>").val("2").html("2km"));
+                        sel.append($("<option>").val("5").html("5km"));
+                        sel.append($("<option>").val("7").html("7km"));
+                        sel.append($("<option>").val("10").html("10km"));
+                        sel.append($("<option>").val("12").html("12km"));
+                        sel.val(pkm.egg_type);
+                        break;
+                    case "egg_received_date":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=date>").val(pkm.egg_received_date)
+                        );
+                        break;
+                    case "egg_hatched_date":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=date>").val(pkm.egg_hatched_date)
+                        );
+                        break;
+                    case "postcard_received_date":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=date>").val(
+                                pkm.postcard_received_date
+                            )
+                        );
+                        break;
+                    case "trade_date":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=date>").val(pkm.trade_date)
+                        );
+                        break;
+                    case "caught_date":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=date>").val(pkm.caught_date)
+                        );
+                        break;
+                    case "event":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=text>").val(pkm.event)
+                        );
+                        break;
+                    case "del":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<button>").html("-").on("click", remove)
+                        );
+                        break;
+                }
+            }
+        }
+    } else {
+        $tbody.append(get_row());
+    }
+    function get_row() {
+        let $tr = $("<tr>");
+        for (let title_arr of title) {
+            let $td = $("<td>");
+            $tr.append($td);
+            let sel = $("<select>");
+            switch (title_arr[0]) {
+                case "다음에 추가":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<button>").html("+").on("click", add)
+                    );
+                    break;
+                case "사탕 그룹":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=text>")
+                    );
+                    break;
+                case "도감 번호":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=text>")
+                    );
+                    break;
+                case "반짝반짝":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=checkbox>")
+                    );
+                    break;
+                case "색이 다른":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=checkbox>")
+                    );
+                    break;
+                case "그림자":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=checkbox>")
+                    );
+                    break;
+                case "정화":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=checkbox>")
+                    );
+                    break;
+                case "지방":
+                    $td.attr("data-key", title_arr[1]).append(sel);
+                    sel.append($("<option>").val("").html("기본"));
+                    sel.append($("<option>").val("a").html("알로라"));
+                    sel.append($("<option>").val("g").html("가라르"));
+                    sel.append($("<option>").val("h").html("히스이"));
+                    break;
+                case "몸무게":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=text>")
+                    );
+                    break;
+                case "키":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=text>")
+                    );
+                    break;
+                case "특별한 기술":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=text>")
+                    );
+                    break;
+                case "만남":
+                    $td.attr("data-key", title_arr[1]).append(sel);
+                    sel.append($("<option>").val("w").html("야생"));
+                    sel.append($("<option>").val("e").html("알"));
+                    sel.append($("<option>").val("f").html("필드 리서치"));
+                    sel.append($("<option>").val("r").html("레이드"));
+                    sel.append($("<option>").val("g").html("고 로켓단"));
+                    sel.append($("<option>").val("p").html("엽서"));
+                    break;
+                case "볼":
+                    $td.attr("data-key", title_arr[1]).append(sel);
+                    sel.append($("<option>").val("p").html("포켓볼"));
+                    sel.append($("<option>").val("s").html("슈퍼볼"));
+                    sel.append($("<option>").val("h").html("하이퍼볼"));
+                    sel.append($("<option>").val("pr").html("프리미어볼"));
+                    sel.append($("<option>").val("ub").html("울트라비스트볼"));
+                    sel.append($("<option>").val("e").html("알 부화"));
+                    sel.append($("<option>").val("m").html("마스터볼"));
+                    break;
+                case "알 종류":
+                    $td.attr("data-key", title_arr[1]).append(sel);
+                    sel.append($("<option>").val("").html(""));
+                    sel.append($("<option>").val("2").html("2km"));
+                    sel.append($("<option>").val("5").html("5km"));
+                    sel.append($("<option>").val("7").html("7km"));
+                    sel.append($("<option>").val("10").html("10km"));
+                    sel.append($("<option>").val("12").html("12km"));
+                    break;
+                case "알 받은 날":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=date>")
+                    );
+                    break;
+                case "알 부화 날":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=date>")
+                    );
+                    break;
+                case "엽서 받은 날":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=date>")
+                    );
+                    break;
+                case "교환한 날":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=date>")
+                    );
+                    break;
+                case "잡은 날":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=date>")
+                    );
+                    break;
+                case "행사":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=text>")
+                    );
+                    break;
+                case "삭제":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<button>").html("-").on("click", remove)
+                    );
+                    break;
+            }
+        }
+        return $tr;
+    }
+    function save_export() {
+        let $tr_list = $("#pokemongo tbody tr");
+        pkm_arr = [];
+        for (let tr of $tr_list) {
+            let $tr = $(tr);
+            let obj = {};
+            let $td_list = $tr.find("td");
+            for (let td of $td_list) {
+                let $td = $(td);
+                let key = $td.attr("data-key");
+                if (key === "add" || key === "remove") continue;
+                let val = $td.find("input, select").val();
+                if (val === "on") val = $td.find("input").prop("checked");
+                obj[key] = val;
+            }
+            pkm_arr.push(obj);
+        }
+        let pkm_arr_json = JSON.stringify(pkm_arr);
+        $("#export").val("var perfect_pokemons = " + pkm_arr_json + ";");
+        localStorage.pkm_arr = pkm_arr_json;
+    }
+    function add() {
+        $(this).closest("tr").after(get_row());
+    }
+    function remove() {
+        $(this).closest("tr").remove();
+    }
+</script>

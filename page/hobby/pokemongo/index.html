@@ -6,101 +6,16 @@
         <tbody></tbody>
     </table>
 </article>
-<style>
-    #pokemongo_tb {
-        border-width: 3px;
-        padding: 0 1em;
-        margin: auto;
-        border-collapse: collapse;
-    }
-    #pokemongo_tb thead th {
-        background-color: #333;
-        color: #e7dbed;
-    }
-    #pokemongo_tb tbody tr.odd td {
-        background-color: #222;
-    }
-    #pokemongo_tb tbody tr.lucky td {
-        color: #d9c393;
-        font-weight: bold;
-    }
-    #pokemongo_tb tbody td {
-        padding: 0 1em;
-    }
-
-    #pokemongo_tb .icon {
-        width: 1.2em;
-        height: 1.2em;
-        padding-right: 0.6em;
-        background-size: contain;
-        display: inline-block;
-    }
-    #pokemongo_tb .icon:last-child {
-        padding-right: 0;
-    }
-    #pokemongo_tb .if_sn {
-        background-image: url("page/hobby/pokemongo/icon_shiny.png");
-    }
-    #pokemongo_tb .meet_w {
-        background-image: url("page/hobby/pokemongo/icon_meet_wild.png");
-    }
-    #pokemongo_tb .meet_f {
-        background-image: url("page/hobby/pokemongo/icon_meet_fieldresearch.png");
-    }
-    #pokemongo_tb .meet_r {
-        background-image: url("page/hobby/pokemongo/icon_meet_raids.png");
-    }
-    #pokemongo_tb .meet_g {
-        background-image: url("page/hobby/pokemongo/icon_meet_goroket.png");
-    }
-    #pokemongo_tb .ball_p {
-        background-image: url("page/hobby/pokemongo/icon_ball_p.webp");
-    }
-    #pokemongo_tb .ball_s {
-        background-image: url("page/hobby/pokemongo/icon_ball_s.webp");
-    }
-    #pokemongo_tb .ball_h {
-        background-image: url("page/hobby/pokemongo/icon_ball_h.webp");
-    }
-    #pokemongo_tb .ball_m {
-        background-image: url("page/hobby/pokemongo/icon_ball_m.webp");
-    }
-    #pokemongo_tb .ball_pr {
-        background-image: url("page/hobby/pokemongo/icon_ball_pr.webp");
-    }
-    #pokemongo_tb .ball_ub {
-        background-image: url("page/hobby/pokemongo/icon_ball_ub.webp");
-    }
-    #pokemongo_tb .txt {
-        display: inline-block;
-        padding-right: 0.6em;
-    }
-    #pokemongo_tb .txt:last-child {
-        padding-right: 0;
-    }
-</style>
-<script src="page/hobby/pokemongo/pokemon_names.js"></script>
-<script src="page/hobby/pokemongo/perfect_pokemons.js"></script>
+<link rel="stylesheet" href="${path}/style.css" />
+<script src="${path}/pokemon_names.js"></script>
+<script src="${path}/perfect_pokemons.js"></script>
 <script>
-    var table_title_order = ["gr", "no", "fm", "sm", "et", "cd", "td"];
-    var table_title = {
-        gr: "사탕 그룹", // group
-        no: "번호",
-        fm: "모습", // form
-        sn: "색이 다른", // shinylucky
-        nm: "이름", // name
-        sm: "특별한 기술", // special move
-        et: "기타", // etc
-        mt: "만나다", // meet
-        pb: "볼", // poke ball
-        cd: "잡은/받은 날", // catch date
-        td: "교환/부화", // trade
-        lk: "반짝반짝", // lucky
-    };
+    var test = 0;
+    var table_title = ["사탕 그룹", "도감 번호", "모습", "특별한 기술", "기타"];
     var thead = $("#pokemongo_tb thead");
-    for (let key of table_title_order) {
+    for (let title of table_title) {
         let th = $("<th>");
-        th.html(table_title[key]);
+        th.html(title);
         thead.append(th);
     }
     var tbody = $("#pokemongo_tb tbody");
@@ -108,64 +23,81 @@
     var txt = $("<div>").addClass("txt");
     var odd = false;
     for (let obj of perfect_pokemons) {
+        if (test) console.log(obj);
         let tr = $("<tr>");
         tbody.append(tr);
-        if (obj.hasOwnProperty("gr")) {
+        if (obj.hasOwnProperty("candy_group")) {
             odd = !odd;
         }
         if (!odd) tr.addClass("odd");
-        for (let key of table_title_order) {
+        for (let title of table_title) {
             let td = $("<td>");
             tr.append(td);
-            if (obj.hasOwnProperty(key)) {
-                switch (key) {
-                    case "gr":
-                    case "no":
-                    case "cd":
-                    case "sm":
-                    case "td":
-                        td.append(txt.clone().html(obj[key]));
-                        break;
-                    case "fm":
-                        if (obj.hasOwnProperty("sn")) {
-                            td.append(icon.clone().addClass("sn"));
-                        }
-                        td.append(txt.clone().html(obj[key]));
+            switch (title) {
+                case "사탕 그룹":
+                    if (
+                        obj.hasOwnProperty("candy_group") &&
+                        obj["candy_group"]
+                    ) {
+                        td.html(obj["candy_group"]);
+                    }
+                    break;
+                case "도감 번호":
+                    if (obj.hasOwnProperty("pokedex_no") && obj["pokedex_no"]) {
+                        td.html(obj["pokedex_no"]);
+                    }
+                    break;
+                case "모습":
+                    if (obj.hasOwnProperty("shiny") && obj["shiny"]) {
+                        td.append(icon.clone().addClass("shiny"));
+                    }
+                    if (obj.hasOwnProperty("shadow") && obj["shadow"]) {
+                        td.append(icon.clone().addClass("shadow"));
+                    }
+                    if (obj.hasOwnProperty("purified") && obj["purified"]) {
+                        td.append(icon.clone().addClass("purified"));
+                    }
+                    if (obj.hasOwnProperty("region") && obj["region"]) {
+                        td.append(txt.clone().html(obj["region"]));
+                    }
+                    if (
+                        obj.hasOwnProperty("pokedex_no") &&
+                        obj["pokedex_no"] &&
+                        pokemon_names[obj["pokedex_no"]]
+                    ) {
                         td.append(
-                            txt.clone().html(pokemon_names[obj["no"]][0])
+                            txt
+                                .clone()
+                                .html(pokemon_names[obj["pokedex_no"]][0])
                         );
-                        break;
-                    case "pb":
-                    default:
-                        console.log(key, "처리 필요");
-                }
-            } else {
-                switch (key) {
-                    case "fm":
-                        if (obj.hasOwnProperty("sn")) {
-                            td.append(icon.clone().addClass("sn"));
-                        }
-                        td.append(
-                            txt.clone().html(pokemon_names[obj["no"]][0])
-                        );
-                        break;
-                    case "et":
-                        if (obj.hasOwnProperty("mt")) {
-                            td.append(
-                                icon.clone().addClass("meet_" + obj["mt"])
-                            );
-                        }
-                        if (obj.hasOwnProperty("pb")) {
-                            td.append(
-                                icon.clone().addClass("ball_" + obj["pb"])
-                            );
-                        }
-                        break;
-                }
+                    }
+                    break;
+                case "특별한 기술":
+                    if (
+                        obj.hasOwnProperty("knows_attack") &&
+                        obj["knows_attack"]
+                    ) {
+                        td.append(txt.clone().html(obj["knows_attack"]));
+                    }
+                    break;
+                case "기타":
+                    if (obj.hasOwnProperty("meet") && obj["meet"]) {
+                        td.append(icon.clone().addClass("meet_" + obj["meet"]));
+                    }
+                    if (obj.hasOwnProperty("ball") && obj["ball"]) {
+                        td.append(icon.clone().addClass("ball_" + obj["ball"]));
+                    }
+                    if (obj.hasOwnProperty("trade_date") && obj["trade_date"]) {
+                        td.append(icon.clone().addClass("trade"));
+                    }
+                    break;
             }
-            if (obj.hasOwnProperty("lk")) {
+            if (obj.hasOwnProperty("lucky") && obj["lucky"]) {
                 tr.addClass("lucky");
             }
         }
+    }
+    function pkmg() {
+        load_file({ target: "main", url: "${path}/pkmg.html" });
     }
 </script>
