@@ -41,6 +41,7 @@
         ["정화", "purified", "chk"],
         ["지방", "region", "sel", ["기본", "알로라", "가라르", "히스이"]],
         ["복장", "costume", "txt"],
+        ["성별", "sex", "sel", ["무성", "수컷", "암컷"]],
         ["몸무게", "weight", "txt"],
         ["키", "height", "txt"],
         ["특별한 기술", "knows_attack", "txt"],
@@ -129,6 +130,12 @@
                     $td.attr("data-key", title_arr[1]).append(
                         $("<input type=text>")
                     );
+                    break;
+                case "sex":
+                    $td.attr("data-key", title_arr[1]).append(sel);
+                    sel.append($("<option>").val("").html("없음"));
+                    sel.append($("<option>").val("m").html("수컷"));
+                    sel.append($("<option>").val("f").html("암컷"));
                     break;
                 case "weight":
                     $td.attr("data-key", title_arr[1]).append(
@@ -303,11 +310,19 @@
                         sel.append($("<option>").val("a").html("알로라"));
                         sel.append($("<option>").val("g").html("가라르"));
                         sel.append($("<option>").val("h").html("히스이"));
+                        sel.val(pkm.region);
                         break;
                     case "costume":
                         $td.attr("data-key", title_arr[1]).append(
                             $("<input type=text>").val(pkm.costume)
                         );
+                        break;
+                    case "sex":
+                        $td.attr("data-key", title_arr[1]).append(sel);
+                        sel.append($("<option>").val("").html("없음"));
+                        sel.append($("<option>").val("m").html("수컷"));
+                        sel.append($("<option>").val("f").html("암컷"));
+                        sel.val(pkm.sex);
                         break;
                     case "weight":
                         $td.attr("data-key", title_arr[1]).append(
