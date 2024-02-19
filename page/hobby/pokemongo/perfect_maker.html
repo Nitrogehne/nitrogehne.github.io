@@ -20,6 +20,15 @@
     #pokemongo [data-key="pokedex_no"] input[type="text"] {
         width: 3em;
     }
+    #pokemongo [data-key="lucky"] {
+        background-color: #fead4388;
+    }
+    #pokemongo [data-key="shadow"] {
+        background-color: #cb9aef88;
+    }
+    #pokemongo [data-key="purified"] {
+        background-color: #85dee788;
+    }
     #pokemongo [data-key="costume"] input[type="text"] {
         width: 7em;
     }
@@ -142,9 +151,9 @@
                     break;
                 case "sex":
                     $td.attr("data-key", title_arr[1]).append(sel);
-                    sel.append($("<option>").val("").html("없음"));
-                    sel.append($("<option>").val("m").html("수컷"));
-                    sel.append($("<option>").val("f").html("암컷"));
+                    sel.append($("<option>").val("").html("_무_"));
+                    sel.append($("<option>").val("m").html("수__"));
+                    sel.append($("<option>").val("f").html("__암"));
                     break;
                 case "weight":
                     $td.attr("data-key", title_arr[1]).append(
@@ -328,9 +337,19 @@
                         break;
                     case "sex":
                         $td.attr("data-key", title_arr[1]).append(sel);
-                        sel.append($("<option>").val("").html("없음"));
-                        sel.append($("<option>").val("m").html("수컷"));
-                        sel.append($("<option>").val("f").html("암컷"));
+                        sel.append($("<option>").val("").html("_무_"));
+                        sel.append(
+                            $("<option>")
+                                .css("background-color", "darkblue")
+                                .val("m")
+                                .html("수__")
+                        );
+                        sel.append(
+                            $("<option>")
+                                .css("background-color", "darkpink")
+                                .val("f")
+                                .html("__암")
+                        );
                         sel.val(pkm.sex);
                         break;
                     case "weight":
