@@ -17,6 +17,15 @@
     #pokemongo input[type="text"] {
         width: 5em;
     }
+    #pokemongo [data-key="pokedex_no"] input[type="text"] {
+        width: 3em;
+    }
+    #pokemongo [data-key="costume"] input[type="text"] {
+        width: 7em;
+    }
+    #pokemongo [data-key="event"] input[type="text"] {
+        width: 7em;
+    }
 </style>
 <article id="pokemongo">
     <button onclick="save_export()">[저장 및 내보내기]</button>
@@ -32,11 +41,11 @@
     var $thead = $("#pokemongo table thead");
     var title = [
         ["삭제", "del", "btn"],
-        ["다음에 추가", "add", "btn"],
+        ["다음에<br/>추가", "add", "btn"],
         ["사탕 그룹", "candy_group", "txt"],
-        ["도감 번호", "pokedex_no", "txt"],
-        ["반짝반짝", "lucky", "chk"],
-        ["색이 다른", "shiny", "chk"],
+        ["도감<br/>번호", "pokedex_no", "txt"],
+        ["반짝<br/>반짝", "lucky", "chk"],
+        ["색이<br/>다른", "shiny", "chk"],
         ["그림자", "shadow", "chk"],
         ["정화", "purified", "chk"],
         ["지방", "region", "sel", ["기본", "알로라", "가라르", "히스이"]],
@@ -47,12 +56,12 @@
         ["특별한 기술", "knows_attack", "txt"],
         ["만남", "meet", "sel", ["w", "f", "g", "e"]],
         ["볼", "ball", "sel", ["p", "s", "h", "m", "pr", "ub"]],
+        ["교환한 날", "trade_date", "date"],
+        ["잡은 날", "caught_date", "date"],
         ["알 종류", "egg_type", "sel", ["2", "5", "7", "10", "12"]],
         ["알 받은 날", "egg_received_date", "date"],
         ["알 부화 날", "egg_hatched_date", "date"],
         ["엽서 받은 날", "postcard_received_date", "date"],
-        ["교환한 날", "trade_date", "date"],
-        ["잡은 날", "caught_date", "date"],
         ["행사", "event", "txt"],
     ];
     $tr = $("<tr>");
