@@ -2,6 +2,7 @@ var perfect_pokemons = [
     {
         candy_group: "이상해씨",
         pokedex_no: "1",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -25,6 +26,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "3",
+        name: "",
         lucky: true,
         shiny: false,
         shadow: false,
@@ -48,6 +50,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "3",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -71,6 +74,7 @@ var perfect_pokemons = [
     {
         candy_group: "파이리",
         pokedex_no: "6",
+        name: "",
         lucky: true,
         shiny: false,
         shadow: false,
@@ -94,6 +98,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "6",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -117,6 +122,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "6",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -140,6 +146,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "6",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -163,6 +170,7 @@ var perfect_pokemons = [
     {
         candy_group: "꼬부기",
         pokedex_no: "9",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -186,6 +194,7 @@ var perfect_pokemons = [
     {
         candy_group: "캐터피",
         pokedex_no: "10",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -209,6 +218,7 @@ var perfect_pokemons = [
     {
         candy_group: "뿔충이",
         pokedex_no: "15",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -232,6 +242,7 @@ var perfect_pokemons = [
     {
         candy_group: "꼬렛",
         pokedex_no: "19",
+        name: "",
         lucky: true,
         shiny: false,
         shadow: false,
@@ -255,6 +266,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "20",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -278,6 +290,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "19",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -301,6 +314,7 @@ var perfect_pokemons = [
     {
         candy_group: "깨비참",
         pokedex_no: "21",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -324,6 +338,7 @@ var perfect_pokemons = [
     {
         candy_group: "아보",
         pokedex_no: "23",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -347,6 +362,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "23",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -370,6 +386,7 @@ var perfect_pokemons = [
     {
         candy_group: "피카츄",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -393,6 +410,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -416,6 +434,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -439,6 +458,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -462,6 +482,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -485,6 +506,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -508,6 +530,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -531,6 +554,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: true,
         shiny: false,
         shadow: false,
@@ -554,6 +578,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -577,6 +602,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -600,6 +626,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -623,6 +650,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -646,6 +674,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "25",
+        name: "",
         lucky: true,
         shiny: false,
         shadow: false,
@@ -669,6 +698,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "26",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -692,6 +722,7 @@ var perfect_pokemons = [
     {
         candy_group: "모래두지",
         pokedex_no: "27",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -715,6 +746,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "27",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -738,6 +770,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "27",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -761,6 +794,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "28",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -784,6 +818,7 @@ var perfect_pokemons = [
     {
         candy_group: "니드런♀",
         pokedex_no: "29",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -807,6 +842,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "31",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -830,6 +866,7 @@ var perfect_pokemons = [
     {
         candy_group: "니드런♂",
         pokedex_no: "32",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -853,6 +890,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "32",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -876,6 +914,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "34",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -899,6 +938,7 @@ var perfect_pokemons = [
     {
         candy_group: "삐삐",
         pokedex_no: "36",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -922,6 +962,7 @@ var perfect_pokemons = [
     {
         candy_group: "식스테일",
         pokedex_no: "37",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -945,6 +986,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "37",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -968,6 +1010,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "38",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -991,6 +1034,7 @@ var perfect_pokemons = [
     {
         candy_group: "푸린",
         pokedex_no: "40",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1014,6 +1058,7 @@ var perfect_pokemons = [
     {
         candy_group: "주뱃",
         pokedex_no: "41",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1037,6 +1082,7 @@ var perfect_pokemons = [
     {
         candy_group: "고오스",
         pokedex_no: "94",
+        name: "",
         lucky: false,
         shiny: true,
         shadow: false,
@@ -1060,6 +1106,7 @@ var perfect_pokemons = [
     {
         candy_group: "썬더",
         pokedex_no: "145",
+        name: "",
         lucky: true,
         shiny: true,
         shadow: false,
@@ -1083,6 +1130,7 @@ var perfect_pokemons = [
     {
         candy_group: "토중몬",
         pokedex_no: "290",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1106,6 +1154,7 @@ var perfect_pokemons = [
     {
         candy_group: "스컹뿡",
         pokedex_no: "434",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: true,
@@ -1129,6 +1178,7 @@ var perfect_pokemons = [
     {
         candy_group: "",
         pokedex_no: "434",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1152,6 +1202,7 @@ var perfect_pokemons = [
     {
         candy_group: "딥상어동",
         pokedex_no: "445",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1175,6 +1226,7 @@ var perfect_pokemons = [
     {
         candy_group: "달막화",
         pokedex_no: "554",
+        name: "",
         lucky: true,
         shiny: false,
         shadow: false,
@@ -1198,6 +1250,7 @@ var perfect_pokemons = [
     {
         candy_group: "탱그릴",
         pokedex_no: "592",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1221,6 +1274,7 @@ var perfect_pokemons = [
     {
         candy_group: "파쪼옥",
         pokedex_no: "595",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1244,6 +1298,7 @@ var perfect_pokemons = [
     {
         candy_group: "음뱃",
         pokedex_no: "715",
+        name: "",
         lucky: false,
         shiny: false,
         shadow: false,
@@ -1267,6 +1322,7 @@ var perfect_pokemons = [
     {
         candy_group: "대여르",
         pokedex_no: "870",
+        name: "",
         lucky: true,
         shiny: false,
         shadow: false,
@@ -1290,6 +1346,7 @@ var perfect_pokemons = [
     {
         candy_group: "빈나두",
         pokedex_no: "938",
+        name: "빈나두",
         lucky: false,
         shiny: false,
         shadow: false,

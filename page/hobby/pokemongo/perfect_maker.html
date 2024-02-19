@@ -53,6 +53,7 @@
         ["다음에<br/>추가", "add", "btn"],
         ["사탕 그룹", "candy_group", "txt"],
         ["도감<br/>번호", "pokedex_no", "txt"],
+        ["이름", "name", "txt"],
         ["반짝<br/>반짝", "lucky", "chk"],
         ["색이<br/>다른", "shiny", "chk"],
         ["그림자", "shadow", "chk"],
@@ -113,6 +114,11 @@
                     );
                     break;
                 case "pokedex_no":
+                    $td.attr("data-key", title_arr[1]).append(
+                        $("<input type=text>")
+                    );
+                    break;
+                case "name":
                     $td.attr("data-key", title_arr[1]).append(
                         $("<input type=text>")
                     );
@@ -288,6 +294,11 @@
                     case "pokedex_no":
                         $td.attr("data-key", title_arr[1]).append(
                             $("<input type=text>").val(pkm.pokedex_no)
+                        );
+                        break;
+                    case "name":
+                        $td.attr("data-key", title_arr[1]).append(
+                            $("<input type=text>").val(pkm.name)
                         );
                         break;
                     case "lucky":

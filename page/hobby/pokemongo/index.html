@@ -75,7 +75,9 @@
                     if (obj.hasOwnProperty("costume") && obj["costume"]) {
                         td.append(txt.clone().html(obj["costume"]));
                     }
-                    if (
+                    if (obj["name"]) {
+                        td.append(txt.clone().html(obj.name));
+                    } else if (
                         obj.hasOwnProperty("pokedex_no") &&
                         obj["pokedex_no"] &&
                         pokemon_names[obj["pokedex_no"]]
