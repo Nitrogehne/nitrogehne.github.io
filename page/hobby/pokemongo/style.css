@@ -55,6 +55,9 @@
 #pokemongo_tb .meet_g {
     background-image: url("icon_meet_goroket.png");
 }
+#pokemongo_tb .meet_s {
+    background-image: url("icon_meet_fieldresearch.png");
+}
 #pokemongo_tb .ball_p {
     background-image: url("icon_ball_p.webp");
 }
