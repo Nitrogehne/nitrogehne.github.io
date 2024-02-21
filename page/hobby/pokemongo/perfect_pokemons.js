@@ -1279,7 +1279,7 @@ var perfect_pokemons = [
         shiny: false,
         shadow: false,
         purified: false,
-        region: "",
+        region: "a",
         costume: "",
         sex: "f",
         weight: "1.01",
@@ -1778,7 +1778,7 @@ var perfect_pokemons = [
     {
         candy_group: "빈나두",
         pokedex_no: "938",
-        name: "",
+        name: "빈나두",
         lucky: false,
         shiny: false,
         shadow: false,
