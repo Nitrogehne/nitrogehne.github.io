@@ -57,6 +57,9 @@
                     if (obj.hasOwnProperty("purified") && obj["purified"]) {
                         td.append(icon.clone().addClass("purified"));
                     }
+                    if (obj.hasOwnProperty("costume") && obj["costume"]) {
+                        td.append(txt.clone().html(obj["costume"]));
+                    }
                     if (obj.hasOwnProperty("region") && obj["region"]) {
                         let region = "";
                         switch (obj["region"]) {
@@ -72,9 +75,6 @@
                         }
                         td.append(txt.clone().html(region));
                     }
-                    if (obj.hasOwnProperty("costume") && obj["costume"]) {
-                        td.append(txt.clone().html(obj["costume"]));
-                    }
                     if (obj["name"]) {
                         td.append(txt.clone().html(obj.name));
                     } else if (
@@ -87,6 +87,14 @@
                                 .clone()
                                 .html(pokemon_names[obj["pokedex_no"]][0])
                         );
+                    }
+                    switch (obj.sex) {
+                        case "m":
+                            td.append(txt.clone().html("♂"));
+                            break;
+                        case "f":
+                            td.append(txt.clone().html("♀"));
+                            break;
                     }
                     break;
                 case "특별한 기술":
