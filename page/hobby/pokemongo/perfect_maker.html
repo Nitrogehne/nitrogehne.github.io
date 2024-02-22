@@ -318,7 +318,7 @@
         }
         return el;
     }
-    $(document).on("change", "input, select", function () {
+    $(document).on("change", "input:not(#export), select", function () {
         console.log(111);
         save_export();
     });
