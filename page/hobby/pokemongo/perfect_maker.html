@@ -318,8 +318,11 @@
         }
         return el;
     }
-    $(document).on("change", "input:not(#export), select", function () {
-        console.log(111);
-        save_export();
-    });
+    $(document).on(
+        "change",
+        "#pokemongo td input, #pokemongo td select",
+        function () {
+            save_export();
+        }
+    );
 </script>
