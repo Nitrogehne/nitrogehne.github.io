@@ -1,24 +1,42 @@
 @charset "utf-8";
-
+#pokemongo {
+}
+#pokemongo .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #pokemongo_tb {
-    border-width: 3px;
-    padding: 0 1em;
-    margin: auto;
+    border: 3px solid #fff;
     border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    height: 85vh;
+    margin: auto;
+    overflow: auto;
+    background-image: url("/img/icon_pokemongo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 #pokemongo_tb thead th {
+    position: sticky;
+    top: 0;
+    border: 1px solid #fff8;
     background-color: #333;
     color: #e7dbed;
 }
+#pokemongo_tb tbody tr td {
+    padding: 0 1em;
+    border: 1px solid #8888;
+    background-color: #000000f8;
+}
 #pokemongo_tb tbody tr.odd td {
-    background-color: #222;
+    background-color: #222222f8;
 }
 #pokemongo_tb tbody tr.lucky td {
     color: #fead43;
     font-weight: bold;
-}
-#pokemongo_tb tbody td {
-    padding: 0 1em;
 }
 
 #pokemongo_tb .icon {
@@ -32,52 +50,52 @@
     padding-right: 0;
 }
 #pokemongo_tb .shiny {
-    background-image: url("icon_shiny.png");
+    background-image: url("icon/icon_shiny.png");
 }
 #pokemongo_tb .shadow {
-    background-image: url("icon_shadow.webp");
+    background-image: url("icon/icon_shadow.webp");
 }
 #pokemongo_tb .purified {
-    background-image: url("icon_purified.webp");
+    background-image: url("icon/icon_purified.webp");
 }
 #pokemongo_tb .trade {
-    background-image: url("icon_trade.png");
+    background-image: url("icon/icon_trade.png");
 }
 #pokemongo_tb .meet_w {
-    background-image: url("icon_meet_wild.png");
+    background-image: url("icon/icon_meet_wild.png");
 }
 #pokemongo_tb .meet_f {
-    background-image: url("icon_meet_fieldresearch.png");
+    background-image: url("icon/icon_meet_fieldresearch.png");
 }
 #pokemongo_tb .meet_r {
-    background-image: url("icon_meet_raids.png");
+    background-image: url("icon/icon_meet_raids.png");
 }
 #pokemongo_tb .meet_rr {
-    background-image: url("icon_meet_raids.png");
+    background-image: url("icon/icon_meet_raids.png");
 }
 #pokemongo_tb .meet_g {
-    background-image: url("icon_meet_goroket.png");
+    background-image: url("icon/icon_meet_goroket.png");
 }
 #pokemongo_tb .meet_s {
-    background-image: url("icon_meet_fieldresearch.png");
+    background-image: url("icon/icon_meet_fieldresearch.png");
 }
 #pokemongo_tb .ball_p {
-    background-image: url("icon_ball_p.webp");
+    background-image: url("icon/icon_ball_p.webp");
 }
 #pokemongo_tb .ball_s {
-    background-image: url("icon_ball_s.webp");
+    background-image: url("icon/icon_ball_s.webp");
 }
 #pokemongo_tb .ball_h {
-    background-image: url("icon_ball_h.webp");
+    background-image: url("icon/icon_ball_h.webp");
 }
 #pokemongo_tb .ball_m {
-    background-image: url("icon_ball_m.webp");
+    background-image: url("icon/icon_ball_m.webp");
 }
 #pokemongo_tb .ball_pr {
-    background-image: url("icon_ball_pr.webp");
+    background-image: url("icon/icon_ball_pr.webp");
 }
 #pokemongo_tb .ball_ub {
-    background-image: url("icon_ball_ub.webp");
+    background-image: url("icon/icon_ball_ub.webp");
 }
 #pokemongo_tb .txt {
     display: inline-block;
