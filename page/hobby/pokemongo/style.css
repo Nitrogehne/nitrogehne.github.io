@@ -28,8 +28,11 @@
 }
 #pokemongo_tb tbody tr td {
     padding: 0 1em;
-    border: 1px solid #8888;
     background-color: #000000f8;
+    border: 1px solid #8888;
+}
+#pokemongo_tb tbody tr.candy_group_first td {
+    border-top: 2px solid #fff8 !important;
 }
 #pokemongo_tb tbody tr.odd td {
     background-color: #222222f8;
@@ -99,8 +102,5 @@
 }
 #pokemongo_tb .txt {
     display: inline-block;
-    padding-right: 0.6em;
-}
-#pokemongo_tb .txt:last-child {
-    padding-right: 0;
+    padding: 0 0.25em;
 }

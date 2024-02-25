@@ -23,25 +23,33 @@
     var icon = $("<div>").addClass("icon");
     var txt = $("<div>").addClass("txt");
     var odd = false;
+    var candy_group_tr;
+    var candy_group_rowspan;
     for (let obj of perfect_pokemons) {
         if (test) console.log(obj);
         let tr = $("<tr>");
         tbody.append(tr);
-        if (obj.hasOwnProperty("candy_group") && obj["candy_group"]) {
-            odd = !odd;
-        }
-        if (!odd) tr.addClass("odd");
         for (let title of table_title) {
             let td = $("<td>");
             tr.append(td);
             switch (title) {
                 case "사탕 그룹":
-                    if (
-                        obj.hasOwnProperty("candy_group") &&
-                        obj["candy_group"]
-                    ) {
-                        td.html(obj["candy_group"]);
+                    if (obj["candy_group"]) {
+                        candy_group_tr = tr;
+                        candy_group_rowspan = 1;
+                        odd = !odd;
+                        td.html(obj["candy_group"]).attr(
+                            "data-title",
+                            "candy_group"
+                        );
+                        candy_group_tr.addClass("candy_group_first");
+                    } else {
+                        candy_group_tr
+                            .find("td[data-title=candy_group]")
+                            .attr("rowspan", ++candy_group_rowspan);
+                        td.remove();
                     }
+                    if (!odd) tr.addClass("odd");
                     break;
                 case "도감 번호":
                     if (obj.hasOwnProperty("pokedex_no") && obj["pokedex_no"]) {
