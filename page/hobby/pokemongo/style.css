@@ -105,6 +105,10 @@
     padding: 0 0.25em;
 }
 
-#dex {
-    background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png");
+#floating_image {
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    display: none;
+    pointer-events: none;
 }

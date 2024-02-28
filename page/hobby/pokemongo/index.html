@@ -6,6 +6,7 @@
             <tbody></tbody>
         </table>
     </div>
+    <img alt="Floating Image" id="floating_image" />
 </article>
 <link rel="stylesheet" href="${path}/style.css" />
 <script src="${path}/pokemon_names.js"></script>
@@ -57,19 +58,25 @@
                     }
                     break;
                 case "모습":
-                    if (obj.hasOwnProperty("shiny") && obj["shiny"]) {
+                    if (obj["shiny"]) {
                         td.append(icon.clone().addClass("shiny"));
                     }
-                    if (obj.hasOwnProperty("shadow") && obj["shadow"]) {
+                    if (obj["shadow"]) {
                         td.append(icon.clone().addClass("shadow"));
                     }
-                    if (obj.hasOwnProperty("purified") && obj["purified"]) {
+                    if (obj["purified"]) {
                         td.append(icon.clone().addClass("purified"));
                     }
-                    if (obj.hasOwnProperty("costume") && obj["costume"]) {
-                        td.append(txt.clone().html(obj["costume"]));
+                    if (obj["costume"]) {
+                        td.append(
+                            txt
+                                .clone()
+                                .addClass("hover")
+                                .attr("data-img_url", obj["image"])
+                                .html(obj["costume"])
+                        );
                     }
-                    if (obj.hasOwnProperty("region") && obj["region"]) {
+                    if (obj["region"]) {
                         let region = "";
                         switch (obj["region"]) {
                             case "a":
@@ -133,5 +140,33 @@
     }
     function pkmg() {
         load_file({ target: "main", url: "${path}/pkmg.html" });
+    }
+
+    $(document)
+        .on("mouseover", ".hover[data-img_url]", function (e) {
+            let img_url = $(this).attr("data-img_url");
+            if (img_url) {
+                $("#floating_image").css("display", "block");
+                img_url = "${path}/img/" + img_url;
+                updateFloatingImagePosition(img_url, e);
+            }
+        })
+        .on("mousemove", ".hover[data-img_url]", function (e) {
+            let img_url = $(this).attr("data-img_url");
+            if (img_url) {
+                img_url = "${path}/img/" + img_url;
+                updateFloatingImagePosition(img_url, e);
+            }
+        })
+        .on("mouseout", ".hover[data-img_url]", function (e) {
+            let img_url = $(this).attr("data-img_url");
+            if (img_url) {
+                $("#floating_image").css("display", "none");
+            }
+        });
+    function updateFloatingImagePosition(img_url, e) {
+        $("#floating_image").attr("src", img_url);
+        $("#floating_image").css("left", e.clientX + "px");
+        $("#floating_image").css("top", e.clientY + "px");
     }
 </script>
