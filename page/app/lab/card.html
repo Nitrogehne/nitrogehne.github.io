@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>3D 포켓몬 카드</title>
+        <style>
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                perspective: 1000px;
+            }
+
+            .container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card {
+                width: 200px;
+                height: 300px;
+                background-color: #f1f1f1;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transform-style: preserve-3d;
+                transition: transform 0.5s;
+            }
+
+            .card:hover {
+                transform: rotateY(20deg) rotateX(-20deg);
+            }
+
+            .card .pokemon {
+                width: 100%;
+                height: 100%;
+                background: url("https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png")
+                    center/cover;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="pokemon"></div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const card = document.querySelector(".card");
+
+                document.addEventListener("mousemove", (event) => {
+                    const mouseX =
+                        (event.clientX / window.innerWidth - 0.5) * 40;
+                    const mouseY =
+                        (event.clientY / window.innerHeight - 0.5) * 40;
+
+                    card.style.transform = `rotateY(${mouseX}deg) rotateX(${mouseY}deg)`;
+                });
+            });
+        </script>
+    </body>
+</html>

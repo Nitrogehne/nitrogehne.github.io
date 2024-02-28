@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>미로 찾기 게임</title>
+        <style>
+            .maze {
+                display: grid;
+                gap: 1px;
+                background-color: black;
+            }
+            .cell {
+                width: 20px;
+                height: 20px;
+                background-color: white;
+            }
+            .player,
+            .exit {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+            }
+            .player {
+                background-color: green;
+            }
+            .exit {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="mazeSize">미로 크기: </label>
+        <input type="number" id="mazeSize" value="8" min="1" max="30" />
+
+        <div class="maze" id="maze"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const maze = document.getElementById("maze");
+                const mazeSizeInput = document.getElementById("mazeSize");
+
+                generateMaze(parseInt(mazeSizeInput.value));
+
+                mazeSizeInput.addEventListener("input", () => {
+                    maze.innerHTML = "";
+                    generateMaze(parseInt(mazeSizeInput.value));
+                });
+
+                function generateMaze(size) {
+                    maze.style.gridTemplateColumns = `repeat(${size}, 20px)`;
+                    maze.style.gridTemplateRows = `repeat(${size}, 20px)`;
+
+                    const emptyCells = [];
+
+                    for (let i = 0; i < size * size; i++) {
+                        const cell = document.createElement("div");
+                        cell.classList.add("cell");
+                        if (Math.random() < 0.2) {
+                            cell.style.backgroundColor = "black";
+                        } else {
+                            emptyCells.push(i); // 벽이 아닌 공간의 인덱스 저장
+                        }
+                        maze.appendChild(cell);
+                    }
+
+                    let playerPosition, exitPosition;
+
+                    do {
+                        playerPosition =
+                            emptyCells[
+                                Math.floor(Math.random() * emptyCells.length)
+                            ]; // 빈 공간에서 랜덤한 위치 선택
+                        exitPosition =
+                            emptyCells[
+                                Math.floor(Math.random() * emptyCells.length)
+                            ]; // 빈 공간에서 랜덤한 위치 선택
+                    } while (playerPosition === exitPosition); // 플레이어와 출구가 같은 위치에 있을 경우 다시 선택
+
+                    maze.children[playerPosition].classList.add("player");
+                    maze.children[exitPosition].classList.add("exit");
+                }
+
+                document.addEventListener("keydown", (event) => {
+                    const player = maze.querySelector(".player");
+                    let playerIndex = Array.from(maze.children).indexOf(player);
+                    let newPosition;
+                    switch (event.key) {
+                        case "ArrowUp":
+                            newPosition =
+                                playerIndex - parseInt(mazeSizeInput.value);
+                            break;
+                        case "ArrowDown":
+                            newPosition =
+                                playerIndex + parseInt(mazeSizeInput.value);
+                            break;
+                        case "ArrowLeft":
+                            newPosition = playerIndex - 1;
+                            break;
+                        case "ArrowRight":
+                            newPosition = playerIndex + 1;
+                            break;
+                    }
+                    if (
+                        newPosition >= 0 &&
+                        newPosition <
+                            parseInt(mazeSizeInput.value) *
+                                parseInt(mazeSizeInput.value) &&
+                        maze.children[newPosition].classList.contains("cell")
+                    ) {
+                        // 새로운 위치가 빈 공간이거나 출구인 경우에만 이동
+                        if (
+                            maze.children[newPosition].classList.contains(
+                                "cell"
+                            ) ||
+                            maze.children[newPosition].classList.contains(
+                                "exit"
+                            )
+                        ) {
+                            player.classList.remove("player");
+                            maze.children[newPosition].classList.add("player");
+                        }
+                    }
+                    if (maze.children[newPosition].classList.contains("exit")) {
+                        alert("축하합니다! 미로를 탈출했습니다!");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

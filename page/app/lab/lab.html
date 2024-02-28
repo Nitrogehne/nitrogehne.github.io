@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Galarian Meowth</title>
+        <style>
+            .image-container {
+                width: 300px;
+                height: 300px;
+                background-color: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            .image-container img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="image-container" id="imageContainer"></div>
+
+        <script>
+            // 이미지를 Base64로 인코딩하여 변수에 저장
+            var imageUrl =
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52-galarian.png";
+            var imageBase64 = "";
+
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                var reader = new FileReader();
+                reader.onloadend = function () {
+                    imageBase64 = reader.result;
+                    displayImage();
+                };
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open("GET", imageUrl);
+            xhr.responseType = "blob";
+            xhr.send();
+
+            // 이미지를 표시하는 함수
+            function displayImage() {
+                var imageContainer = document.getElementById("imageContainer");
+                var img = document.createElement("img");
+                img.src = imageBase64;
+                img.alt = "Galarian Meowth";
+                imageContainer.appendChild(img);
+            }
+        </script>
+    </body>
+</html>
