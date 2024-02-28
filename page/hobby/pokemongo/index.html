@@ -94,7 +94,6 @@
                     if (obj["name"]) {
                         td.append(txt.clone().html(obj.name));
                     } else if (
-                        obj.hasOwnProperty("pokedex_no") &&
                         obj["pokedex_no"] &&
                         pokemon_names[obj["pokedex_no"]]
                     ) {
@@ -114,32 +113,26 @@
                     }
                     break;
                 case "특별한 기술":
-                    if (
-                        obj.hasOwnProperty("knows_attack") &&
-                        obj["knows_attack"]
-                    ) {
+                    if (obj["knows_attack"]) {
                         td.append(txt.clone().html(obj["knows_attack"]));
                     }
                     break;
                 case "기타":
-                    if (obj.hasOwnProperty("meet") && obj["meet"]) {
+                    if (obj["meet"]) {
                         td.append(icon.clone().addClass("meet_" + obj["meet"]));
                     }
-                    if (obj.hasOwnProperty("ball") && obj["ball"]) {
+                    if (obj["ball"]) {
                         td.append(icon.clone().addClass("ball_" + obj["ball"]));
                     }
-                    if (obj.hasOwnProperty("trade_date") && obj["trade_date"]) {
+                    if (obj["trade_date"]) {
                         td.append(icon.clone().addClass("trade"));
                     }
                     break;
             }
-            if (obj.hasOwnProperty("lucky") && obj["lucky"]) {
+            if (obj["lucky"]) {
                 tr.addClass("lucky");
             }
         }
-    }
-    function pkmg() {
-        load_file({ target: "main", url: "${path}/pkmg.html" });
     }
 
     $(document)
