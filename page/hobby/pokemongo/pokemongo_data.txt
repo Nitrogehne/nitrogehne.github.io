@@ -1,0 +1,20 @@
+이미지 찾기
+https://github.com/PokeMiners/pogo_assets/tree/master/Images
+
+포켓몬 이미지
+https://github.com/PokeMiners/pogo_assets/tree/master/Images/Pokemon
+
+검색에
+
+pokemon_icon_도감번호
+pokemon_icon_1000
+
+<img alt="pokemon_icon_001_00.png" src="https://github.com/PokeMiners/pogo_assets/blob/master/Images/Pokemon/pokemon_icon_001_00.png?raw=true" data-hpc="true" class="Box-sc-g0xbh4-0 kzRgrI">
+
+https://github.com/PokeMiners/pogo_assets/tree/master/Images/Pokemon/pokemon_icon_001_00.png 이상해씨
+https://github.com/PokeMiners/pogo_assets/tree/master/Images/Pokemon/pokemon_icon_001_00_11.png 꼬깔 이상해씨
+https://github.com/PokeMiners/pogo_assets/tree/master/Images/Pokemon/pokemon_icon_001_00_11_shiny.png 색이다른 꼬깔 이상해씨
+
+
+
+https://raw.githubusercontent.com/PokeMiners/pogo_assets/d1f04b7a7cd00e295db97992512ad1954cd817fe/Images/Pokemon/Addressable%20Assets/pm1000.icon.png

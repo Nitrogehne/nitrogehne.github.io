@@ -6,13 +6,20 @@
             <tbody></tbody>
         </table>
     </div>
-    <img alt="Floating Image" id="floating_image" />
+    <div id="floating_image"></div>
+    <img id="image_validation" />
 </article>
 <link rel="stylesheet" href="${path}/style.css" />
 <script src="${path}/pokemon_names.js"></script>
 <script src="${path}/perfect_pokemons.js"></script>
 <script>
-    var test = 0;
+    var test = location.hostname != "nitrogehne.github.io" ? true : false;
+    if (test) {
+        console.log(">>>>> TEST MODE <<<<<");
+        let pkm_arr_json = localStorage.pkm_arr;
+        pkm_arr = JSON.parse(pkm_arr_json);
+        perfect_pokemons = pkm_arr;
+    }
     var table_title = ["사탕 그룹", "도감 번호", "모습", "특별한 기술", "기타"];
     var thead = $("#pokemongo_tb thead");
     for (let title of table_title) {
@@ -26,20 +33,19 @@
     var odd = false;
     var candy_group_tr;
     var candy_group_rowspan;
-    for (let obj of perfect_pokemons) {
-        if (test) console.log(obj);
-        let tr = $("<tr>");
+    for (let pm_obj of perfect_pokemons) {
+        let tr = $("<tr>").data("pm_obj", pm_obj);
         tbody.append(tr);
         for (let title of table_title) {
             let td = $("<td>");
             tr.append(td);
             switch (title) {
                 case "사탕 그룹":
-                    if (obj["candy_group"]) {
+                    if (pm_obj["candy_group"]) {
                         candy_group_tr = tr;
                         candy_group_rowspan = 1;
                         odd = !odd;
-                        td.html(obj["candy_group"]).attr(
+                        td.html(pm_obj["candy_group"]).attr(
                             "data-title",
                             "candy_group"
                         );
@@ -53,32 +59,35 @@
                     if (!odd) tr.addClass("odd");
                     break;
                 case "도감 번호":
-                    if (obj.hasOwnProperty("pokedex_no") && obj["pokedex_no"]) {
-                        td.html(obj["pokedex_no"]);
+                    if (pm_obj["pokedex_no"]) {
+                        td.html(pm_obj["pokedex_no"]);
                     }
                     break;
                 case "모습":
-                    if (obj["shiny"]) {
-                        td.append(icon.clone().addClass("shiny"));
+                    let form = $("<div>").addClass("form");
+                    td.append(form);
+                    if (pm_obj["shiny"]) {
+                        form.append(icon.clone().addClass("shiny"));
                     }
-                    if (obj["shadow"]) {
-                        td.append(icon.clone().addClass("shadow"));
+                    if (pm_obj["shadow"]) {
+                        form.append(icon.clone().addClass("shadow"));
+                        td.addClass("shadow");
                     }
-                    if (obj["purified"]) {
-                        td.append(icon.clone().addClass("purified"));
+                    if (pm_obj["purified"]) {
+                        form.append(icon.clone().addClass("purified"));
+                        td.addClass("purified");
                     }
-                    if (obj["costume"]) {
-                        td.append(
-                            txt
-                                .clone()
-                                .addClass("hover")
-                                .attr("data-img_url", obj["image"])
-                                .html(obj["costume"])
+                    if (pm_obj["costume"]) {
+                        let txt_ = txt.clone().html(pm_obj["costume"]);
+                        txt_.addClass("hover").attr(
+                            "data-img_url",
+                            pm_obj["image"]
                         );
+                        form.append(txt_);
                     }
-                    if (obj["region"]) {
+                    if (pm_obj["region"]) {
                         let region = "";
-                        switch (obj["region"]) {
+                        switch (pm_obj["region"]) {
                             case "a":
                                 region = "알로라";
                                 break;
@@ -89,77 +98,163 @@
                                 region = "히스이";
                                 break;
                         }
-                        td.append(txt.clone().html(region));
+                        form.append(txt.clone().html(region));
                     }
-                    if (obj["name"]) {
-                        td.append(txt.clone().html(obj.name));
+                    if (pm_obj["name"]) {
+                        form.append(txt.clone().html(pm_obj.name));
                     } else if (
-                        obj["pokedex_no"] &&
-                        pokemon_names[obj["pokedex_no"]]
+                        pm_obj["pokedex_no"] &&
+                        pokemon_names[pm_obj["pokedex_no"]]
                     ) {
-                        td.append(
+                        form.append(
                             txt
                                 .clone()
-                                .html(pokemon_names[obj["pokedex_no"]][0])
+                                .html(pokemon_names[pm_obj["pokedex_no"]][0])
                         );
                     }
-                    switch (obj.sex) {
+                    switch (pm_obj["gender"]) {
                         case "m":
-                            td.append(txt.clone().html("♂"));
+                            form.append(icon.clone().addClass("male"));
                             break;
                         case "f":
-                            td.append(txt.clone().html("♀"));
+                            form.append(icon.clone().addClass("female"));
                             break;
                     }
                     break;
                 case "특별한 기술":
-                    if (obj["knows_attack"]) {
-                        td.append(txt.clone().html(obj["knows_attack"]));
+                    if (pm_obj["knows_attack"]) {
+                        td.append(txt.clone().html(pm_obj["knows_attack"]));
                     }
                     break;
                 case "기타":
-                    if (obj["meet"]) {
-                        td.append(icon.clone().addClass("meet_" + obj["meet"]));
+                    if (pm_obj["meet"]) {
+                        td.append(
+                            icon.clone().addClass("meet_" + pm_obj["meet"])
+                        );
                     }
-                    if (obj["ball"]) {
-                        td.append(icon.clone().addClass("ball_" + obj["ball"]));
+                    if (pm_obj["ball"]) {
+                        td.append(
+                            icon.clone().addClass("ball_" + pm_obj["ball"])
+                        );
                     }
-                    if (obj["trade_date"]) {
+                    if (pm_obj["trade_date"]) {
                         td.append(icon.clone().addClass("trade"));
                     }
                     break;
             }
-            if (obj["lucky"]) {
+            if (pm_obj["lucky"]) {
                 tr.addClass("lucky");
             }
         }
     }
 
     $(document)
-        .on("mouseover", ".hover[data-img_url]", function (e) {
-            let img_url = $(this).attr("data-img_url");
-            if (img_url) {
-                $("#floating_image").css("display", "block");
-                img_url = "${path}/img/" + img_url;
-                updateFloatingImagePosition(img_url, e);
+        .on("mouseover", ".form", function (e) {
+            let $this = $(this);
+            let pm_obj = $this.closest("tr").data("pm_obj");
+            let no = Number(pm_obj["pokedex_no"]);
+            let url = "${path}/img/pokemon/";
+            url += Math.floor(no / 100) * 100 + 1 + "_";
+            url += Math.floor(no / 100) * 100 + 100 + "/";
+            url += "pm" + no;
+            if (pm_obj["image"]) {
+                url += "." + pm_obj["image"];
             }
+            if (pm_obj["distinction"] && pm_obj["gender"] === "f") {
+                url += ".g2";
+            }
+            if (pm_obj["shiny"]) {
+                url += ".s";
+            }
+            switch (pm_obj["region"]) {
+                case "a":
+                    url += ".fALOLA";
+                    break;
+                case "g":
+                    url += ".fGALARIAN";
+                    break;
+                case "h":
+                    url += ".fHISUIAN";
+                    break;
+            }
+            url += ".icon.png";
+            $("#floating_image").css("background-image", "url(" + url + ")");
+            $("#floating_image").css("display", "block");
+            updateFloatingImagePosition(e);
+            $("#image_validation")
+                .attr("src", url)
+                .data("pm_obj", pm_obj)
+                .data("type", 1);
         })
-        .on("mousemove", ".hover[data-img_url]", function (e) {
+        .on("mousemove", ".form", function (e) {
             let img_url = $(this).attr("data-img_url");
-            if (img_url) {
-                img_url = "${path}/img/" + img_url;
-                updateFloatingImagePosition(img_url, e);
-            }
+            updateFloatingImagePosition(e);
         })
-        .on("mouseout", ".hover[data-img_url]", function (e) {
-            let img_url = $(this).attr("data-img_url");
-            if (img_url) {
-                $("#floating_image").css("display", "none");
-            }
+        .on("mouseout", ".form", function (e) {
+            $("#floating_image").css("display", "none");
         });
-    function updateFloatingImagePosition(img_url, e) {
-        $("#floating_image").attr("src", img_url);
+    function updateFloatingImagePosition(e) {
         $("#floating_image").css("left", e.clientX + "px");
-        $("#floating_image").css("top", e.clientY + "px");
+        $("#floating_image").css("top", "calc(" + e.clientY + "px - 5em)");
     }
+    var st = null;
+    $("#image_validation").on("error", function (e) {
+        clearTimeout(st);
+        let $this = $(this);
+        let pm_obj = $this.data("pm_obj");
+        let type = $this.data("type"); // type으로 에러 발생
+        let distinction = true;
+        let url = "";
+        if (type < 5) {
+            if (type === 1) {
+                //console.log($this.attr("src"));
+            }
+            if (type === 1 || type === 2) {
+                url +=
+                    "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon%20-%20256x256/Addressable%20Assets/";
+            }
+            if (type === 3 || type === 4) {
+                url +=
+                    "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/";
+            }
+            url += "pm" + pm_obj["pokedex_no"];
+            if (pm_obj["image"]) {
+                url += "." + pm_obj["image"];
+            }
+            if (type === 1 || type === 3) {
+                if (pm_obj["distinction"] && pm_obj["gender"] === "f") {
+                    url += ".g2";
+                }
+            }
+            if (type === 2 || type === 4) {
+                distinction = false;
+            }
+            if (pm_obj["shiny"]) {
+                url += ".s";
+            }
+            switch (pm_obj["region"]) {
+                case "a":
+                    url += ".fALOLA";
+                    break;
+                case "g":
+                    url += ".fGALARIAN";
+                    break;
+                case "h":
+                    url += ".fHISUIAN";
+                    break;
+            }
+            url += ".icon.png";
+            $this.attr("src", url).data("type", ++type);
+        } else {
+            console.warn("no image");
+            $this.hide();
+        }
+        $("#floating_image").css("background-image", "url(" + url + ")");
+        st = setTimeout(function () {
+            pm_obj["distinction"] = false;
+            localStorage.pkm_arr = JSON.stringify(perfect_pokemons);
+            console.log(url);
+        }, 500);
+    });
+    //pm27.fALOLA.icon.png
 </script>

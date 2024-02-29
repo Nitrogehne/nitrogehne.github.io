@@ -76,6 +76,9 @@
     #pokemongo [data-key="costume"] input[type="text"] {
         width: 7em;
     }
+    #pokemongo [data-key="image"] input[type="text"] {
+        width: 10em;
+    }
     #pokemongo [data-key="weight"] input[type="text"] {
         width: 4em;
     }
@@ -135,9 +138,10 @@
         ],
         ["복장", "costume", "txt"],
         ["모습", "image", "txt"],
+        ["암수구분", "distinction", "chk", true],
         [
             "성별",
-            "sex",
+            "gender",
             "sel",
             [
                 ["", ""],
@@ -285,7 +289,9 @@
                 return $("<input type=text>").attr("name", data_arr[2]);
                 break;
             case "chk":
-                return $("<input type=checkbox>").attr("name", data_arr[2]);
+                return $("<input type=checkbox>")
+                    .attr("name", data_arr[2])
+                    .prop("checked", data_arr[3]);
                 break;
             case "sel":
                 let sel = $("<select>").attr("name", data_arr[2]);
