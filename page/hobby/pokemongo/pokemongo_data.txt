@@ -16,5 +16,7 @@ https://github.com/PokeMiners/pogo_assets/tree/master/Images/Pokemon/pokemon_ico
 https://github.com/PokeMiners/pogo_assets/tree/master/Images/Pokemon/pokemon_icon_001_00_11_shiny.png 색이다른 꼬깔 이상해씨
 
 
+256/pm94. 검색 키워드
+
 
 https://raw.githubusercontent.com/PokeMiners/pogo_assets/d1f04b7a7cd00e295db97992512ad1954cd817fe/Images/Pokemon/Addressable%20Assets/pm1000.icon.png

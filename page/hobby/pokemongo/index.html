@@ -27,6 +27,11 @@
         th.html(title);
         thead.append(th);
     }
+    if (test) {
+        let th = $("<th>");
+        th.html("다운로드");
+        thead.append(th);
+    }
     var tbody = $("#pokemongo_tb tbody");
     var icon = $("<div>").addClass("icon");
     var txt = $("<div>").addClass("txt");
@@ -146,11 +151,17 @@
                 tr.addClass("lucky");
             }
         }
+        if (test) {
+            let td = $("<td>").addClass("download");
+            tr.append(td);
+        }
     }
 
+    var curr;
     $(document)
         .on("mouseover", ".form", function (e) {
             let $this = $(this);
+            curr = $this;
             let pm_obj = $this.closest("tr").data("pm_obj");
             let no = Number(pm_obj["pokedex_no"]);
             let url = "${path}/img/pokemon/";
@@ -228,6 +239,7 @@
             }
             if (type === 2 || type === 4) {
                 distinction = false;
+                perfect_pokemons["distinction"] = distinction;
             }
             if (pm_obj["shiny"]) {
                 url += ".s";
@@ -246,15 +258,20 @@
             url += ".icon.png";
             $this.attr("src", url).data("type", ++type);
         } else {
+            clearTimeout(st);
             console.warn("no image");
             $this.hide();
+            return;
         }
         $("#floating_image").css("background-image", "url(" + url + ")");
         st = setTimeout(function () {
-            pm_obj["distinction"] = false;
+            if (!test) {
+                clearTimeout(st);
+                return;
+            }
+            pm_obj["distinction"] = distinction;
             localStorage.pkm_arr = JSON.stringify(perfect_pokemons);
             console.log(url);
         }, 500);
     });
-    //pm27.fALOLA.icon.png
 </script>
