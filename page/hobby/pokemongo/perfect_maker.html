@@ -1,334 +1,49 @@
-<style>
-    #pokemongo {
-        display: block;
-        max-height: 80vh;
-        overflow-y: scroll;
-    }
-    #pokemongo table {
-        border-width: 3px;
-        padding: 0 1em;
-        margin: auto;
-        border-collapse: collapse;
-        table-layout: fixed;
-        height: 100%;
-    }
-    #pokemongo table thead {
-        position: sticky;
-        top: 0px;
-    }
-    #pokemongo table thead tr th {
-        background-color: #333;
-        color: #e7dbed;
-        border: 1px solid #fff;
-        writing-mode: vertical-lr;
-    }
-    #pokemongo table thead tr.top_head th {
-        writing-mode: horizontal-tb;
-        background-color: #000;
-    }
-    #pokemongo table tbody td {
-        color: #e7dbed;
-        border: 1px solid #fff4;
-    }
-    #pokemongo table tbody tr:nth-child(6n + 1) td {
-        background-color: #000;
-    }
-    #pokemongo table tbody tr:nth-child(6n + 2) td {
-        background-color: #200;
-    }
-    #pokemongo table tbody tr:nth-child(6n + 3) td {
-        background-color: #220;
-    }
-    #pokemongo table tbody tr:nth-child(6n + 4) td {
-        background-color: #020;
-    }
-    #pokemongo table tbody tr:nth-child(6n + 5) td {
-        background-color: #002;
-    }
-    #pokemongo table tbody tr:nth-child(6n + 6) td {
-        background-color: #202;
-    }
-    #pokemongo input {
-        background-color: inherit;
-    }
-    #pokemongo input[type="text"] {
-        width: 5em;
-    }
-    #pokemongo [data-key="pokedex_no"] input[type="text"] {
-        width: 3em;
-    }
-    #pokemongo [data-key="lucky"] input[type="checkbox"] {
-        box-shadow: 0px 0px 0px 1px #fead43;
-        accent-color: #fead4388;
-    }
-    #pokemongo [data-key="shiny"] input[type="checkbox"] {
-        box-shadow: 0px 0px 0px 1px #ffffff;
-        accent-color: #ffffff88;
-    }
-    #pokemongo [data-key="shadow"] input[type="checkbox"] {
-        box-shadow: 0px 0px 0px 1px #cb9aef;
-        accent-color: #cb9aef88;
-    }
-    #pokemongo [data-key="purified"] input[type="checkbox"] {
-        box-shadow: 0px 0px 0px 1px #85dee7;
-        accent-color: #85dee788;
-    }
-    #pokemongo [data-key="costume"] input[type="text"] {
-        width: 7em;
-    }
-    #pokemongo [data-key="image"] input[type="text"] {
-        width: 10em;
-    }
-    #pokemongo [data-key="weight"] input[type="text"] {
-        width: 4em;
-    }
-    #pokemongo [data-key="height"] input[type="text"] {
-        width: 3em;
-    }
-    #pokemongo select {
-        max-width: 4em;
-    }
-    #pokemongo [data-key="event"] input[type="text"] {
-        width: 7em;
-    }
-    #pokemongo button {
-        background-color: inherit;
-    }
-    #pokemongo select {
-        background-color: inherit;
-    }
-</style>
-<article id="pokemongo">
+<link rel="stylesheet" href="${path}/perfect_maker.css" />
+<script src="${path}/pokemon_names.js"></script>
+<script src="${path}/perfect_maker.js"></script>
+<article id="perfect_maker">
     <table>
         <thead>
             <tr class="top_head">
                 <th colspan="1">
-                    <button onclick="save_export()">[저장 및 내보내기]</button>
-                    <input id="export" style="width: 30em" />
-                    <button onclick="import_data()">[가져오기]</button>
+                    <button
+                        onclick="save_export()"
+                        style="border: 1px solid #fff; margin: 0.2em"
+                    >
+                        저장 및 내보내기
+                    </button>
+                    <input
+                        id="export"
+                        style="
+                            width: 30em;
+                            background-color: #fff2;
+                            margin: 0.2em;
+                        "
+                    />
+                    <button
+                        onclick="import_data()"
+                        style="border: 1px solid #fff; margin: 0.2em"
+                    >
+                        가져오기
+                    </button>
                 </th>
             </tr>
         </thead>
         <tbody></tbody>
+        <tfoot>
+            <tr class="bottom_foot">
+                <td>
+                    <input
+                        id="slider"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                        step="1"
+                        style="width: calc(100% - 2em); margin: 0 1em"
+                    />
+                </td>
+            </tr>
+        </tfoot>
     </table>
 </article>
-<script>
-    var $table = $("#pokemongo table");
-    var $thead = $("#pokemongo table thead");
-    var title = [
-        ["삭제", "del", "btn", "-", remove],
-        ["다음에 추가", "add", "btn", "+", add],
-        ["사탕 그룹", "candy_group", "txt"],
-        ["도감 번호", "pokedex_no", "txt"],
-        ["이름", "name", "txt"],
-        ["반짝반짝", "lucky", "chk"],
-        ["색이 다른", "shiny", "chk"],
-        ["그림자", "shadow", "chk"],
-        ["정화", "purified", "chk"],
-        [
-            "지방",
-            "region",
-            "sel",
-            [
-                ["", ""],
-                ["a", "알로라"],
-                ["g", "가라르"],
-                ["h", "히스이"],
-            ],
-        ],
-        ["복장", "costume", "txt"],
-        ["모습", "image", "txt"],
-        ["암수구분", "distinction", "chk", true],
-        [
-            "성별",
-            "gender",
-            "sel",
-            [
-                ["", ""],
-                ["m", "수"],
-                ["f", "&nbsp;&nbsp;&nbsp;암"],
-            ],
-        ],
-        ["몸무게", "weight", "txt"],
-        ["키", "height", "txt"],
-        ["특별한 기술", "knows_attack", "txt"],
-        [
-            "만남",
-            "meet",
-            "sel",
-            [
-                ["w", "야생"],
-                ["f", "필드리서치"],
-                ["g", "고로켓단"],
-                ["e", "알"],
-                ["r", "레이드"],
-                ["rr", "리모트레이드"],
-                ["p", "엽서"],
-                ["s", "스페셜리서치"],
-            ],
-        ],
-        [
-            "볼",
-            "ball",
-            "sel",
-            [
-                ["p", "포켓볼"],
-                ["s", "슈퍼볼"],
-                ["h", "하이퍼볼"],
-                ["pr", "프리미어볼"],
-                ["ub", "울트라비스트볼"],
-                ["e", "알 부화"],
-                ["m", "마스터볼"],
-            ],
-        ],
-        ["교환한 날", "trade_date", "date"],
-        ["잡은 날", "caught_date", "date"],
-        [
-            "알 종류",
-            "egg_type",
-            "sel",
-            [
-                ["", ""],
-                ["2", "2km"],
-                ["5", "5km"],
-                ["7", "7km"],
-                ["10", "10km"],
-                ["12", "12km"],
-            ],
-        ],
-        ["알 받은 날", "egg_received_date", "date"],
-        ["알 부화 날", "egg_hatched_date", "date"],
-        ["엽서 받은 날", "postcard_received_date", "date"],
-        ["행사", "event", "txt"],
-        ["추가정보", "info", "txt"],
-    ];
-    $(".top_head th").attr("colspan", title.length);
-    $tr = $("<tr>");
-    $thead.append($tr);
-    for (let title_arr of title) {
-        let $th = $("<th>");
-        $tr.append($th);
-        $th.html(title_arr[0]);
-    }
-    var $tbody = $("#pokemongo table tbody");
-    var pkm_arr;
-    if (localStorage.pkm_arr) {
-        let pkm_arr_json = localStorage.pkm_arr;
-        $("#export").val("var perfect_pokemons = " + pkm_arr_json + ";");
-        pkm_arr = JSON.parse(pkm_arr_json);
-        draw_table();
-    } else {
-        $tbody.append(get_row());
-    }
-    function get_row() {
-        let $tr = $("<tr>");
-        for (let title_arr of title) {
-            let $td = $("<td>");
-            $tr.append($td);
-            let sel = $("<select>");
-            $td.attr("data-key", title_arr[1]).append(get_el(title_arr));
-        }
-        return $tr;
-    }
-    function save_export() {
-        let $tr_list = $("#pokemongo tbody tr");
-        pkm_arr = [];
-        for (let tr of $tr_list) {
-            let $tr = $(tr);
-            let obj = {};
-            let $td_list = $tr.find("td");
-            for (let td of $td_list) {
-                let $td = $(td);
-                let key = $td.attr("data-key");
-                if (key === "add" || key === "remove") continue;
-                let val = $td.find("input, select").val();
-                if (val === "on") val = $td.find("input").prop("checked");
-                obj[key] = val;
-            }
-            pkm_arr.push(obj);
-        }
-        let pkm_arr_json = JSON.stringify(pkm_arr);
-        $("#export").val("var perfect_pokemons = " + pkm_arr_json + ";");
-        localStorage.pkm_arr = pkm_arr_json;
-    }
-    function import_data() {
-        let pkm_arr_json = $("#export").val();
-        pkm_arr_json = pkm_arr_json.replace("var perfect_pokemons = ", "");
-        pkm_arr_json = pkm_arr_json.substring(0, pkm_arr_json.length - 1);
-        pkm_arr = JSON.parse(pkm_arr_json);
-        draw_table();
-    }
-    function draw_table() {
-        $tbody.empty();
-        for (let pkm of pkm_arr) {
-            let $tr = $("<tr>");
-            $tbody.append($tr);
-            for (let title_arr of title) {
-                let $td = $("<td>");
-                $tr.append($td);
-                let sel = $("<select>");
-                $td.attr("data-key", title_arr[1]).append(
-                    get_el_with_data(title_arr, pkm)
-                );
-            }
-        }
-    }
-    function add() {
-        $(this).closest("tr").after(get_row());
-        save_export();
-    }
-    function remove() {
-        $(this).closest("tr").remove();
-    }
-    function get_el(data_arr) {
-        switch (data_arr[2]) {
-            case "btn":
-                return $("<button>").html(data_arr[3]).on("click", data_arr[4]);
-                break;
-            case "txt":
-                return $("<input type=text>").attr("name", data_arr[2]);
-                break;
-            case "chk":
-                return $("<input type=checkbox>")
-                    .attr("name", data_arr[2])
-                    .prop("checked", data_arr[3]);
-                break;
-            case "sel":
-                let sel = $("<select>").attr("name", data_arr[2]);
-                for (let op of data_arr[3]) {
-                    sel.append($("<option>").val(op[0]).html(op[1]));
-                }
-                return sel;
-                break;
-            case "date":
-                return $("<input type=text>").attr("name", data_arr[2]);
-                break;
-        }
-    }
-    function get_el_with_data(data_arr, pkm_obj) {
-        let el = get_el(data_arr);
-        switch (data_arr[2]) {
-            case "btn":
-                break;
-            case "sel":
-                el.val(pkm_obj[data_arr[1]]);
-                break;
-            default: // input
-                switch (el.attr("type")) {
-                    case "checkbox":
-                        el.prop("checked", pkm_obj[data_arr[1]]);
-                        break;
-                    default:
-                        el.val(pkm_obj[data_arr[1]]);
-                }
-        }
-        return el;
-    }
-    $(document).on(
-        "change",
-        "#pokemongo td input, #pokemongo td select",
-        function () {
-            save_export();
-        }
-    );
-</script>

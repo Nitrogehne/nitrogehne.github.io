@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+#perfect_maker {
+    display: block;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+/* 테이블 */
+#perfect_maker table {
+    border-width: 3px;
+    padding: 0 1em;
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    height: 100%;
+}
+#perfect_maker table thead {
+    position: sticky;
+    top: 0px;
+}
+#perfect_maker table thead tr th {
+    background-color: #333;
+    color: #e7dbed;
+    border: 1px solid #fff;
+    writing-mode: vertical-lr;
+}
+#perfect_maker table thead tr.top_head th {
+    writing-mode: horizontal-tb;
+    background-color: #000;
+}
+#perfect_maker table tbody td {
+    color: #e7dbed;
+    border: 1px solid #fff4;
+}
+#perfect_maker table tbody tr:nth-child(6n + 1) td {
+    background-color: #000;
+}
+#perfect_maker table tbody tr:nth-child(6n + 2) td {
+    background-color: #200;
+}
+#perfect_maker table tbody tr:nth-child(6n + 3) td {
+    background-color: #220;
+}
+#perfect_maker table tbody tr:nth-child(6n + 4) td {
+    background-color: #020;
+}
+#perfect_maker table tbody tr:nth-child(6n + 5) td {
+    background-color: #002;
+}
+#perfect_maker table tbody tr:nth-child(6n + 6) td {
+    background-color: #202;
+}
+
+/* input */
+#perfect_maker input {
+    background-color: inherit;
+}
+#perfect_maker input[type="text"] {
+    width: 4em;
+    padding: 0 0.2em;
+    margin: 0.2em;
+    background-color: #fff2;
+}
+#perfect_maker input[type="text"]:focus {
+    width: 10em;
+}
+#perfect_maker [data-key="lucky"] input[type="checkbox"] {
+    box-shadow: 0px 0px 0px 1px #fead43;
+    accent-color: #fead4388;
+}
+#perfect_maker [data-key="shiny"] input[type="checkbox"] {
+    box-shadow: 0px 0px 0px 1px #ffffff;
+    accent-color: #ffffff88;
+}
+#perfect_maker [data-key="shadow"] input[type="checkbox"] {
+    box-shadow: 0px 0px 0px 1px #cb9aef;
+    accent-color: #cb9aef88;
+}
+#perfect_maker [data-key="purified"] input[type="checkbox"] {
+    box-shadow: 0px 0px 0px 1px #85dee7;
+    accent-color: #85dee788;
+}
+/* select */
+#perfect_maker select {
+    max-width: 4em;
+    background-color: #fff2;
+    margin: 0.2em;
+}
+#perfect_maker select:focus {
+    max-width: 10em;
+}
+#perfect_maker select option {
+    background-color: #000;
+}
+/* button */
+#perfect_maker button {
+    background-color: inherit;
+    border: 2px #fff2 ridge;
+    padding: 0 0.25em;
+}

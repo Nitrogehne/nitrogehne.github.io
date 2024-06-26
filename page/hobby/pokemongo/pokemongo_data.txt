@@ -20,3 +20,31 @@ https://github.com/PokeMiners/pogo_assets/tree/master/Images/Pokemon/pokemon_ico
 
 
 https://raw.githubusercontent.com/PokeMiners/pogo_assets/d1f04b7a7cd00e295db97992512ad1954cd817fe/Images/Pokemon/Addressable%20Assets/pm1000.icon.png
+
+
+포켓몬 코리아 도감 이미지
+https://pokemonkorea.co.kr/pokedex
+
+
+
+
+    #perfect_maker [data-key="pokedex_no"] input[type="text"] {
+        width: 3em;
+    }
+
+    #perfect_maker [data-key="costume"] input[type="text"] {
+        width: 7em;
+    }
+    #perfect_maker [data-key="image"] input[type="text"] {
+        width: 10em;
+    }
+    #perfect_maker [data-key="weight"] input[type="text"] {
+        width: 4em;
+    }
+    #perfect_maker [data-key="height"] input[type="text"] {
+        width: 3em;
+    }
+    
+    #perfect_maker [data-key="event"] input[type="text"] {
+        width: 7em;
+    }
