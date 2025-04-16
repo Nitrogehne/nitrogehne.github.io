@@ -111,8 +111,8 @@
                 },
                 {
                     title: "실험실",
-                    url2: "page/app/lab/lab.html",
-                    target: "_blank",
+                    "data-url2": "page/app/lab/lab.html",
+                    //target: "_blank",
                 },
             ],
         },
@@ -130,6 +130,16 @@
                     title: "Pokémon GO",
                     url: "https://fork-impala-121.notion.site/Ehne-s-Pok-mon-GO-4-List-f2820e333ec249d2be2517c7da5ec668",
                     target: "_blank",
+                    // url: "page/hobby/pokemongo/index.html",
+                    "data-url2":
+                        "https://fork-impala-121.notion.site/Ehne-s-Pok-mon-GO-4-List-f2820e333ec249d2be2517c7da5ec668",
+                    "data-target2": "_blank",
+                    sub: [
+                        {
+                            title: "동네방네 GoGoGo",
+                            url: "page/hobby/pokemongo/ko-gogogo-around-town/index.html",
+                        },
+                    ],
                 },
                 {
                     title: "nSound",
@@ -277,9 +287,6 @@
                 obj.target ? "href" : "data-url",
                 obj.url ? obj.url : ""
             );
-            if (obj.url2) {
-                a.setAttribute("data-url2", obj.url2);
-            }
             a.setAttribute("data-target", obj.target ? "" : "main");
             for (let i in obj) {
                 if (["title", "url", "icon", "sub"].includes(i)) continue;
@@ -297,7 +304,7 @@
     document.querySelector("#main_menu a").setAttribute("class", "current");
 
     $(document)
-        .on("click", "#main_menu [data-target]", function () {
+        .on("click", "#main_menu [data-url]", function () {
             var obj = $(this);
             var target =
                 obj.attr("data-target") == "this"
@@ -309,15 +316,14 @@
             $("#main_menu .current").removeClass("current");
             obj.addClass("current");
         })
-        .on("dblclick", "#main_menu [data-target]", function () {
-            var obj = $(this);
-            var target =
-                obj.attr("data-target") == "this"
-                    ? $(this)
-                    : obj.attr("data-target");
-            var url = obj.attr("data-url2");
+        .on("dblclick", "#main_menu [data-url2]", function () {
+            const $this = $(this);
+            const url = obj.attr("data-url2");
             if (!url) return;
-            load_file({ target: target, url: url });
+            const target = $this.attr("data-target2")
+                ? $this.attr("data-target2")
+                : "_blank";
+            if (!target) load_file({ target: target, url: url });
             $("#main_menu .current").removeClass("current");
             obj.addClass("current");
         });
