@@ -58,13 +58,17 @@
         text-align: center;
         font-size: 20px;
         font-weight: bold;
-        color: #333;
+        color: black; /* 폰트 색상: 검정 */
+        text-shadow: -1px -1px 15px white,
+            /* 좌상단 흰색 그림자 */ 1px -1px 15px white,
+            /* 우상단 흰색 그림자 */ -1px 1px 15px white,
+            /* 좌하단 흰색 그림자 */ 1px 1px 15px white; /* 우하단 흰색 그림자 */
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         cursor: pointer;
-        border: 1px solid #fff;
+        border: 3px double #fff;
     }
     .image-box img {
         width: 100%;
@@ -72,7 +76,9 @@
         object-fit: cover;
     }
     .image-box.error {
+        border: 1px solid #888;
         background-color: rgba(0, 0, 0, 0.25);
+        cursor: default;
     }
     .image-box.error::before {
         content: attr(alt); /* alt가 인덱스 번호니까 그걸 사용 */
